@@ -45,6 +45,14 @@
   "document_type": "",
   "fields": [
     {
+      "fieldname": "trait_name",
+      "fieldtype": "Data",
+      "label": "Trait Name",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
       "fieldname": "category",
       "fieldtype": "Select",
       "label": "Category",

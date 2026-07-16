@@ -45,6 +45,14 @@
   "document_type": "",
   "fields": [
     {
+      "fieldname": "block_name",
+      "fieldtype": "Data",
+      "label": "Block Name",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
       "fieldname": "hostel",
       "fieldtype": "Link",
       "label": "hostel",

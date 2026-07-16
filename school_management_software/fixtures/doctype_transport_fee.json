@@ -45,6 +45,15 @@
   "document_type": "",
   "fields": [
     {
+      "fieldname": "student",
+      "fieldtype": "Data",
+      "label": "Student",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1,
+      "options": "Custom Student"
+    },
+    {
       "fieldname": "transport_assignment",
       "fieldtype": "Link",
       "label": "Transport Assignment",

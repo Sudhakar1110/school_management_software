@@ -45,6 +45,14 @@
   "document_type": "",
   "fields": [
     {
+      "fieldname": "guardian_name",
+      "fieldtype": "Data",
+      "label": "Guardian Name",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
       "fieldname": "email_address",
       "fieldtype": "Data",
       "label": "Email Address",

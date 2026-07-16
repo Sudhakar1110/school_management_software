@@ -45,6 +45,14 @@
   "document_type": "",
   "fields": [
     {
+      "fieldname": "admit_card_name",
+      "fieldtype": "Data",
+      "label": "Admit Card Name",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
       "fieldname": "applicable_for",
       "fieldtype": "Select",
       "label": "Applicable For",

@@ -45,6 +45,14 @@
   "document_type": "",
   "fields": [
     {
+      "fieldname": "assessment_group_name",
+      "fieldtype": "Data",
+      "label": "Assessment Group Name",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
       "fieldname": "parent_assessment_group",
       "fieldtype": "Link",
       "label": "Parent Assessment Group",

@@ -16,7 +16,7 @@
   "beta": 0,
   "is_virtual": 0,
   "naming_rule": "By fieldname",
-  "autoname": "field:hostel_ame",
+  "autoname": "field:hostel_name",
   "allow_rename": 1,
   "description": "",
   "title_field": "",
@@ -44,6 +44,14 @@
   "restrict_to_domain": "",
   "document_type": "",
   "fields": [
+    {
+      "fieldname": "hostel_name",
+      "fieldtype": "Data",
+      "label": "Hostel Name",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
     {
       "fieldname": "hostel__type",
       "fieldtype": "Select",

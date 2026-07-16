@@ -45,6 +45,14 @@
   "document_type": "",
   "fields": [
     {
+      "fieldname": "vehicle_name",
+      "fieldtype": "Data",
+      "label": "Vehicle Name",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
       "fieldname": "registration_number",
       "fieldtype": "Data",
       "label": "Registration Number"
