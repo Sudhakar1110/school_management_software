@@ -4,66 +4,12 @@
   "module": "Education",
   "charts": [],
   "cards": [],
-  "links": [
-    {
-      "type": "DocType",
-      "link_to": "Custom Student",
-      "label": "Students"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Custom Program Enrollment",
-      "label": "Program Enrollments"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Custom Course Schedule",
-      "label": "Course Schedules"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Teacher Weekly Schedule",
-      "label": "Teacher Schedules"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Student Transport Assignment",
-      "label": "Transport Assignments"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Guardian Profile",
-      "label": "Guardian Profiles"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Student ID Card",
-      "label": "Student ID Cards"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Student ID Card Batch",
-      "label": "ID Card Batches"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Student Certificate",
-      "label": "Student Certificates"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Employee Certificate",
-      "label": "Employee Certificates"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Employee ID Card",
-      "label": "Employee ID Cards"
-    }
-  ],
+  "links": [],
   "shortcuts": [],
   "title": "Student & Scheduling",
-  "content": "[{\"type\":\"card\",\"card_name\":\"Student & Scheduling\",\"label\":\"Student & Scheduling\",\"links\":[{\"type\":\"link\",\"label\":\"Students\",\"link_to\":\"Custom Student\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Program Enrollments\",\"link_to\":\"Custom Program Enrollment\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Course Schedules\",\"link_to\":\"Custom Course Schedule\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Teacher Schedules\",\"link_to\":\"Teacher Weekly Schedule\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Transport Assignments\",\"link_to\":\"Student Transport Assignment\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Guardian Profiles\",\"link_to\":\"Guardian Profile\",\"link_type\":\"DocType\"}]},{\"type\":\"card\",\"card_name\":\"Student & Scheduling 2\",\"label\":\"More Student & Scheduling\",\"links\":[{\"type\":\"link\",\"label\":\"Student ID Cards\",\"link_to\":\"Student ID Card\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"ID Card Batches\",\"link_to\":\"Student ID Card Batch\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Student Certificates\",\"link_to\":\"Student Certificate\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Employee Certificates\",\"link_to\":\"Employee Certificate\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Employee ID Cards\",\"link_to\":\"Employee ID Card\",\"link_type\":\"DocType\"}]}]",
+  "content": "[{\"id\":\"2LPEE7lNek\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Student Strength\",\"col\":3}},{\"id\":\"uDnyK06Bfv\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"UHJooQmexi\",\"type\":\"card\",\"data\":{\"card_name\":\"Student & Guardian \",\"col\":4}},{\"id\":\"EgNO41Yfvh\",\"type\":\"card\",\"data\":{\"card_name\":\"Time Table\",\"col\":4}}]",
   "label": "Student & Scheduling",
-  "public": 1
+  "public": 1,
+  "icon": "lc-calendar-clock",
+  "sequence_id": 7
 }

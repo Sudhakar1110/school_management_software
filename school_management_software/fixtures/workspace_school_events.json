@@ -4,51 +4,12 @@
   "module": "Education",
   "charts": [],
   "cards": [],
-  "links": [
-    {
-      "type": "DocType",
-      "link_to": "School Event",
-      "label": "School Events"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Student Event",
-      "label": "Student Events"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Event Type",
-      "label": "Event Types"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Event Participant",
-      "label": "Participants"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Event Gallery",
-      "label": "Event Gallery"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Event Attachment",
-      "label": "Attachments"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Meeting Schedule",
-      "label": "Meeting Schedule"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Gate Pass",
-      "label": "Gate Pass"
-    }
-  ],
+  "links": [],
   "shortcuts": [],
   "title": "School Events",
-  "content": "[{\"type\":\"card\",\"card_name\":\"School Events\",\"label\":\"School Events\",\"links\":[{\"type\":\"link\",\"label\":\"School Events\",\"link_to\":\"School Event\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Student Events\",\"link_to\":\"Student Event\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Event Types\",\"link_to\":\"Event Type\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Participants\",\"link_to\":\"Event Participant\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Event Gallery\",\"link_to\":\"Event Gallery\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Attachments\",\"link_to\":\"Event Attachment\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Meeting Schedule\",\"link_to\":\"Meeting Schedule\",\"link_type\":\"DocType\"}]},{\"type\":\"card\",\"card_name\":\"School Events 2\",\"label\":\"More School Events\",\"links\":[{\"type\":\"link\",\"label\":\"Gate Pass\",\"link_to\":\"Gate Pass\",\"link_type\":\"DocType\"}]}]",
+  "content": "[{\"id\":\"ncQ1J8naOn\",\"type\":\"workflow_overview\",\"data\":{\"workflow_overview_name\":\"Event Setup\",\"workflows\":[{\"label\":\"Event Setup\",\"doctypes\":[{\"doctype\":\"Event Type\",\"label\":\"Event Type\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Academic Year\",\"label\":\"Academic Year\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Event Planning\",\"doctypes\":[{\"doctype\":\"School Event\",\"label\":\"School Event\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Event Participant\",\"label\":\"Event Participant\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Event Attachment\",\"label\":\"Event Attachment\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Event Execution\",\"doctypes\":[{\"doctype\":\"Student Attendance\",\"label\":\"Student Attendance\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Event Gallery\",\"label\":\"Event Gallery\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Certification\",\"label\":\"Certification\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]}],\"col\":12}},{\"id\":\"rZavmXDF5d\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Completed Events\",\"col\":4}},{\"id\":\"qo037P8YuI\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Published Events\",\"col\":4}},{\"id\":\"YSzvMlBx32\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today\",\"col\":4}},{\"id\":\"eOOFN2xnO4\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Upcoming\",\"col\":4}},{\"id\":\"9HO_ivFusZ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Cancelled Events\",\"col\":4}},{\"id\":\"E9KiBxm8pY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Events\",\"col\":4}},{\"id\":\"AjFAJPgl7O\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Assessments\",\"col\":12}},{\"id\":\"hUJIDT89cY\",\"type\":\"card\",\"data\":{\"card_name\":\"Doctypes\",\"col\":5}},{\"id\":\"zG4o2afSls\",\"type\":\"card\",\"data\":{\"card_name\":\"Assessments\",\"col\":5}}]",
   "label": "School Events",
-  "public": 1
+  "public": 1,
+  "icon": "lc-clipboard-check",
+  "sequence_id": 6.2
 }

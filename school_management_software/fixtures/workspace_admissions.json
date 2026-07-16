@@ -4,46 +4,12 @@
   "module": "Education",
   "charts": [],
   "cards": [],
-  "links": [
-    {
-      "type": "DocType",
-      "link_to": "Create Admission",
-      "label": "Create Admission"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Custom Student",
-      "label": "Students"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Custom Program Enrollment",
-      "label": "Program Enrollment"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Program Student Entry",
-      "label": "Program Student Entry"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Student Admission",
-      "label": "Student Admission"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Student Category",
-      "label": "Student Category"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Guardian Profile",
-      "label": "Guardian Profile"
-    }
-  ],
+  "links": [],
   "shortcuts": [],
   "title": "Admissions",
-  "content": "[{\"type\":\"card\",\"card_name\":\"Admissions\",\"label\":\"Admissions\",\"links\":[{\"type\":\"link\",\"label\":\"Create Admission\",\"link_to\":\"Create Admission\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Students\",\"link_to\":\"Custom Student\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Program Enrollment\",\"link_to\":\"Custom Program Enrollment\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Program Student Entry\",\"link_to\":\"Program Student Entry\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Student Admission\",\"link_to\":\"Student Admission\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Student Category\",\"link_to\":\"Student Category\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Guardian Profile\",\"link_to\":\"Guardian Profile\",\"link_type\":\"DocType\"}]}]",
+  "content": "[{\"id\":\"x_pk_vcopX\",\"type\":\"workflow_overview\",\"data\":{\"workflows\":[{\"label\":\"Admission workflow\",\"doctypes\":[{\"doctype\":\"Student Admission\",\"label\":\"Student Adimission\",\"icon\":\"lc-graduation-cap\",\"status_type\":\"Active\"},{\"doctype\":\"Student Applicant\",\"label\":\"Student Applicant\",\"icon\":\"lc-user-plus\",\"status_type\":\"Active\"},{\"doctype\":\"Program Enrollment\",\"label\":\"Program Enrollment\",\"icon\":\"lc-book-open-check\",\"status_type\":\"Active\"}]}],\"col\":12,\"workflow_overview_name\":\"Admission workflow\"}},{\"id\":\"z7X6tugUq4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ue7WI5Uk6P\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Admission this Year\",\"col\":3}},{\"id\":\"PcjaKB23ov\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Student Applicant\",\"col\":3}},{\"id\":\"RoA5wo2-1K\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Grade Enrollment\",\"col\":3}},{\"id\":\"9QP5zNfC84\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Course Enrollment\",\"col\":3}},{\"id\":\"E6vbMqptfz\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Enrollments\",\"col\":12}},{\"id\":\"OcLVCw416A\",\"type\":\"card\",\"data\":{\"card_name\":\"Admissions\",\"col\":12}}]",
   "label": "Admissions",
-  "public": 1
+  "public": 1,
+  "icon": "lc-file-plus-corner",
+  "sequence_id": 4
 }

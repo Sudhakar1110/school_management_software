@@ -4,61 +4,13 @@
   "module": "Education",
   "charts": [],
   "cards": [],
-  "links": [
-    {
-      "type": "DocType",
-      "link_to": "Library Book",
-      "label": "Books"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Book Copy",
-      "label": "Book Copies"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Book Author",
-      "label": "Authors"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Book Category",
-      "label": "Categories"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Book Issue",
-      "label": "Issue Books"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Book Return",
-      "label": "Return Books"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Library Member",
-      "label": "Members"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Library Rack",
-      "label": "Racks"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Library fine",
-      "label": "Library Fines"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Library Settings",
-      "label": "Library Settings"
-    }
-  ],
+  "links": [],
   "shortcuts": [],
   "title": "Library",
-  "content": "[{\"type\":\"card\",\"card_name\":\"Library\",\"label\":\"Library\",\"links\":[{\"type\":\"link\",\"label\":\"Books\",\"link_to\":\"Library Book\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Book Copies\",\"link_to\":\"Book Copy\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Authors\",\"link_to\":\"Book Author\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Categories\",\"link_to\":\"Book Category\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Issue Books\",\"link_to\":\"Book Issue\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Return Books\",\"link_to\":\"Book Return\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Members\",\"link_to\":\"Library Member\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Racks\",\"link_to\":\"Library Rack\",\"link_type\":\"DocType\"}]},{\"type\":\"card\",\"card_name\":\"Library 2\",\"label\":\"More Library\",\"links\":[{\"type\":\"link\",\"label\":\"Library Fines\",\"link_to\":\"Library fine\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Library Settings\",\"link_to\":\"Library Settings\",\"link_type\":\"DocType\"}]}]",
+  "content": "[{\"id\":\"aX_-E0sLXc\",\"type\":\"workflow_overview\",\"data\":{\"workflow_overview_name\":\"Library Setup\",\"workflows\":[{\"label\":\"Library Setup\",\"doctypes\":[{\"doctype\":\"Book Author\",\"label\":\"Book Author\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Book Category\",\"label\":\"Book Category\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Library Rack\",\"label\":\"Library Rack\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Library Book\",\"label\":\"Library Book\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Book Copy\",\"label\":\"Book Copy\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Library Member\",\"label\":\"Library Member\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Library Circulation\",\"doctypes\":[{\"doctype\":\"Library Member\",\"label\":\"Library Member\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Book Issue\",\"label\":\"Book Issue\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Book return\",\"label\":\"Book return\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Library fine\",\"label\":\"Library fine\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]}],\"col\":12}},{\"id\":\"DZNExlFvyY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KXpINMRfSy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Present\",\"col\":3}},{\"id\":\"H69WdVrrz6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Absent\",\"col\":3}},{\"id\":\"AjFAJPgl7O\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Assessments\",\"col\":12}},{\"id\":\"hUJIDT89cY\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":5}},{\"id\":\"zG4o2afSls\",\"type\":\"card\",\"data\":{\"card_name\":\"Library\",\"col\":5}}]",
   "label": "Library",
-  "public": 1
+  "public": 1,
+  "icon": "lc-clipboard-check",
+  "indicator_color": "green",
+  "sequence_id": 6.1
 }

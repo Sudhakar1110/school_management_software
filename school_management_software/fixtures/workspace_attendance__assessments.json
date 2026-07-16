@@ -4,61 +4,12 @@
   "module": "Education",
   "charts": [],
   "cards": [],
-  "links": [
-    {
-      "type": "DocType",
-      "link_to": "Hostel Attendance",
-      "label": "Hostel Attendance"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Exam Attendance",
-      "label": "Exam Attendance"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Mess Attendance",
-      "label": "Mess Attendance"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Assessment Group",
-      "label": "Assessment Groups"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Trait Entry",
-      "label": "Trait Entries"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Report Card",
-      "label": "Report Cards"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Student Progress Card",
-      "label": "Progress Cards"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Student Rank",
-      "label": "Student Ranks"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Exam Schedule",
-      "label": "Exam Schedules"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Exam Term",
-      "label": "Exam Terms"
-    }
-  ],
+  "links": [],
   "shortcuts": [],
   "title": "Attendance & Assessments",
-  "content": "[{\"type\":\"card\",\"card_name\":\"Attendance & Assessments\",\"label\":\"Attendance & Assessments\",\"links\":[{\"type\":\"link\",\"label\":\"Hostel Attendance\",\"link_to\":\"Hostel Attendance\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Exam Attendance\",\"link_to\":\"Exam Attendance\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Mess Attendance\",\"link_to\":\"Mess Attendance\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Assessment Groups\",\"link_to\":\"Assessment Group\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Trait Entries\",\"link_to\":\"Trait Entry\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Report Cards\",\"link_to\":\"Report Card\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Progress Cards\",\"link_to\":\"Student Progress Card\",\"link_type\":\"DocType\"}]},{\"type\":\"card\",\"card_name\":\"Attendance & Assessments 2\",\"label\":\"More Attendance & Assessments\",\"links\":[{\"type\":\"link\",\"label\":\"Student Ranks\",\"link_to\":\"Student Rank\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Exam Schedules\",\"link_to\":\"Exam Schedule\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Exam Terms\",\"link_to\":\"Exam Term\",\"link_type\":\"DocType\"}]}]",
+  "content": "[{\"id\":\"aX_-E0sLXc\",\"type\":\"workflow_overview\",\"data\":{\"workflows\":[{\"label\":\"Attendance workflow\",\"doctypes\":[{\"doctype\":\"Student Group\",\"label\":\"Student Group\",\"icon\":\"lc-users\",\"status_type\":\"Active\"},{\"doctype\":\"Course Schedule\",\"label\":\"Course Schedule\",\"icon\":\"lc-calendar-range\",\"status_type\":\"Active\"},{\"doctype\":\"Attendance\",\"label\":\"Attendance\",\"icon\":\"lc-calendar-check\",\"status_type\":\"Active\"}]},{\"label\":\"Assessment workflow\",\"doctypes\":[{\"doctype\":\"Grading Scale\",\"label\":\"Grading scale\",\"icon\":\"lc-chart-bar-increasing\",\"status_type\":\"Active\"},{\"doctype\":\"Assessment Criteria\",\"label\":\"Assessment Criteria\",\"icon\":\"lc-list-checks\",\"status_type\":\"Active\"},{\"doctype\":\"Assessment Group\",\"label\":\"Assessment Group\",\"icon\":\"lc-folder-kanban\",\"status_type\":\"Active\"},{\"doctype\":\"Assessment Plan\",\"label\":\"Assessment Plan\",\"icon\":\"lc-clipboard-list\",\"status_type\":\"Active\"},{\"doctype\":\"Assessment Result Tool\",\"label\":\"Assessment Result tool\",\"icon\":\"lc-file-check\",\"status_type\":\"Active\"}]}],\"col\":12,\"workflow_overview_name\":\"Attendance workflow\"}},{\"id\":\"DZNExlFvyY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KXpINMRfSy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Present\",\"col\":3}},{\"id\":\"H69WdVrrz6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Absent\",\"col\":3}},{\"id\":\"AjFAJPgl7O\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Assessments\",\"col\":12}},{\"id\":\"hUJIDT89cY\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":5}},{\"id\":\"zG4o2afSls\",\"type\":\"card\",\"data\":{\"card_name\":\"Assessments\",\"col\":5}}]",
   "label": "Attendance & Assessments",
-  "public": 1
+  "public": 1,
+  "icon": "lc-clipboard-check",
+  "sequence_id": 6
 }

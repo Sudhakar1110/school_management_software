@@ -4,31 +4,12 @@
   "module": "Education",
   "charts": [],
   "cards": [],
-  "links": [
-    {
-      "type": "DocType",
-      "link_to": "Transport Fee",
-      "label": "Transport Fees"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Hostel Fee",
-      "label": "Hostel Fees"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Fine Doctypes",
-      "label": "Fines"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Create Admission",
-      "label": "Create Admission"
-    }
-  ],
+  "links": [],
   "shortcuts": [],
   "title": "Student Fees",
-  "content": "[{\"type\":\"card\",\"card_name\":\"Student Fees\",\"label\":\"Student Fees\",\"links\":[{\"type\":\"link\",\"label\":\"Transport Fees\",\"link_to\":\"Transport Fee\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Hostel Fees\",\"link_to\":\"Hostel Fee\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Fines\",\"link_to\":\"Fine Doctypes\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Create Admission\",\"link_to\":\"Create Admission\",\"link_type\":\"DocType\"}]}]",
+  "content": "[{\"id\":\"5jQJSDTNjS\",\"type\":\"workflow_overview\",\"data\":{\"workflows\":[{\"label\":\"Fee workflow\",\"doctypes\":[{\"doctype\":\"Fee Category\",\"label\":\"Fee Category\",\"icon\":\"tag\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Fee Structure\",\"label\":\"Fee Structure\",\"icon\":\"lc-clipboard-list\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Student Group\",\"label\":\"Student Group\",\"icon\":\"lc-wallet\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Fee Schedule\",\"label\":\"Fee Schedule\",\"icon\":\"lc-calendar-1\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Sales Invoice\",\"label\":\"Sales Invoice\",\"icon\":\"lc-receipt-indian-rupee\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Payment Entry\",\"label\":\"Payment Entry\",\"icon\":\"lc-banknote\",\"status_type\":\"Active\",\"helper_text\":\"\"}]}],\"col\":12,\"workflow_overview_name\":\"Fee workflow\"}},{\"id\":\"nW2By23EQX\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"BVTsDEj4Tb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Fees This Year\",\"col\":4}},{\"id\":\"ckSOP8B7aD\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Fees Collected This Year\",\"col\":4}},{\"id\":\"gAPT0STR5W\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Fee Outstanding This Year\",\"col\":4}},{\"id\":\"GI0r83e7zl\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Program Wise Total Fee\",\"col\":12}},{\"id\":\"72CzSFdOXu\",\"type\":\"card\",\"data\":{\"card_name\":\"Fees\",\"col\":12}}]",
   "label": "Student Fees",
-  "public": 1
+  "public": 1,
+  "icon": "lc-wallet",
+  "sequence_id": 5
 }

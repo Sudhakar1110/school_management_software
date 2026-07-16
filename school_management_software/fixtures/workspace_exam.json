@@ -4,51 +4,13 @@
   "module": "Education",
   "charts": [],
   "cards": [],
-  "links": [
-    {
-      "type": "DocType",
-      "link_to": "Exam Hall",
-      "label": "Exam Halls"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Exam Schedule",
-      "label": "Exam Schedules"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Exam Term",
-      "label": "Exam Terms"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Exam Attendance",
-      "label": "Exam Attendance"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Hall Ticket",
-      "label": "Hall Tickets"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Hall Allocation",
-      "label": "Hall Allocations"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Student Admit Card",
-      "label": "Admit Cards"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Admit Card Template",
-      "label": "Admit Card Templates"
-    }
-  ],
+  "links": [],
   "shortcuts": [],
   "title": "Exam",
-  "content": "[{\"type\":\"card\",\"card_name\":\"Exam\",\"label\":\"Exam\",\"links\":[{\"type\":\"link\",\"label\":\"Exam Halls\",\"link_to\":\"Exam Hall\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Exam Schedules\",\"link_to\":\"Exam Schedule\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Exam Terms\",\"link_to\":\"Exam Term\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Exam Attendance\",\"link_to\":\"Exam Attendance\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Hall Tickets\",\"link_to\":\"Hall Ticket\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Hall Allocations\",\"link_to\":\"Hall Allocation\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Admit Cards\",\"link_to\":\"Student Admit Card\",\"link_type\":\"DocType\"}]},{\"type\":\"card\",\"card_name\":\"Exam 2\",\"label\":\"More Exam\",\"links\":[{\"type\":\"link\",\"label\":\"Admit Card Templates\",\"link_to\":\"Admit Card Template\",\"link_type\":\"DocType\"}]}]",
+  "content": "[{\"id\":\"aX_-E0sLXc\",\"type\":\"workflow_overview\",\"data\":{\"workflow_overview_name\":\"Exam Management Flow\",\"workflows\":[{\"label\":\"Exam Management Flow\",\"doctypes\":[{\"doctype\":\"Academic Year\",\"label\":\"Academic Year\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Exam Term\",\"label\":\"Exam Term\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Assessment Group\",\"label\":\"Assessment Group\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Assessment Plan\",\"label\":\"Assessment Plan\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Exam Operations\",\"doctypes\":[{\"doctype\":\"Exam Schedule\",\"label\":\"Exam Schedule\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Hall Allocation\",\"label\":\"Hall Allocation\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Hall Ticket\",\"label\":\"Hall Ticket\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Exam Attendance\",\"label\":\"Exam Attendance\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Results & Reports\",\"doctypes\":[{\"doctype\":\"Assessment Result Tool\",\"label\":\"Assessment Result Tool\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Assessment Result\",\"label\":\"Assessment Result\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Student Progress Card\",\"label\":\"Student Rank\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]}],\"col\":12}},{\"id\":\"DZNExlFvyY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KXpINMRfSy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Present\",\"col\":3}},{\"id\":\"H69WdVrrz6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Absent\",\"col\":3}},{\"id\":\"AjFAJPgl7O\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Assessments\",\"col\":12}},{\"id\":\"hUJIDT89cY\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":5}},{\"id\":\"zG4o2afSls\",\"type\":\"card\",\"data\":{\"card_name\":\"Assessments\",\"col\":5}}]",
   "label": "Exam",
-  "public": 1
+  "public": 1,
+  "icon": "lc-clipboard-check",
+  "indicator_color": "green",
+  "sequence_id": 6.1
 }
