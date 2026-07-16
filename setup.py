@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="school_management",
+    name="school_management_software",
     version="0.0.1",
     description="School Management",
     author="School Management",

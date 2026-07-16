@@ -1,7 +1,7 @@
 # School Management - Frappe App
 # Auto-generated from Excel customization exports for ERPNext v15 Education module
 
-app_name = "school_management"
+app_name = "school_management_software"
 app_title = "School Management"
 app_publisher = "School Management"
 app_description = "School Management Software - Custom ERPNext Education Module with Admissions, Hostel, Library, Transport, Events, Exams, and more"

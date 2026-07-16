@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "school_management_software"
+version = "0.0.1"
+description = "School Management Software - Custom ERPNext Education Module"
+authors = [
+    {name = "School Management", email = "admin@schoolmanagement.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.11"
+
+[tool.bench]
+app_name = "school_management_software"
