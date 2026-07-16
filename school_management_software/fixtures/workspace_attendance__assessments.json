@@ -13,7 +13,8 @@
     {
       "type": "Card Break",
       "label": "Attendance",
-      "link_type": "DocType"
+      "link_type": "DocType",
+      "link_count": 8
     },
     {
       "type": "Link",
@@ -71,7 +72,8 @@
     {
       "type": "Card Break",
       "label": "Assessments",
-      "link_type": "DocType"
+      "link_type": "DocType",
+      "link_count": 8
     },
     {
       "type": "Link",
