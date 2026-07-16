@@ -16,7 +16,7 @@
   "beta": 0,
   "is_virtual": 0,
   "naming_rule": "By \"Naming Series\" field",
-  "autoname": "naming_seriesA:UTH-.YYYY.-",
+  "autoname": "naming_series:AUTH-.YYYY.-",
   "allow_rename": 1,
   "description": "",
   "title_field": "",
@@ -44,6 +44,15 @@
   "restrict_to_domain": "",
   "document_type": "",
   "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "AUTH-.YYYY.-",
+      "default": "AUTH-.YYYY.-",
+      "reqd": 1,
+      "in_list_view": 1
+    },
     {
       "fieldname": "nationality",
       "fieldtype": "Data",
