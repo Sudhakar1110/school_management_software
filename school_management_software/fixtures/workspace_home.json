@@ -49,5 +49,8 @@
   "shortcuts": [],
   "title": "Home",
   "content": "[{\"type\":\"card\",\"card_name\":\"Home\",\"label\":\"Home\",\"links\":[{\"type\":\"link\",\"label\":\"New Admission\",\"link_to\":\"Create Admission\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Students\",\"link_to\":\"Custom Student\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Hostel Admissions\",\"link_to\":\"Hostel Admission\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Library Books\",\"link_to\":\"Library Book\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"School Events\",\"link_to\":\"School Event\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Transport Routes\",\"link_to\":\"Transport Route\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Exam Schedule\",\"link_to\":\"Exam Schedule\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Student Certificates\",\"link_to\":\"Student Certificate\",\"link_type\":\"DocType\"}]}]",
-  "label": "Home"
+  "label": "Home",
+  "public": 1,
+  "is_default": 1,
+  "icon": "dashboard"
 }

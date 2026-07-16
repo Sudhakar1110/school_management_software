@@ -59,5 +59,6 @@
   "shortcuts": [],
   "title": "Library",
   "content": "[{\"type\":\"card\",\"card_name\":\"Library\",\"label\":\"Library\",\"links\":[{\"type\":\"link\",\"label\":\"Books\",\"link_to\":\"Library Book\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Book Copies\",\"link_to\":\"Book Copy\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Authors\",\"link_to\":\"Book Author\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Categories\",\"link_to\":\"Book Category\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Issue Books\",\"link_to\":\"Book Issue\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Return Books\",\"link_to\":\"Book Return\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Members\",\"link_to\":\"Library Member\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Racks\",\"link_to\":\"Library Rack\",\"link_type\":\"DocType\"}]},{\"type\":\"card\",\"card_name\":\"Library 2\",\"label\":\"More Library\",\"links\":[{\"type\":\"link\",\"label\":\"Library Fines\",\"link_to\":\"Library fine\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Library Settings\",\"link_to\":\"Library Settings\",\"link_type\":\"DocType\"}]}]",
-  "label": "Library"
+  "label": "Library",
+  "public": 1
 }
