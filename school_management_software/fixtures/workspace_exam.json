@@ -2,9 +2,129 @@
   "doctype": "Workspace",
   "name": "Exam",
   "module": "Education",
-  "charts": [],
+  "charts": [
+    {
+      "chart_name": "Student Assessments",
+      "label": "Student Assessments"
+    }
+  ],
   "cards": [],
-  "links": [],
+  "links": [
+    {
+      "type": "Card Break",
+      "label": "Assessments",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Assessment Group",
+      "link_type": "DocType",
+      "link_to": "Assessment Group"
+    },
+    {
+      "type": "Link",
+      "label": "Assessment Criteria",
+      "link_type": "DocType",
+      "link_to": "Assessment Criteria"
+    },
+    {
+      "type": "Link",
+      "label": "Assessment Result",
+      "link_type": "DocType",
+      "link_to": "Assessment Result"
+    },
+    {
+      "type": "Link",
+      "label": "Assessment Result Tool",
+      "link_type": "DocType",
+      "link_to": "Assessment Result Tool"
+    },
+    {
+      "type": "Link",
+      "label": "Course wise Assessment Report",
+      "link_type": "Report",
+      "link_to": "Course wise Assessment Report",
+      "is_query_report": 1
+    },
+    {
+      "type": "Link",
+      "label": "Final Assessment Report",
+      "link_type": "Report",
+      "link_to": "Final Assessment Grades",
+      "is_query_report": 1
+    },
+    {
+      "type": "Link",
+      "label": "Student ReportCard Generation",
+      "link_type": "DocType",
+      "link_to": "Student Report Generation Tool"
+    },
+    {
+      "type": "Link",
+      "label": "Asessment plan",
+      "link_type": "DocType",
+      "link_to": "Assessment Plan"
+    },
+    {
+      "type": "Card Break",
+      "label": "Attendance",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Student Rank",
+      "link_type": "DocType",
+      "link_to": "Student Rank"
+    },
+    {
+      "type": "Link",
+      "label": "Trait Entry",
+      "link_type": "DocType",
+      "link_to": "Trait Entry"
+    },
+    {
+      "type": "Link",
+      "label": "Trait Master",
+      "link_type": "DocType",
+      "link_to": "Trait Master"
+    },
+    {
+      "type": "Link",
+      "label": "Exam Attendance",
+      "link_type": "DocType",
+      "link_to": "Exam Attendance"
+    },
+    {
+      "type": "Link",
+      "label": "Hall Ticket",
+      "link_type": "DocType",
+      "link_to": "Hall Ticket"
+    },
+    {
+      "type": "Link",
+      "label": "Exam Schedule",
+      "link_type": "DocType",
+      "link_to": "Exam Schedule"
+    },
+    {
+      "type": "Link",
+      "label": "Hall Allocation",
+      "link_type": "DocType",
+      "link_to": "Hall Allocation"
+    },
+    {
+      "type": "Link",
+      "label": "Exam Hall",
+      "link_type": "DocType",
+      "link_to": "Exam Hall"
+    },
+    {
+      "type": "Link",
+      "label": "Exam Term",
+      "link_type": "DocType",
+      "link_to": "Exam Term"
+    }
+  ],
   "shortcuts": [],
   "title": "Exam",
   "content": "[{\"id\":\"aX_-E0sLXc\",\"type\":\"workflow_overview\",\"data\":{\"workflow_overview_name\":\"Exam Management Flow\",\"workflows\":[{\"label\":\"Exam Management Flow\",\"doctypes\":[{\"doctype\":\"Academic Year\",\"label\":\"Academic Year\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Exam Term\",\"label\":\"Exam Term\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Assessment Group\",\"label\":\"Assessment Group\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Assessment Plan\",\"label\":\"Assessment Plan\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Exam Operations\",\"doctypes\":[{\"doctype\":\"Exam Schedule\",\"label\":\"Exam Schedule\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Hall Allocation\",\"label\":\"Hall Allocation\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Hall Ticket\",\"label\":\"Hall Ticket\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Exam Attendance\",\"label\":\"Exam Attendance\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Results & Reports\",\"doctypes\":[{\"doctype\":\"Assessment Result Tool\",\"label\":\"Assessment Result Tool\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Assessment Result\",\"label\":\"Assessment Result\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Student Progress Card\",\"label\":\"Student Rank\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]}],\"col\":12}},{\"id\":\"DZNExlFvyY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KXpINMRfSy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Present\",\"col\":3}},{\"id\":\"H69WdVrrz6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Absent\",\"col\":3}},{\"id\":\"AjFAJPgl7O\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Assessments\",\"col\":12}},{\"id\":\"hUJIDT89cY\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":5}},{\"id\":\"zG4o2afSls\",\"type\":\"card\",\"data\":{\"card_name\":\"Assessments\",\"col\":5}}]",
@@ -12,5 +132,11 @@
   "public": 1,
   "icon": "lc-clipboard-check",
   "indicator_color": "green",
-  "sequence_id": 6.1
+  "sequence_id": 6.1,
+  "roles": [
+    {"role": "Academics User"},
+    {"role": "Education Manager"},
+    {"role": "Instructor"},
+    {"role": "Student"}
+  ]
 }
