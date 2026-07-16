@@ -12,11 +12,6 @@
     },
     {
       "type": "DocType",
-      "link_to": "Applicant Fee",
-      "label": "Applicant Fee"
-    },
-    {
-      "type": "DocType",
       "link_to": "Custom Student",
       "label": "Students"
     },
@@ -44,16 +39,11 @@
       "type": "DocType",
       "link_to": "Guardian Profile",
       "label": "Guardian Profile"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Student documents",
-      "label": "Student Documents"
     }
   ],
   "shortcuts": [],
   "title": "Admissions",
-  "content": "[{\"type\":\"card\",\"card_name\":\"Admissions\",\"label\":\"Admissions\",\"links\":[{\"type\":\"link\",\"label\":\"Create Admission\",\"link_to\":\"Create Admission\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Applicant Fee\",\"link_to\":\"Applicant Fee\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Students\",\"link_to\":\"Custom Student\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Program Enrollment\",\"link_to\":\"Custom Program Enrollment\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Program Student Entry\",\"link_to\":\"Program Student Entry\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Student Admission\",\"link_to\":\"Student Admission\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Student Category\",\"link_to\":\"Student Category\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Guardian Profile\",\"link_to\":\"Guardian Profile\",\"link_type\":\"DocType\"}]},{\"type\":\"card\",\"card_name\":\"Admissions 2\",\"label\":\"More Admissions\",\"links\":[{\"type\":\"link\",\"label\":\"Student Documents\",\"link_to\":\"Student documents\",\"link_type\":\"DocType\"}]}]",
+  "content": "[{\"type\":\"card\",\"card_name\":\"Admissions\",\"label\":\"Admissions\",\"links\":[{\"type\":\"link\",\"label\":\"Create Admission\",\"link_to\":\"Create Admission\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Students\",\"link_to\":\"Custom Student\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Program Enrollment\",\"link_to\":\"Custom Program Enrollment\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Program Student Entry\",\"link_to\":\"Program Student Entry\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Student Admission\",\"link_to\":\"Student Admission\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Student Category\",\"link_to\":\"Student Category\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Guardian Profile\",\"link_to\":\"Guardian Profile\",\"link_type\":\"DocType\"}]}]",
   "label": "Admissions",
   "public": 1
 }

@@ -22,16 +22,6 @@
     },
     {
       "type": "DocType",
-      "link_to": "Course Schedule Slot",
-      "label": "Schedule Slots"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Custom Timetable Detail",
-      "label": "Timetable Details"
-    },
-    {
-      "type": "DocType",
       "link_to": "Teacher Weekly Schedule",
       "label": "Teacher Schedules"
     },
@@ -73,7 +63,7 @@
   ],
   "shortcuts": [],
   "title": "Student & Scheduling",
-  "content": "[{\"type\":\"card\",\"card_name\":\"Student & Scheduling\",\"label\":\"Student & Scheduling\",\"links\":[{\"type\":\"link\",\"label\":\"Students\",\"link_to\":\"Custom Student\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Program Enrollments\",\"link_to\":\"Custom Program Enrollment\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Course Schedules\",\"link_to\":\"Custom Course Schedule\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Schedule Slots\",\"link_to\":\"Course Schedule Slot\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Timetable Details\",\"link_to\":\"Custom Timetable Detail\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Teacher Schedules\",\"link_to\":\"Teacher Weekly Schedule\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Transport Assignments\",\"link_to\":\"Student Transport Assignment\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Guardian Profiles\",\"link_to\":\"Guardian Profile\",\"link_type\":\"DocType\"}]},{\"type\":\"card\",\"card_name\":\"Student & Scheduling 2\",\"label\":\"More Student & Scheduling\",\"links\":[{\"type\":\"link\",\"label\":\"Student ID Cards\",\"link_to\":\"Student ID Card\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"ID Card Batches\",\"link_to\":\"Student ID Card Batch\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Student Certificates\",\"link_to\":\"Student Certificate\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Employee Certificates\",\"link_to\":\"Employee Certificate\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Employee ID Cards\",\"link_to\":\"Employee ID Card\",\"link_type\":\"DocType\"}]}]",
+  "content": "[{\"type\":\"card\",\"card_name\":\"Student & Scheduling\",\"label\":\"Student & Scheduling\",\"links\":[{\"type\":\"link\",\"label\":\"Students\",\"link_to\":\"Custom Student\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Program Enrollments\",\"link_to\":\"Custom Program Enrollment\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Course Schedules\",\"link_to\":\"Custom Course Schedule\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Teacher Schedules\",\"link_to\":\"Teacher Weekly Schedule\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Transport Assignments\",\"link_to\":\"Student Transport Assignment\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Guardian Profiles\",\"link_to\":\"Guardian Profile\",\"link_type\":\"DocType\"}]},{\"type\":\"card\",\"card_name\":\"Student & Scheduling 2\",\"label\":\"More Student & Scheduling\",\"links\":[{\"type\":\"link\",\"label\":\"Student ID Cards\",\"link_to\":\"Student ID Card\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"ID Card Batches\",\"link_to\":\"Student ID Card Batch\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Student Certificates\",\"link_to\":\"Student Certificate\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Employee Certificates\",\"link_to\":\"Employee Certificate\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Employee ID Cards\",\"link_to\":\"Employee ID Card\",\"link_type\":\"DocType\"}]}]",
   "label": "Student & Scheduling",
   "public": 1
 }

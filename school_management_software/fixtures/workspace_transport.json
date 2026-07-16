@@ -17,11 +17,6 @@
     },
     {
       "type": "DocType",
-      "link_to": "Transport Stop",
-      "label": "Stops"
-    },
-    {
-      "type": "DocType",
       "link_to": "Transport Fee",
       "label": "Transport Fees"
     },
@@ -33,7 +28,7 @@
   ],
   "shortcuts": [],
   "title": "Transport",
-  "content": "[{\"type\":\"card\",\"card_name\":\"Transport\",\"label\":\"Transport\",\"links\":[{\"type\":\"link\",\"label\":\"Routes\",\"link_to\":\"Transport Route\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Vehicles\",\"link_to\":\"Transport Vehicle\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Stops\",\"link_to\":\"Transport Stop\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Transport Fees\",\"link_to\":\"Transport Fee\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Student Assignments\",\"link_to\":\"Student Transport Assignment\",\"link_type\":\"DocType\"}]}]",
+  "content": "[{\"type\":\"card\",\"card_name\":\"Transport\",\"label\":\"Transport\",\"links\":[{\"type\":\"link\",\"label\":\"Routes\",\"link_to\":\"Transport Route\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Vehicles\",\"link_to\":\"Transport Vehicle\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Transport Fees\",\"link_to\":\"Transport Fee\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Student Assignments\",\"link_to\":\"Student Transport Assignment\",\"link_type\":\"DocType\"}]}]",
   "label": "Transport",
   "public": 1
 }

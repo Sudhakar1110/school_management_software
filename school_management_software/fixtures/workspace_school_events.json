@@ -42,18 +42,13 @@
     },
     {
       "type": "DocType",
-      "link_to": "Meeting Child Table",
-      "label": "Meeting Details"
-    },
-    {
-      "type": "DocType",
       "link_to": "Gate Pass",
       "label": "Gate Pass"
     }
   ],
   "shortcuts": [],
   "title": "School Events",
-  "content": "[{\"type\":\"card\",\"card_name\":\"School Events\",\"label\":\"School Events\",\"links\":[{\"type\":\"link\",\"label\":\"School Events\",\"link_to\":\"School Event\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Student Events\",\"link_to\":\"Student Event\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Event Types\",\"link_to\":\"Event Type\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Participants\",\"link_to\":\"Event Participant\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Event Gallery\",\"link_to\":\"Event Gallery\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Attachments\",\"link_to\":\"Event Attachment\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Meeting Schedule\",\"link_to\":\"Meeting Schedule\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Meeting Details\",\"link_to\":\"Meeting Child Table\",\"link_type\":\"DocType\"}]},{\"type\":\"card\",\"card_name\":\"School Events 2\",\"label\":\"More School Events\",\"links\":[{\"type\":\"link\",\"label\":\"Gate Pass\",\"link_to\":\"Gate Pass\",\"link_type\":\"DocType\"}]}]",
+  "content": "[{\"type\":\"card\",\"card_name\":\"School Events\",\"label\":\"School Events\",\"links\":[{\"type\":\"link\",\"label\":\"School Events\",\"link_to\":\"School Event\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Student Events\",\"link_to\":\"Student Event\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Event Types\",\"link_to\":\"Event Type\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Participants\",\"link_to\":\"Event Participant\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Event Gallery\",\"link_to\":\"Event Gallery\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Attachments\",\"link_to\":\"Event Attachment\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Meeting Schedule\",\"link_to\":\"Meeting Schedule\",\"link_type\":\"DocType\"}]},{\"type\":\"card\",\"card_name\":\"School Events 2\",\"label\":\"More School Events\",\"links\":[{\"type\":\"link\",\"label\":\"Gate Pass\",\"link_to\":\"Gate Pass\",\"link_type\":\"DocType\"}]}]",
   "label": "School Events",
   "public": 1
 }

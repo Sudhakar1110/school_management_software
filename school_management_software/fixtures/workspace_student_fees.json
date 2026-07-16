@@ -12,11 +12,6 @@
     },
     {
       "type": "DocType",
-      "link_to": "Applicant Fee",
-      "label": "Applicant Fees"
-    },
-    {
-      "type": "DocType",
       "link_to": "Transport Fee",
       "label": "Transport Fees"
     },
@@ -38,7 +33,7 @@
   ],
   "shortcuts": [],
   "title": "Student Fees",
-  "content": "[{\"type\":\"card\",\"card_name\":\"Student Fees\",\"label\":\"Student Fees\",\"links\":[{\"type\":\"link\",\"label\":\"Fee Installments\",\"link_to\":\"Custom Student Fee Installment\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Applicant Fees\",\"link_to\":\"Applicant Fee\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Transport Fees\",\"link_to\":\"Transport Fee\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Hostel Fees\",\"link_to\":\"Hostel Fee\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Fines\",\"link_to\":\"Fine Doctypes\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Create Admission\",\"link_to\":\"Create Admission\",\"link_type\":\"DocType\"}]}]",
+  "content": "[{\"type\":\"card\",\"card_name\":\"Student Fees\",\"label\":\"Student Fees\",\"links\":[{\"type\":\"link\",\"label\":\"Fee Installments\",\"link_to\":\"Custom Student Fee Installment\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Transport Fees\",\"link_to\":\"Transport Fee\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Hostel Fees\",\"link_to\":\"Hostel Fee\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Fines\",\"link_to\":\"Fine Doctypes\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Create Admission\",\"link_to\":\"Create Admission\",\"link_type\":\"DocType\"}]}]",
   "label": "Student Fees",
   "public": 1
 }
