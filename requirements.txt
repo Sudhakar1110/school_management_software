@@ -1,2 +1,3 @@
-frappe
-erpnext
+# Frappe app dependencies are declared in module.json (required_apps)
+# NOT in requirements.txt
+# This file intentionally left blank
