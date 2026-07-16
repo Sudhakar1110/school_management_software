@@ -4,12 +4,120 @@
   "module": "Education",
   "charts": [],
   "cards": [],
-  "links": [],
+  "links": [
+    {
+      "type": "Card Break",
+      "label": "Content Master",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Article",
+      "link_type": "DocType",
+      "link_to": "Article"
+    },
+    {
+      "type": "Link",
+      "label": "Video",
+      "link_type": "DocType",
+      "link_to": "Video"
+    },
+    {
+      "type": "Link",
+      "label": "Quiz",
+      "link_type": "DocType",
+      "link_to": "Quiz"
+    },
+    {
+      "type": "Card Break",
+      "label": "Masters",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Academic Year",
+      "link_type": "DocType",
+      "link_to": "Academic Year"
+    },
+    {
+      "type": "Link",
+      "label": "Academic Term",
+      "link_type": "DocType",
+      "link_to": "Academic Term"
+    },
+    {
+      "type": "Link",
+      "label": "Student Batch",
+      "link_type": "DocType",
+      "link_to": "Student Batch Name"
+    },
+    {
+      "type": "Link",
+      "label": "Student Group",
+      "link_type": "DocType",
+      "link_to": "Student Group"
+    },
+    {
+      "type": "Link",
+      "label": "Student Group Creation Tool",
+      "link_type": "DocType",
+      "link_to": "Student Group Creation Tool"
+    },
+    {
+      "type": "Link",
+      "label": "Grade",
+      "link_type": "DocType",
+      "link_to": "Program"
+    },
+    {
+      "type": "Link",
+      "label": "Course",
+      "link_type": "DocType",
+      "link_to": "Course"
+    },
+    {
+      "type": "Link",
+      "label": "Instructor",
+      "link_type": "DocType",
+      "link_to": "Instructor"
+    },
+    {
+      "type": "Link",
+      "label": "Student Log",
+      "link_type": "DocType",
+      "link_to": "Student Log"
+    },
+    {
+      "type": "Link",
+      "label": "Education Settings",
+      "link_type": "DocType",
+      "link_to": "Education Settings"
+    },
+    {
+      "type": "Link",
+      "label": "Student Event",
+      "link_type": "DocType",
+      "link_to": "Student Event"
+    },
+    {
+      "type": "Link",
+      "label": "Student Kit Issue",
+      "link_type": "DocType",
+      "link_to": "Student Kit Issue"
+    }
+  ],
   "shortcuts": [],
   "title": "Masters",
   "content": "[{\"id\":\"VkFpyKHxRl\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":5}},{\"id\":\"WuPUkwsBjd\",\"type\":\"card\",\"data\":{\"card_name\":\"Content Master\",\"col\":3}}]",
   "label": "Masters",
   "public": 1,
   "icon": "lc-settings",
-  "sequence_id": 3
+  "sequence_id": 3,
+  "roles": [
+    {"role": "Academics User"},
+    {"role": "Education Manager"},
+    {"role": "Admission Officer"},
+    {"role": "Instructor"},
+    {"role": "Student"}
+  ]
 }
