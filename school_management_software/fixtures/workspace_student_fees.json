@@ -72,5 +72,12 @@
   "label": "Student Fees",
   "public": 1,
   "icon": "lc-wallet",
-  "sequence_id": 5
+  "sequence_id": 5,
+  "roles": [
+    {"role": "Academics User"},
+    {"role": "Instructor"},
+    {"role": "Education Manager"},
+    {"role": "Accounts Manager"},
+    {"role": "Admission Officer"}
+  ]
 }
