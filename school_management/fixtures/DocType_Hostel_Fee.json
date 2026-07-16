@@ -1,0 +1,130 @@
+{
+  "doctype": "DocType",
+  "name": "Hostel Fee",
+  "module": "Education",
+  "custom": 1,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "is_single": 0,
+  "is_tree": 0,
+  "is_calendar_and_gantt": 0,
+  "editable_grid": 1,
+  "quick_entry": 0,
+  "track_changes": 0,
+  "track_seen": 0,
+  "track_views": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "",
+  "autoname": "",
+  "allow_rename": 1,
+  "description": "",
+  "title_field": "",
+  "search_fields": "",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "default_view": "List",
+  "icon": "",
+  "image_field": "",
+  "timeline_field": "",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_sidebar": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "has_web_view": 0,
+  "allow_guest_to_view": 0,
+  "index_web_pages_for_search": 1,
+  "route": "",
+  "is_published_field": "",
+  "website_search_field": "",
+  "email_template": "",
+  "restrict_to_domain": "",
+  "document_type": "",
+  "fields": [
+    {
+      "fieldname": "hostel_admission",
+      "fieldtype": "Link",
+      "label": "hostel_admission",
+      "options": "Hostel Admission"
+    },
+    {
+      "fieldname": "hostel",
+      "fieldtype": "Link",
+      "label": "hostel",
+      "options": "Hostel"
+    },
+    {
+      "fieldname": "month",
+      "fieldtype": "Select",
+      "label": "month",
+      "options": "January\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember"
+    },
+    {
+      "fieldname": "academic_year",
+      "fieldtype": "Link",
+      "label": "academic_year",
+      "options": "Academic Year"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "amount"
+    },
+    {
+      "fieldname": "due_date",
+      "fieldtype": "Date",
+      "label": "due_date"
+    },
+    {
+      "fieldname": "payment_status",
+      "fieldtype": "Select",
+      "label": "payment_status",
+      "options": "Pending\nPaid\nOverdue\nPartial"
+    },
+    {
+      "fieldname": "payment_entry",
+      "fieldtype": "Link",
+      "label": "payment_entry",
+      "options": "Payment Entry"
+    },
+    {
+      "fieldname": "paid_date",
+      "fieldtype": "Date",
+      "label": "paid_date"
+    },
+    {
+      "fieldname": "fee_type",
+      "fieldtype": "Select",
+      "label": "Fee Type",
+      "options": "Room Rent\nMess Fee\nDeposit\nElectricity\nLaundry\nFine\nOther",
+      "reqd": 1,
+      "in_list_view": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 1,
+      "write": 1,
+      "amend": 0,
+      "cancel": 0,
+      "submit": 0,
+      "import": 0,
+      "select": 0,
+      "level": 0
+    }
+  ],
+  "actions": [],
+  "links": [],
+  "states": []
+}

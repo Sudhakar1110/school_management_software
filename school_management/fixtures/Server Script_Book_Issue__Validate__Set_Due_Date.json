@@ -1,0 +1,17 @@
+{
+  "doctype": "Server Script",
+  "name": "Book Issue - Validate & Set Due Date",
+  "script_type": "DocType Event",
+  "reference_doctype": "Book Issue",
+  "doctype_event": "Before Save (Submitted Document)",
+  "api_method": "",
+  "script": "# Get Issue Duration from Library Settings\r\nissue_days = frappe.db.get_single_value(\r\n    \"Library Settings\",\r\n    \"issue_duration_days\"\r\n) or 14\r\n\r\n# Calculate Due Date\r\nif doc.issue_date:\r\n    doc.due_date = frappe.utils.add_days(doc.issue_date, issue_days)\r\n\r\n# Default Issue Status\r\nif not doc.issue_status:\r\n    doc.issue_status = \"Issued\"\r\n\r\n# Validate Book Copy Availability\r\nif doc.book_copy:\r\n    copy_status = frappe.db.get_value(\r\n        \"Book Copy\",\r\n        doc.book_copy,\r\n        \"copy_status\"\r\n    )\r\n\r\n    if copy_status != \"Available\":\r\n        frappe.throw(\r\n            \"The selected Book Copy is no longer available. Please select another copy.\"\r\n        )",
+  "allow_guest": 0,
+  "disabled": 0,
+  "module": "Education",
+  "event_frequency": "All",
+  "cron_format": "",
+  "enable_rate_limit": 0,
+  "request_limit": 5,
+  "time_window": 86400
+}

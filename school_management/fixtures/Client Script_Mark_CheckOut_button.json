@@ -1,0 +1,9 @@
+{
+  "doctype": "Client Script",
+  "name": "Mark Check-Out button",
+  "dt": "Hostel Admission",
+  "script_type": "Form",
+  "module": "Education",
+  "enabled": 1,
+  "script": "frappe.ui.form.on(\"Hostel Admission\", {\r\n    refresh(frm) {\r\n        if (!frm.is_new() && frm.doc.admission_status === \"Checked In\") {\r\n            frm.add_custom_button(\"Mark Check-Out\", function () {\r\n                frappe.new_doc(\"Hostel Check-Out\", {\r\n                    student: frm.doc.student,\r\n                    hostel_admission: frm.doc.name,\r\n                    hostel: frm.doc.hostel,\r\n                    hostel_block: frm.doc.hostel_block,\r\n                    hostel_room: frm.doc.hostel_room\r\n                });\r\n            }, \"Create\");\r\n        }\r\n    }\r\n});"
+}

@@ -1,0 +1,17 @@
+{
+  "doctype": "Server Script",
+  "name": "approved",
+  "script_type": "DocType Event",
+  "reference_doctype": "Custom Program Enrollment",
+  "doctype_event": "Before Save (Submitted Document)",
+  "api_method": "",
+  "script": "admission_status = frappe.db.get_value(\"Create Admission\", doc.student_admission, \"application_status\")\r\n\r\nif admission_status != \"Approved\":\r\n    frappe.throw(\"Cannot create/save enrollment. The linked admission application status is '{0}', it must be 'Approved'.\".format(admission_status))",
+  "allow_guest": 0,
+  "disabled": 0,
+  "module": "Education",
+  "event_frequency": "All",
+  "cron_format": "",
+  "enable_rate_limit": 0,
+  "request_limit": 5,
+  "time_window": 86400
+}

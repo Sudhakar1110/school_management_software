@@ -1,0 +1,9 @@
+{
+  "doctype": "Client Script",
+  "name": "Approve/Reject buttons on Hostel Application",
+  "dt": "Hostel Application",
+  "script_type": "Form",
+  "module": "Education",
+  "enabled": 1,
+  "script": "frappe.ui.form.on(\"Hostel Application\", {\r\n    refresh(frm) {\r\n        if (frm.is_new()) return;\r\n\r\n        if (frm.doc.status === \"Submitted\") {\r\n            frm.add_custom_button(\"Approve\", function() {\r\n                frappe.confirm(\r\n                    `Approve hostel application for ${frm.doc.student}?`,\r\n                    () => {\r\n                        frm.set_value(\"status\", \"Approved\");\r\n                        frm.save();\r\n                    }\r\n                );\r\n            }).addClass(\"btn-primary\");\r\n\r\n            frm.add_custom_button(\"Reject\", function() {\r\n                frappe.prompt(\r\n                    { fieldname: \"reason\", label: \"Rejection Reason\", fieldtype: \"Small Text\", reqd: 1 },\r\n                    (values) => {\r\n                        frm.set_value(\"status\", \"Rejected\");\r\n                        frm.save();\r\n                    },\r\n                    \"Reject Application\"\r\n                );\r\n            });\r\n        }\r\n\r\n        if (frm.doc.status === \"Approved\") {\r\n            frm.dashboard.set_headline_alert(\r\n                \"✓ Approved — Hostel Admission created automatically.\", \"green\"\r\n            );\r\n        }\r\n    }\r\n});"
+}

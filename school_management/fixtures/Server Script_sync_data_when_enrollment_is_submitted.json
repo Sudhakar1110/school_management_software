@@ -1,0 +1,17 @@
+{
+  "doctype": "Server Script",
+  "name": "sync data when enrollment is submitted",
+  "script_type": "DocType Event",
+  "reference_doctype": "Custom Program Enrollment",
+  "doctype_event": "Before Submit",
+  "api_method": "",
+  "script": "if not doc.custom_student:\r\n\tmatched_student = None\r\n\temail = None\r\n\r\n\tif doc.student_admission and \"@\" in doc.student_admission:\r\n\t\temail = doc.student_admission\r\n\r\n\tif not email and doc.student_admission:\r\n\t\tadmission_dict = frappe.get_doc(\"Create Admission\", doc.student_admission).as_dict()\r\n\t\temail = admission_dict.get(\"student_email_id\") or admission_dict.get(\"email\")\r\n\r\n\tif email:\r\n\t\tmatched_student = frappe.db.get_value(\"Custom Student\", {\"student_email_id\": email}, \"name\")\r\n\r\n\tif not matched_student and doc.student_name:\r\n\t\tcleaned_name = doc.student_name.strip()\r\n\t\tmatched_student = frappe.db.get_value(\"Custom Student\", {\"student_name\": cleaned_name}, \"name\")\r\n\r\n\tif not matched_student:\r\n\t\tfull_name = (doc.student_name or \"Unknown\").strip()\r\n\t\tname_parts = full_name.split(\" \")\r\n\t\tfirst = name_parts[0] if len(name_parts) > 0 else full_name\r\n\t\tlast = name_parts[-1] if len(name_parts) > 1 else \"\"\r\n\r\n\t\tnew_student = frappe.get_doc({\r\n\t\t\t\"doctype\": \"Custom Student\",\r\n\t\t\t\"first_name\": first,\r\n\t\t\t\"last_name\": last,\r\n\t\t\t\"student_name\": full_name,\r\n\t\t\t\"student_email_id\": email,\r\n\t\t\t\"enabled\": 1\r\n\t\t})\r\n\t\tnew_student.insert(ignore_permissions=True)\r\n\t\tmatched_student = new_student.name\r\n\r\n\tdoc.custom_student = matched_student",
+  "allow_guest": 0,
+  "disabled": 0,
+  "module": "Education",
+  "event_frequency": "All",
+  "cron_format": "",
+  "enable_rate_limit": 0,
+  "request_limit": 5,
+  "time_window": 86400
+}

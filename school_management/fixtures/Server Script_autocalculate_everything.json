@@ -1,0 +1,17 @@
+{
+  "doctype": "Server Script",
+  "name": "auto-calculate everything",
+  "script_type": "DocType Event",
+  "reference_doctype": "Hostel Room",
+  "doctype_event": "Before Save (Submitted Document)",
+  "api_method": "",
+  "script": "if doc.is\\_new(): doc.occupied\\_beds = 0 doc.available\\_beds = doc.total\\_beds or 0 doc.room\\_status = \"Available\" if (doc.total\\_beds or 0) > 0 else \"Maintenance\" else: old\\_doc = doc.get\\_doc\\_before\\_save() if old\\_doc and old\\_doc.total\\_beds != doc.total\\_beds: occupied = frappe.db.count(\"Hostel Admission\", { \"hostel\\_room\": doc.name, \"admission\\_status\": \"Checked In\" }) if (doc.total\\_beds or 0) < occupied: frappe.throw( f\"Cannot reduce Total Beds to {doc.total\\_beds}. \" f\"{occupied} students are currently Checked In to this room.\" ) doc.occupied\\_beds = occupied doc.available\\_beds = (doc.total\\_beds or 0) - occupied doc.room\\_status = \"Full\" if occupied >= doc.total\\_beds else \"Available\"",
+  "allow_guest": 0,
+  "disabled": 0,
+  "module": "Education",
+  "event_frequency": "All",
+  "cron_format": "",
+  "enable_rate_limit": 0,
+  "request_limit": 5,
+  "time_window": 86400
+}

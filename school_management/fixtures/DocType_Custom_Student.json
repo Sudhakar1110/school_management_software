@@ -1,0 +1,396 @@
+{
+  "doctype": "DocType",
+  "name": "Custom Student",
+  "module": "Custom",
+  "custom": 1,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "is_single": 0,
+  "is_tree": 0,
+  "is_calendar_and_gantt": 0,
+  "editable_grid": 1,
+  "quick_entry": 0,
+  "track_changes": 0,
+  "track_seen": 0,
+  "track_views": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "By \"Naming Series\" field",
+  "autoname": "naming_series:",
+  "allow_rename": 1,
+  "description": "",
+  "title_field": "student_name",
+  "search_fields": "",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "default_view": "",
+  "icon": "",
+  "image_field": "image",
+  "timeline_field": "",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_sidebar": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "has_web_view": 0,
+  "allow_guest_to_view": 0,
+  "index_web_pages_for_search": 1,
+  "route": "",
+  "is_published_field": "",
+  "website_search_field": "",
+  "email_template": "",
+  "restrict_to_domain": "",
+  "document_type": "",
+  "fields": [
+    {
+      "fieldname": "section_break_1",
+      "fieldtype": "Section Break",
+      "label": ""
+    },
+    {
+      "fieldname": "enabled",
+      "fieldtype": "Check",
+      "label": "Enabled",
+      "default": "1"
+    },
+    {
+      "fieldname": "section_break_3",
+      "fieldtype": "Section Break",
+      "label": ""
+    },
+    {
+      "fieldname": "first_name",
+      "fieldtype": "Data",
+      "label": "First Name",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "middle_name",
+      "fieldtype": "Data",
+      "label": "Middle Name"
+    },
+    {
+      "fieldname": "last_name",
+      "fieldtype": "Data",
+      "label": "Last Name"
+    },
+    {
+      "fieldname": "student_name",
+      "fieldtype": "Data",
+      "label": "Student Name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_4",
+      "fieldtype": "Column Break",
+      "label": ""
+    },
+    {
+      "fieldname": "joining_date",
+      "fieldtype": "Date",
+      "label": "Joining Date"
+    },
+    {
+      "fieldname": "user",
+      "fieldtype": "Link",
+      "label": "User",
+      "options": "User"
+    },
+    {
+      "fieldname": "image",
+      "fieldtype": "Attach Image",
+      "label": "Student Image"
+    },
+    {
+      "fieldname": "class_teacher",
+      "fieldtype": "Link",
+      "label": "Class teacher",
+      "options": "Instructor"
+    },
+    {
+      "fieldname": "section_break_7",
+      "fieldtype": "Section Break",
+      "label": ""
+    },
+    {
+      "fieldname": "student_email_id",
+      "fieldtype": "Data",
+      "label": "Student Email ID",
+      "options": "Email"
+    },
+    {
+      "fieldname": "date_of_birth",
+      "fieldtype": "Date",
+      "label": "Date of Birth"
+    },
+    {
+      "fieldname": "blood_group",
+      "fieldtype": "Select",
+      "label": "Blood Group",
+      "options": "\nA+\nA-\nB+\nB-\nO+\nO-\nAB+\nAB-",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "custom_guardian_email",
+      "fieldtype": "Data",
+      "label": "Guardian Email",
+      "options": "Email"
+    },
+    {
+      "fieldname": "column_break_3",
+      "fieldtype": "Column Break",
+      "label": ""
+    },
+    {
+      "fieldname": "student_mobile_number",
+      "fieldtype": "Data",
+      "label": "Student Mobile Number"
+    },
+    {
+      "fieldname": "gender",
+      "fieldtype": "Link",
+      "label": "Gender",
+      "options": "Gender"
+    },
+    {
+      "fieldname": "nationality",
+      "fieldtype": "Data",
+      "label": "Nationality"
+    },
+    {
+      "fieldname": "admission_details_section",
+      "fieldtype": "Section Break",
+      "label": "Admission Details"
+    },
+    {
+      "fieldname": "class_name",
+      "fieldtype": "Data",
+      "label": "Class",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "section_name",
+      "fieldtype": "Data",
+      "label": "Section",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "register_no",
+      "fieldtype": "Data",
+      "label": "Register No",
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "roll_no",
+      "fieldtype": "Int",
+      "label": "Roll No",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_extra1",
+      "fieldtype": "Column Break",
+      "label": ""
+    },
+    {
+      "fieldname": "admission_date",
+      "fieldtype": "Date",
+      "label": "Admission Date",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "pan_no",
+      "fieldtype": "Data",
+      "label": "PAN No"
+    },
+    {
+      "fieldname": "phone_no",
+      "fieldtype": "Data",
+      "label": "Phone No"
+    },
+    {
+      "fieldname": "transport_stoppage",
+      "fieldtype": "Data",
+      "label": "Transport Stoppage",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "section_break_extra2",
+      "fieldtype": "Section Break",
+      "label": ""
+    },
+    {
+      "fieldname": "religion",
+      "fieldtype": "Data",
+      "label": "Religion",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "caste",
+      "fieldtype": "Data",
+      "label": "Caste",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "mother_tongue",
+      "fieldtype": "Data",
+      "label": "Mother Tongue",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_extra2",
+      "fieldtype": "Column Break",
+      "label": ""
+    },
+    {
+      "fieldname": "mother_name",
+      "fieldtype": "Data",
+      "label": "Mother's Name"
+    },
+    {
+      "fieldname": "father_name",
+      "fieldtype": "Data",
+      "label": "Father's Name"
+    },
+    {
+      "fieldname": "address_tab",
+      "fieldtype": "Tab Break",
+      "label": "Address"
+    },
+    {
+      "fieldname": "section_break_22",
+      "fieldtype": "Section Break",
+      "label": ""
+    },
+    {
+      "fieldname": "address_line_1",
+      "fieldtype": "Data",
+      "label": "Address Line 1"
+    },
+    {
+      "fieldname": "address_line_2",
+      "fieldtype": "Data",
+      "label": "Address Line 2"
+    },
+    {
+      "fieldname": "pincode",
+      "fieldtype": "Data",
+      "label": "Pincode"
+    },
+    {
+      "fieldname": "column_break_20",
+      "fieldtype": "Column Break",
+      "label": ""
+    },
+    {
+      "fieldname": "city",
+      "fieldtype": "Data",
+      "label": "City"
+    },
+    {
+      "fieldname": "state",
+      "fieldtype": "Data",
+      "label": "State"
+    },
+    {
+      "fieldname": "country",
+      "fieldtype": "Link",
+      "label": "Country",
+      "options": "Country"
+    },
+    {
+      "fieldname": "relations_tab",
+      "fieldtype": "Tab Break",
+      "label": "Relations"
+    },
+    {
+      "fieldname": "section_break_18",
+      "fieldtype": "Section Break",
+      "label": ""
+    },
+    {
+      "fieldname": "guardians",
+      "fieldtype": "Table",
+      "label": "Guardians",
+      "options": "Custom Student Guardian"
+    },
+    {
+      "fieldname": "section_break_20",
+      "fieldtype": "Section Break",
+      "label": ""
+    },
+    {
+      "fieldname": "siblings",
+      "fieldtype": "Table",
+      "label": "Siblings",
+      "options": "Custom Student Sibling"
+    },
+    {
+      "fieldname": "exit_tab",
+      "fieldtype": "Tab Break",
+      "label": "Exit"
+    },
+    {
+      "fieldname": "exit_section",
+      "fieldtype": "Section Break",
+      "label": ""
+    },
+    {
+      "fieldname": "date_of_leaving",
+      "fieldtype": "Date",
+      "label": "Date of Leaving"
+    },
+    {
+      "fieldname": "leaving_certificate_number",
+      "fieldtype": "Data",
+      "label": "Leaving Certificate Number"
+    },
+    {
+      "fieldname": "column_break_31",
+      "fieldtype": "Column Break",
+      "label": ""
+    },
+    {
+      "fieldname": "reason_for_leaving",
+      "fieldtype": "Text",
+      "label": "Reason for Leaving"
+    },
+    {
+      "fieldname": "tab_5_tab",
+      "fieldtype": "Tab Break",
+      "label": "fee"
+    },
+    {
+      "fieldname": "fee_staus",
+      "fieldtype": "Link",
+      "label": "fee Staus",
+      "options": "Payment Entry"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 1,
+      "write": 1,
+      "amend": 0,
+      "cancel": 0,
+      "submit": 0,
+      "import": 0,
+      "select": 0,
+      "level": 0
+    }
+  ],
+  "actions": [],
+  "links": [],
+  "states": []
+}

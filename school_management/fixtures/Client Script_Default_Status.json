@@ -1,0 +1,9 @@
+{
+  "doctype": "Client Script",
+  "name": "Default Status",
+  "dt": "Student Transport Assignment",
+  "script_type": "Form",
+  "module": "Education",
+  "enabled": 1,
+  "script": "frappe.ui.form.on(\"Student Transport Assignment\", {\r\n\r\n    onload(frm) {\r\n\r\n        if (frm.is_new()) {\r\n\r\n            frm.set_value(\"is_active\", 1);\r\n            frm.set_value(\"fee_status\", \"Pending\");\r\n\r\n        }\r\n\r\n    }\r\n\r\n});"
+}

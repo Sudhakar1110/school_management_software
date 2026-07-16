@@ -1,0 +1,17 @@
+{
+  "doctype": "Server Script",
+  "name": "generate_course_schedule",
+  "script_type": "API",
+  "reference_doctype": "",
+  "doctype_event": "Before Insert",
+  "api_method": "generate_course_schedule",
+  "script": "docname = frappe.form_dict.get(\"docname\")\r\ndoc = frappe.get_doc(\"Custom Course Schedule\", docname)\r\n\r\nif not doc.weekly_slots:\r\n    frappe.throw(\"No weekly slots defined\")\r\n\r\nterm = frappe.get_doc(\"Academic Term\", doc.academic_term)\r\nstart_date = term.term_start_date\r\nend_date = term.term_end_date\r\n\r\nday_map = {\r\n    \"Monday\": 0, \"Tuesday\": 1, \"Wednesday\": 2,\r\n    \"Thursday\": 3, \"Friday\": 4, \"Saturday\": 5, \"Sunday\": 6\r\n}\r\n\r\ncount = 0\r\ncurrent = start_date\r\nwhile current <= end_date:\r\n    weekday = current.weekday()\r\n    for slot in doc.weekly_slots:\r\n        if day_map.get(slot.day_of_week) == weekday:\r\n            exists = frappe.db.exists(\"Course Schedule\", {\r\n                \"student_group\": doc.student_group,\r\n                \"schedule_date\": current,\r\n                \"from_time\": slot.from_time,\r\n                \"course\": slot.course\r\n            })\r\n            if not exists:\r\n                cs = frappe.get_doc({\r\n                    \"doctype\": \"Course Schedule\",\r\n                    \"student_group\": doc.student_group,\r\n                    \"course\": slot.course,\r\n                    \"schedule_date\": current,\r\n                    \"from_time\": slot.from_time,\r\n                    \"to_time\": slot.to_time,\r\n                    \"room\": slot.room,\r\n                    \"instructor\": slot.instructor\r\n                })\r\n                cs.insert(ignore_permissions=True)\r\n                count += 1\r\n    current = frappe.utils.add_days(current, 1)\r\n\r\nfrappe.response[\"message\"] = {\"count\": count}",
+  "allow_guest": 0,
+  "disabled": 0,
+  "module": "Education",
+  "event_frequency": "All",
+  "cron_format": "",
+  "enable_rate_limit": 0,
+  "request_limit": 5,
+  "time_window": 86400
+}

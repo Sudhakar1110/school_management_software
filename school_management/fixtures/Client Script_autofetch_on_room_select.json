@@ -1,0 +1,9 @@
+{
+  "doctype": "Client Script",
+  "name": "auto-fetch on room select",
+  "dt": "Grievance Box",
+  "script_type": "Form",
+  "module": "Education",
+  "enabled": 1,
+  "script": "frappe.ui.form.on(\"Grievance Box\", {\r\n    hostel_room: function(frm) {\r\n        if (!frm.doc.hostel_room) return;\r\n\r\n        frappe.db.get_value(\"Hostel Room\", frm.doc.hostel_room,\r\n            [\"hostel\", \"hostel_block\"]\r\n        ).then(({message}) => {\r\n            if (!message) return;\r\n\r\n            frm.set_value(\"hostel\", message.hostel);\r\n            frm.set_value(\"hostel_block\", message.hostel_block);\r\n\r\n            frappe.db.get_value(\"Warden\", { hostel: message.hostel, status: \"Active\" }, \"name\")\r\n                .then(({message: w}) => {\r\n                    if (w && w.name) {\r\n                        frm.set_value(\"warden\", w.name);\r\n                    }\r\n                });\r\n        });\r\n    },\r\n\r\n    status: function(frm) {\r\n        if (frm.doc.status === \"Resolved\" && !frm.doc.resolution_date) {\r\n            frm.set_value(\"resolution_date\", frappe.datetime.get_today());\r\n        }\r\n    }\r\n});"
+}

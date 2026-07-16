@@ -1,0 +1,17 @@
+{
+  "doctype": "Server Script",
+  "name": "Scheduler Event Frequency Daily",
+  "script_type": "Scheduler Event",
+  "reference_doctype": "",
+  "doctype_event": "Before Insert",
+  "api_method": "",
+  "script": "tomorrow = frappe.utils.add\\_days(frappe.utils.nowdate(), 1) events = frappe.get\\_all( \"School Event\", filters={ \"start\\_date\": tomorrow, \"publish\": 1, \"status\": [\"!=\", \"Cancelled\"] }, fields=[\"name\", \"title\", \"venue\", \"start\\_date\"] ) for event in events: event\\_doc = frappe.get\\_doc(\"School Event\", event.name) recipients = [] for participant in event\\_doc.participants: if participant.email: recipients.append(participant.email) recipients = list(set(recipients)) if recipients: frappe.sendmail( recipients=recipients, subject=\"Event Reminder: {0}\".format(event\\_doc.title), message=\"\"\" Dear Participant,, ,  This is a reminder that the event **{0}** is scheduled for **{1}**., ,  **Venue:** {2}, ,  Thank you.,  School Administration \"\"\".format( event\\_doc.title, event\\_doc.start\\_date, event\\_doc.venue ) )",
+  "allow_guest": 0,
+  "disabled": 0,
+  "module": "Education",
+  "event_frequency": "Daily",
+  "cron_format": "",
+  "enable_rate_limit": 0,
+  "request_limit": 5,
+  "time_window": 86400
+}

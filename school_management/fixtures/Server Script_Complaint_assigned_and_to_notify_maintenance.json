@@ -1,0 +1,17 @@
+{
+  "doctype": "Server Script",
+  "name": "Complaint assigned and to notify maintenance",
+  "script_type": "DocType Event",
+  "reference_doctype": "Grievance Box",
+  "doctype_event": "After Save (Submitted Document)",
+  "api_method": "",
+  "script": "old_doc = doc.get_doc_before_save()\r\n\r\nif old_doc and old_doc.assigned_to != doc.assigned_to and doc.assigned_to:\r\n    user = frappe.db.get_value(\"Employee\", doc.assigned_to, \"user_id\")\r\n\r\n    if user:\r\n        frappe.get_doc({\r\n            \"doctype\": \"ToDo\",\r\n            \"allocated_to\": user,\r\n            \"reference_type\": \"Grievance Box\",\r\n            \"reference_name\": doc.name,\r\n            \"priority\": \"High\" if doc.priority in (\"High\", \"Critical\") else \"Medium\",\r\n            \"description\": f\"Complaint assigned: {doc.category or doc.complaint_type} \"\r\n                            f\"in Room {doc.hostel_room}. Priority: {doc.priority}.\"\r\n        }).insert(ignore_permissions=True)\r\n\r\nif old_doc and old_doc.status != \"Resolved\" and doc.status == \"Resolved\":\r\n    # notify the student their complaint is resolved — via ToDo to Warden\r\n    # since students likely don't have direct system logins (same pattern as earlier phases)\r\n    if doc.warden:\r\n        warden_user = frappe.db.get_value(\"Warden\", doc.warden, \"employee\")\r\n        warden_user_id = frappe.db.get_value(\"Employee\", warden_user, \"user_id\") if warden_user else None\r\n        if warden_user_id:\r\n            frappe.get_doc({\r\n                \"doctype\": \"ToDo\",\r\n                \"allocated_to\": warden_user_id,\r\n                \"reference_type\": \"Grievance Box\",\r\n                \"reference_name\": doc.name,\r\n                \"description\": f\"Complaint by {doc.student} resolved — please inform student.\"\r\n            }).insert(ignore_permissions=True)",
+  "allow_guest": 0,
+  "disabled": 0,
+  "module": "Education",
+  "event_frequency": "All",
+  "cron_format": "",
+  "enable_rate_limit": 0,
+  "request_limit": 5,
+  "time_window": 86400
+}

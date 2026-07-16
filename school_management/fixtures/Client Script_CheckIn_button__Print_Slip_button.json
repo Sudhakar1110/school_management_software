@@ -1,0 +1,9 @@
+{
+  "doctype": "Client Script",
+  "name": "Check-In button + Print Slip button",
+  "dt": "Hostel Admission",
+  "script_type": "Form",
+  "module": "Education",
+  "enabled": 1,
+  "script": "frappe.ui.form.on(\"Hostel Admission\", {\r\n    refresh(frm) {\r\n        if (frm.is_new()) return;\r\n\r\n        if ([\"Draft\", \"Approved\"].includes(frm.doc.admission_status) && frm.doc.hostel_room) {\r\n            frm.add_custom_button(\"Check In\", function() {\r\n                frappe.confirm(\r\n                    `Check in ${frm.doc.student_name} to Room ${frm.doc.hostel_room}?`,\r\n                    () => {\r\n                        frm.set_value(\"admission_status\", \"Checked In\");\r\n                        frm.save();\r\n                    }\r\n                );\r\n            }).addClass(\"btn-primary\");\r\n        }\r\n\r\n        if (frm.doc.admission_status === \"Checked In\") {\r\n            frm.add_custom_button(\"Print Admission Slip\", function() {\r\n                frappe.route_options = {};\r\n                frappe.set_route(\"print\", \"Hostel Admission\", frm.doc.name);\r\n            });\r\n        }\r\n    }\r\n});"
+}

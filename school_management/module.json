@@ -1,0 +1,16 @@
+{
+  "app_name": "school_management",
+  "app_title": "School Management",
+  "app_publisher": "School Management",
+  "app_description": "School Management Software - Custom ERPNext Education Module with Admissions, Hostel, Library, Transport, Events, Exams, and more",
+  "app_version": "0.0.1",
+  "app_icon": "octicon octicon-file-directory",
+  "app_color": "blue",
+  "app_email": "admin@schoolmanagement.com",
+  "app_license": "MIT",
+  "required_apps": [
+    "frappe",
+    "erpnext"
+  ],
+  "source_url": "https://github.com/Sudhakar1110/school_management_software"
+}

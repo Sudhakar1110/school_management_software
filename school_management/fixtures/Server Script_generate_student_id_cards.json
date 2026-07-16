@@ -1,0 +1,17 @@
+{
+  "doctype": "Server Script",
+  "name": "generate_student_id_cards",
+  "script_type": "API",
+  "reference_doctype": "",
+  "doctype_event": "Before Insert",
+  "api_method": "generate_student_id_cards",
+  "script": "batch = frappe.get_doc(\"Student ID Card Batch\", frappe.form_dict.batch)\r\n\r\n# Update Batch Status\r\nbatch.status = \"In Progress\"\r\n\r\ncreated = 0\r\nskipped = 0\r\n\r\nfor row in batch.students:\r\n\r\n    # Skip if already generated\r\n    if row.card_generated:\r\n        skipped += 1\r\n        continue\r\n\r\n    # Check whether Student ID Card already exists\r\n    existing_card = frappe.db.exists(\r\n        \"Student ID Card\",\r\n        {\r\n            \"student\": row.student,\r\n            \"academic_year\": batch.academic_year\r\n        }\r\n    )\r\n\r\n    if existing_card:\r\n        row.card_generated = 1\r\n        row.student_id_card = existing_card\r\n        row.generated_on = frappe.utils.now_datetime()\r\n        skipped += 1\r\n        continue\r\n\r\n    # Fetch Student Details\r\n    student = frappe.get_doc(\"Custom Student\", row.student)\r\n\r\n    # Create Student ID Card\r\n    card = frappe.new_doc(\"Student ID Card\")\r\n\r\n    card.student = student.name\r\n    card.student_name = student.student_name\r\n    card.academic_year = student.current_academic_year\r\n    card.program = student.current_program\r\n    card.roll_no = student.roll_no\r\n    card.blood_group = student.blood_group\r\n    card.mobile = student.student_mobile_number\r\n    card.photo = student.image\r\n    card.template = batch.template\r\n    card.status = \"Draft\"\r\n\r\n    # Save Student ID Card\r\n    card.insert(ignore_permissions=True)\r\n\r\n    # Update Batch Item\r\n    row.card_generated = 1\r\n    row.student_id_card = card.name\r\n    row.generated_on = frappe.utils.now_datetime()\r\n\r\n    created += 1\r\n\r\n# Update Batch Status\r\nbatch.status = \"Completed\"\r\n\r\n# Save Batch\r\nbatch.save(ignore_permissions=True)\r\n\r\nfrappe.response[\"message\"] = (\r\n    str(created)\r\n    + \" Student ID Card(s) generated successfully. \"\r\n    + str(skipped)\r\n    + \" Student(s) skipped because an ID Card already exists.\"\r\n)",
+  "allow_guest": 0,
+  "disabled": 0,
+  "module": "Education",
+  "event_frequency": "All",
+  "cron_format": "",
+  "enable_rate_limit": 0,
+  "request_limit": 5,
+  "time_window": 86400
+}

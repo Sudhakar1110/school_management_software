@@ -1,0 +1,9 @@
+{
+  "doctype": "Client Script",
+  "name": "auto-fetch Room/Block/Warden on student select + live duration",
+  "dt": "Hostel Visitor Log",
+  "script_type": "Form",
+  "module": "Education",
+  "enabled": 1,
+  "script": "frappe.ui.form.on(\"Hostel Visitor Log\", { student: function(frm) { if (!frm.doc.student) return; frappe.db.get\\_list(\"Hostel Admission\", { filters: { student: frm.doc.student, admission\\_status: \"Checked In\" }, fields: [\"hostel\", \"hostel\\_block\", \"hostel\\_room\"], limit: 1 }).then(records => { if (!records.length) { frappe.msgprint(\"No active (Checked In) admission found for this student.\"); return; } let a = records[0]; frm.set\\_value(\"hostel\", a.hostel); frm.set\\_value(\"student\\_room\", a.hostel\\_room); // fetch the on-duty warden for that hostel frappe.db.get\\_value(\"Warden\", { hostel: a.hostel, status: \"Active\" }, \"name\") .then(({message}) => { if (message && message.name) { frm.set\\_value(\"warden\", message.name); } }); }); }, entry\\_time: function(frm) { if (!frm.doc.entry\\_time) { frm.set\\_value(\"entry\\_time\", frappe.datetime.now\\_datetime()); } }, exit\\_time: function(frm) { if (frm.doc.entry\\_time && frm.doc.exit\\_time) { let mins = frappe.datetime.get\\_minute\\_diff(frm.doc.exit\\_time, frm.doc.entry\\_time); if (mins < 0) { frappe.msgprint(\"Exit Time cannot be before Entry Time.\"); frm.set\\_value(\"exit\\_time\", \"\"); return; } let hrs = Math.floor(mins / 60); let rem = mins % 60; frm.set\\_value(\"visit\\_duration\", `${hrs}h ${rem}m`); } }, refresh(frm) { if (frm.is\\_new() && !frm.doc.entry\\_time) { frm.set\\_value(\"entry\\_time\", frappe.datetime.now\\_datetime()); } } });"
+}

@@ -1,0 +1,17 @@
+{
+  "doctype": "Server Script",
+  "name": "create_fine_on_book_return",
+  "script_type": "DocType Event",
+  "reference_doctype": "Book return",
+  "doctype_event": "After Insert",
+  "api_method": "",
+  "script": "# Get the linked Book Issue\r\nbook_issue = frappe.get_doc(\"Book Issue\", doc.book_issue)\r\n\r\n# Get Fine Per Day from Library Settings\r\nfine_per_day = frappe.db.get_single_value(\r\n    \"Library Settings\",\r\n    \"fine_per_day\"\r\n) or 5\r\n\r\n# Calculate Overdue Days and Fine\r\nif book_issue.due_date and doc.return_date:\r\n\r\n    days_overdue = frappe.utils.date_diff(\r\n        doc.return_date,\r\n        book_issue.due_date\r\n    )\r\n\r\n    if days_overdue > 0:\r\n        doc.days_overdue = days_overdue\r\n        doc.fine_amount = days_overdue * fine_per_day\r\n    else:\r\n        doc.days_overdue = 0\r\n        doc.fine_amount = 0\r\n\r\nelse:\r\n    doc.days_overdue = 0\r\n    doc.fine_amount = 0\r\n\r\n# Update Book Issue\r\nfrappe.db.set_value(\r\n    \"Book Issue\",\r\n    doc.book_issue,\r\n    {\r\n        \"issue_status\": \"Returned\",\r\n        \"return_date\": doc.return_date\r\n    }\r\n)\r\n\r\n# Make Book Copy Available\r\nif book_issue.book_copy:\r\n    frappe.db.set_value(\r\n        \"Book Copy\",\r\n        book_issue.book_copy,\r\n        \"copy_status\",\r\n        \"Available\"\r\n    )\r\n\r\n# Create Library Fine only if Fine > 0\r\nif doc.fine_amount > 0:\r\n\r\n    existing_fine = frappe.db.exists(\r\n        \"Library Fine\",\r\n        {\r\n            \"book_return\": doc.name\r\n        }\r\n    )\r\n\r\n    if not existing_fine:\r\n\r\n        fine = frappe.new_doc(\"Library Fine\")\r\n        fine.library_member = doc.library_member\r\n        fine.library_book = doc.library_book\r\n        fine.book_return = doc.name\r\n        fine.amount = doc.fine_amount\r\n        fine.due_date = doc.return_date\r\n        fine.payment_status = \"Unpaid\"\r\n\r\n        fine.insert(ignore_permissions=True)",
+  "allow_guest": 0,
+  "disabled": 0,
+  "module": "Education",
+  "event_frequency": "All",
+  "cron_format": "",
+  "enable_rate_limit": 0,
+  "request_limit": 5,
+  "time_window": 86400
+}

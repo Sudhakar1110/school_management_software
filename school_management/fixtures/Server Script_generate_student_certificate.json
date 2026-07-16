@@ -1,0 +1,17 @@
+{
+  "doctype": "Server Script",
+  "name": "generate_student_certificate",
+  "script_type": "API",
+  "reference_doctype": "",
+  "doctype_event": "Before Insert",
+  "api_method": "generate_student_certificate",
+  "script": "student_name = frappe.form_dict.get(\"student\")\r\ntemplate_name = frappe.form_dict.get(\"template\")\r\n\r\nstudent = frappe.get_doc(\"Custom Student\", student_name)\r\ntemplate = frappe.get_doc(\"Student Certificate Template\", template_name)\r\n\r\nhtml = frappe.render_template(template.html_template, {\"doc\": student})\r\npdf_content = frappe.utils.pdf.get_pdf(html)\r\n\r\ncert = frappe.get_doc({\r\n    \"doctype\": \"Student Certificate\",\r\n    \"student\": student_name,\r\n    \"template\": template_name,\r\n    \"generated_on\": frappe.utils.now_datetime(),\r\n    \"generated_by\": frappe.session.user\r\n})\r\ncert.insert(ignore_permissions=True)\r\n\r\nfile_doc = frappe.get_doc({\r\n    \"doctype\": \"File\",\r\n    \"file_name\": f\"{cert.name}.pdf\",\r\n    \"attached_to_doctype\": \"Student Certificate\",\r\n    \"attached_to_name\": cert.name,\r\n    \"content\": pdf_content,\r\n    \"is_private\": 1\r\n})\r\nfile_doc.save(ignore_permissions=True)\r\n\r\ncert.certificate_pdf = file_doc.file_url\r\ncert.save(ignore_permissions=True)\r\nfrappe.db.commit()\r\n\r\nfrappe.response[\"message\"] = {\"certificate\": cert.name, \"pdf_url\": file_doc.file_url}",
+  "allow_guest": 0,
+  "disabled": 0,
+  "module": "Education",
+  "event_frequency": "All",
+  "cron_format": "",
+  "enable_rate_limit": 0,
+  "request_limit": 5,
+  "time_window": 86400
+}

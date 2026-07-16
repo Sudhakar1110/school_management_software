@@ -1,0 +1,9 @@
+{
+  "doctype": "Client Script",
+  "name": "Approve/Reject buttons",
+  "dt": "Create Admission",
+  "script_type": "Form",
+  "module": "Education",
+  "enabled": 1,
+  "script": "frappe.ui.form.on('Create Admission', {\r\n    refresh: function(frm) {\r\n        if (frm.doc.application_status === 'Applied' && !frm.is_new()) {\r\n            frm.add_custom_button('Approve', function() {\r\n                frappe.confirm('Are you sure you want to approve this application?', () => {\r\n                    frm.set_value('application_status', 'Approved');\r\n                    frm.save();\r\n                });\r\n            }, 'Actions');\r\n\r\n            frm.add_custom_button('Reject', function() {\r\n                frappe.confirm('Are you sure you want to reject this application?', () => {\r\n                    frm.set_value('application_status', 'Rejected');\r\n                    frm.save();\r\n                });\r\n            }, 'Actions');\r\n        }\r\n\r\n        if (frm.doc.application_status === 'Approved') {\r\n            frm.dashboard.set_headline_alert('This application is approved and ready for enrollment.', 'green');\r\n        }\r\n        if (frm.doc.application_status === 'Rejected') {\r\n            frm.dashboard.set_headline_alert('This application has been rejected.', 'red');\r\n        }\r\n    }\r\n});"
+}

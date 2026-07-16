@@ -1,0 +1,17 @@
+{
+  "doctype": "Server Script",
+  "name": "Book Issue - Mark Copy as Issued",
+  "script_type": "DocType Event",
+  "reference_doctype": "Book Issue",
+  "doctype_event": "After Submit",
+  "api_method": "",
+  "script": "if doc.book_copy:\r\n\r\n    frappe.db.set_value(\r\n        \"Book Copy\",\r\n        doc.book_copy,\r\n        \"copy_status\",\r\n        \"Issued\"\r\n    )",
+  "allow_guest": 0,
+  "disabled": 0,
+  "module": "Education",
+  "event_frequency": "All",
+  "cron_format": "",
+  "enable_rate_limit": 0,
+  "request_limit": 5,
+  "time_window": 86400
+}

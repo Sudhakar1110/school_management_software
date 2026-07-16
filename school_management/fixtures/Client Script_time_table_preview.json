@@ -1,0 +1,9 @@
+{
+  "doctype": "Client Script",
+  "name": "time table preview",
+  "dt": "Custom Course Schedule",
+  "script_type": "Form",
+  "module": "Education",
+  "enabled": 1,
+  "script": "frappe.ui.form.on('Custom Course Schedule', { refresh: function(frm) { render\\_preview(frm); if (frm.doc.student\\_group && frm.doc.academic\\_term && frm.doc.weekly\\_slots && frm.doc.weekly\\_slots.length) { frm.add\\_custom\\_button('Generate Schedule for Term', function() { frappe.confirm( 'This will create Course Schedule records for the entire term. Continue?', function() { frappe.call({ method: 'generate\\_course\\_schedule', type: 'POST', args: { docname: frm.doc.name }, freeze: true, freeze\\_message: 'Generating schedule...', callback: function(r) { if (r.message) { frappe.msgprint(r.message.count + ' schedule records created.'); } } }); } ); }); } }, weekly\\_slots\\_on\\_form\\_rendered: function(frm) { render\\_preview(frm); } }); function render\\_preview(frm) { if (!frm.doc.weekly\\_slots || !frm.doc.weekly\\_slots.length) { frm.set\\_df\\_property('timetable\\_preview', 'options', '  No weekly slots added yet.  '); return; } var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']; var html = '  | Day | Time | Course | Room | | --- | --- | --- | --- | '; days.forEach(function(day) { var rows = frm.doc.weekly\\_slots.filter(function(r) { return r.day\\_of\\_week === day; }); rows.sort(function(a, b) { return (a.from\\_time || '').localeCompare(b.from\\_time || ''); }); rows.forEach(function(r, idx) { html += '|'; if (idx === 0) { html += ' ' + day + ' |'; } html += ' ' + (r.from\\_time || '') + ' - ' + (r.to\\_time || '') + ' |'; html += ' ' + (r.course || '') + ' |'; html += ' ' + (r.room || '') + ' |'; html += ' '; }); }); html += ' '; frm.set\\_df\\_property('timetable\\_preview', 'options', html); }"
+}
