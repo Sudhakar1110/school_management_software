@@ -4,9 +4,50 @@
   "module": "Education",
   "charts": [],
   "cards": [],
-  "links": [],
+  "links": [
+    {
+      "type": "DocType",
+      "link_to": "Create Admission",
+      "label": "Recent Admissions"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Custom Student",
+      "label": "Student Overview"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Hostel Admission",
+      "label": "Hostel Status"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Library Book",
+      "label": "Library"
+    },
+    {
+      "type": "DocType",
+      "link_to": "School Event",
+      "label": "Upcoming Events"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Exam Schedule",
+      "label": "Exams"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Transport Route",
+      "label": "Transport"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Transport Fee",
+      "label": "Fee Status"
+    }
+  ],
   "shortcuts": [],
   "title": "Overview",
-  "content": "[]",
+  "content": "[{\"type\":\"card\",\"card_name\":\"Overview\",\"label\":\"Overview\",\"links\":[{\"type\":\"link\",\"label\":\"Recent Admissions\",\"link_to\":\"Create Admission\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Student Overview\",\"link_to\":\"Custom Student\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Hostel Status\",\"link_to\":\"Hostel Admission\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Library\",\"link_to\":\"Library Book\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Upcoming Events\",\"link_to\":\"School Event\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Exams\",\"link_to\":\"Exam Schedule\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Transport\",\"link_to\":\"Transport Route\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Fee Status\",\"link_to\":\"Transport Fee\",\"link_type\":\"DocType\"}]}]",
   "label": "Overview"
 }

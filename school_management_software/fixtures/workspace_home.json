@@ -4,9 +4,50 @@
   "module": "Education",
   "charts": [],
   "cards": [],
-  "links": [],
+  "links": [
+    {
+      "type": "DocType",
+      "link_to": "Create Admission",
+      "label": "New Admission"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Custom Student",
+      "label": "Students"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Hostel Admission",
+      "label": "Hostel Admissions"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Library Book",
+      "label": "Library Books"
+    },
+    {
+      "type": "DocType",
+      "link_to": "School Event",
+      "label": "School Events"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Transport Route",
+      "label": "Transport Routes"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Exam Schedule",
+      "label": "Exam Schedule"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Student Certificate",
+      "label": "Student Certificates"
+    }
+  ],
   "shortcuts": [],
   "title": "Home",
-  "content": "[]",
+  "content": "[{\"type\":\"card\",\"card_name\":\"Home\",\"label\":\"Home\",\"links\":[{\"type\":\"link\",\"label\":\"New Admission\",\"link_to\":\"Create Admission\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Students\",\"link_to\":\"Custom Student\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Hostel Admissions\",\"link_to\":\"Hostel Admission\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Library Books\",\"link_to\":\"Library Book\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"School Events\",\"link_to\":\"School Event\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Transport Routes\",\"link_to\":\"Transport Route\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Exam Schedule\",\"link_to\":\"Exam Schedule\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Student Certificates\",\"link_to\":\"Student Certificate\",\"link_type\":\"DocType\"}]}]",
   "label": "Home"
 }

@@ -4,9 +4,60 @@
   "module": "Education",
   "charts": [],
   "cards": [],
-  "links": [],
+  "links": [
+    {
+      "type": "DocType",
+      "link_to": "Exam Hall",
+      "label": "Exam Halls"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Exam Schedule",
+      "label": "Exam Schedules"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Exam Term",
+      "label": "Exam Terms"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Exam Attendance",
+      "label": "Exam Attendance"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Hall Ticket",
+      "label": "Hall Tickets"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Hall Allocation",
+      "label": "Hall Allocations"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Student Admit Card",
+      "label": "Admit Cards"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Hall Ticket Subject",
+      "label": "Hall Ticket Subjects"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Hall Allocation Student",
+      "label": "Allocation Students"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Admit Card Template",
+      "label": "Admit Card Templates"
+    }
+  ],
   "shortcuts": [],
   "title": "Exam",
-  "content": "[]",
+  "content": "[{\"type\":\"card\",\"card_name\":\"Exam\",\"label\":\"Exam\",\"links\":[{\"type\":\"link\",\"label\":\"Exam Halls\",\"link_to\":\"Exam Hall\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Exam Schedules\",\"link_to\":\"Exam Schedule\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Exam Terms\",\"link_to\":\"Exam Term\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Exam Attendance\",\"link_to\":\"Exam Attendance\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Hall Tickets\",\"link_to\":\"Hall Ticket\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Hall Allocations\",\"link_to\":\"Hall Allocation\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Admit Cards\",\"link_to\":\"Student Admit Card\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Hall Ticket Subjects\",\"link_to\":\"Hall Ticket Subject\",\"link_type\":\"DocType\"}]},{\"type\":\"card\",\"card_name\":\"Exam 2\",\"label\":\"More Exam\",\"links\":[{\"type\":\"link\",\"label\":\"Allocation Students\",\"link_to\":\"Hall Allocation Student\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Admit Card Templates\",\"link_to\":\"Admit Card Template\",\"link_type\":\"DocType\"}]}]",
   "label": "Exam"
 }

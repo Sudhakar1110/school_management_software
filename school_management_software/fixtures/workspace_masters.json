@@ -4,9 +4,75 @@
   "module": "Education",
   "charts": [],
   "cards": [],
-  "links": [],
+  "links": [
+    {
+      "type": "DocType",
+      "link_to": "Book Author",
+      "label": "Book Authors"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Book Category",
+      "label": "Book Categories"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Trait Master",
+      "label": "Trait Masters"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Event Type",
+      "label": "Event Types"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Exam Term",
+      "label": "Exam Terms"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Certificate Template",
+      "label": "Certificate Templates"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Admit Card Template",
+      "label": "Admit Card Templates"
+    },
+    {
+      "type": "DocType",
+      "link_to": "ID Card Template",
+      "label": "ID Card Templates"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Assessment Group",
+      "label": "Assessment Groups"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Transport Vehicle",
+      "label": "Transport Vehicles"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Hostel Room Types",
+      "label": "Room Types"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Fine Doctypes",
+      "label": "Fine Types"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Library Settings",
+      "label": "Library Settings"
+    }
+  ],
   "shortcuts": [],
   "title": "Masters",
-  "content": "[]",
+  "content": "[{\"type\":\"card\",\"card_name\":\"Masters\",\"label\":\"Masters\",\"links\":[{\"type\":\"link\",\"label\":\"Book Authors\",\"link_to\":\"Book Author\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Book Categories\",\"link_to\":\"Book Category\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Trait Masters\",\"link_to\":\"Trait Master\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Event Types\",\"link_to\":\"Event Type\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Exam Terms\",\"link_to\":\"Exam Term\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Certificate Templates\",\"link_to\":\"Certificate Template\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Admit Card Templates\",\"link_to\":\"Admit Card Template\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"ID Card Templates\",\"link_to\":\"ID Card Template\",\"link_type\":\"DocType\"}]},{\"type\":\"card\",\"card_name\":\"Masters 2\",\"label\":\"More Masters\",\"links\":[{\"type\":\"link\",\"label\":\"Assessment Groups\",\"link_to\":\"Assessment Group\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Transport Vehicles\",\"link_to\":\"Transport Vehicle\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Room Types\",\"link_to\":\"Hostel Room Types\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Fine Types\",\"link_to\":\"Fine Doctypes\",\"link_type\":\"DocType\"},{\"type\":\"link\",\"label\":\"Library Settings\",\"link_to\":\"Library Settings\",\"link_type\":\"DocType\"}]}]",
   "label": "Masters"
 }
