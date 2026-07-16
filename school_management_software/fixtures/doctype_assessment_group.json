@@ -7,6 +7,7 @@
   "is_child_table": 0,
   "is_single": 0,
   "is_tree": 1,
+  "parent_field": "parent_assessment_group",
   "is_calendar_and_gantt": 0,
   "editable_grid": 1,
   "quick_entry": 0,
