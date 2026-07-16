@@ -76,12 +76,6 @@
     },
     {
       "type": "Link",
-      "label": "Assessment Group",
-      "link_type": "DocType",
-      "link_to": "Assessment Group"
-    },
-    {
-      "type": "Link",
       "label": "Assessment Criteria",
       "link_type": "DocType",
       "link_to": "Assessment Criteria"
@@ -127,16 +121,24 @@
   ],
   "shortcuts": [],
   "title": "Transport",
-  "content": "[{\"id\":\"aX_-E0sLXc\",\"type\":\"workflow_overview\",\"data\":{\"workflow_overview_name\":\"Transport Setup\",\"workflows\":[{\"label\":\"Transport Setup\",\"doctypes\":[{\"doctype\":\"Transport Vehicle\",\"label\":\"Transport Vehicle\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"Create Transport Vehicles\"},{\"doctype\":\"Driver\",\"label\":\"Transport Route\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"Create Drivers\"},{\"doctype\":\"Transport Stop\",\"label\":\"Student Transport Assignment\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"Create Transport Stops\"},{\"doctype\":\"Transport Route\",\"label\":\"Transport Fee\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"Create Transport Routes by assigning Vehicle,Driver and stops\"}]},{\"label\":\"Student Transport Process\",\"doctypes\":[{\"doctype\":\"Student\",\"label\":\"Student\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Student Transport Assignment\",\"label\":\"Student Transport Assignment\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Transport Fee\",\"label\":\"Transport Fee\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Transport Operations\",\"doctypes\":[{\"doctype\":\"Transport Vehicle\",\"label\":\"Transport Vehicle\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Vehicle Log\",\"label\":\"Vehicle Log\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Route History\",\"label\":\"Route History\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]}],\"col\":12}},{\"id\":\"DZNExlFvyY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KXpINMRfSy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Present\",\"col\":3}},{\"id\":\"H69WdVrrz6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Absent\",\"col\":3}},{\"id\":\"AjFAJPgl7O\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Assessments\",\"col\":12}},{\"id\":\"hUJIDT89cY\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":5}},{\"id\":\"zG4o2afSls\",\"type\":\"card\",\"data\":{\"card_name\":\"Doctypes\",\"col\":5}}]",
+  "content": "[{\"id\":\"aX_-E0sLXc\",\"type\":\"workflow_overview\",\"data\":{\"workflow_overview_name\":\"Transport Setup\",\"workflows\":[{\"label\":\"Transport Setup\",\"doctypes\":[{\"doctype\":\"Driver\",\"label\":\"Transport Route\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"Create Drivers\"}]},{\"label\":\"Student Transport Process\",\"doctypes\":[{\"doctype\":\"Student\",\"label\":\"Student\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Transport Operations\",\"doctypes\":[{\"doctype\":\"Vehicle Log\",\"label\":\"Vehicle Log\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Route History\",\"label\":\"Route History\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]}],\"col\":12}},{\"id\":\"DZNExlFvyY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KXpINMRfSy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Present\",\"col\":3}},{\"id\":\"H69WdVrrz6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Absent\",\"col\":3}},{\"id\":\"AjFAJPgl7O\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Assessments\",\"col\":12}},{\"id\":\"hUJIDT89cY\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":5}},{\"id\":\"zG4o2afSls\",\"type\":\"card\",\"data\":{\"card_name\":\"Doctypes\",\"col\":5}}]",
   "label": "Transport",
   "public": 1,
   "icon": "lc-clipboard-check",
   "indicator_color": "green",
   "sequence_id": 6.1,
   "roles": [
-    {"role": "Academics User"},
-    {"role": "Education Manager"},
-    {"role": "Instructor"},
-    {"role": "Student"}
+    {
+      "role": "Academics User"
+    },
+    {
+      "role": "Education Manager"
+    },
+    {
+      "role": "Instructor"
+    },
+    {
+      "role": "Student"
+    }
   ]
 }

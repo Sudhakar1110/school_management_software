@@ -18,12 +18,6 @@
     },
     {
       "type": "Link",
-      "label": "Assessment Group",
-      "link_type": "DocType",
-      "link_to": "Assessment Group"
-    },
-    {
-      "type": "Link",
       "label": "Assessment Criteria",
       "link_type": "DocType",
       "link_to": "Assessment Criteria"
@@ -128,16 +122,24 @@
   ],
   "shortcuts": [],
   "title": "Exam",
-  "content": "[{\"id\":\"aX_-E0sLXc\",\"type\":\"workflow_overview\",\"data\":{\"workflow_overview_name\":\"Exam Management Flow\",\"workflows\":[{\"label\":\"Exam Management Flow\",\"doctypes\":[{\"doctype\":\"Academic Year\",\"label\":\"Academic Year\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Exam Term\",\"label\":\"Exam Term\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Assessment Group\",\"label\":\"Assessment Group\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Assessment Plan\",\"label\":\"Assessment Plan\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Exam Operations\",\"doctypes\":[{\"doctype\":\"Exam Schedule\",\"label\":\"Exam Schedule\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Hall Allocation\",\"label\":\"Hall Allocation\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Hall Ticket\",\"label\":\"Hall Ticket\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Exam Attendance\",\"label\":\"Exam Attendance\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Results & Reports\",\"doctypes\":[{\"doctype\":\"Assessment Result Tool\",\"label\":\"Assessment Result Tool\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Assessment Result\",\"label\":\"Assessment Result\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Student Progress Card\",\"label\":\"Student Rank\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]}],\"col\":12}},{\"id\":\"DZNExlFvyY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KXpINMRfSy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Present\",\"col\":3}},{\"id\":\"H69WdVrrz6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Absent\",\"col\":3}},{\"id\":\"AjFAJPgl7O\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Assessments\",\"col\":12}},{\"id\":\"hUJIDT89cY\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":5}},{\"id\":\"zG4o2afSls\",\"type\":\"card\",\"data\":{\"card_name\":\"Assessments\",\"col\":5}}]",
+  "content": "[{\"id\":\"aX_-E0sLXc\",\"type\":\"workflow_overview\",\"data\":{\"workflow_overview_name\":\"Exam Management Flow\",\"workflows\":[{\"label\":\"Exam Management Flow\",\"doctypes\":[{\"doctype\":\"Academic Year\",\"label\":\"Academic Year\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Exam Term\",\"label\":\"Exam Term\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Assessment Plan\",\"label\":\"Assessment Plan\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Exam Operations\",\"doctypes\":[{\"doctype\":\"Exam Schedule\",\"label\":\"Exam Schedule\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Hall Allocation\",\"label\":\"Hall Allocation\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Hall Ticket\",\"label\":\"Hall Ticket\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Exam Attendance\",\"label\":\"Exam Attendance\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Results & Reports\",\"doctypes\":[{\"doctype\":\"Assessment Result Tool\",\"label\":\"Assessment Result Tool\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Assessment Result\",\"label\":\"Assessment Result\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]}],\"col\":12}},{\"id\":\"DZNExlFvyY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KXpINMRfSy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Present\",\"col\":3}},{\"id\":\"H69WdVrrz6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Absent\",\"col\":3}},{\"id\":\"AjFAJPgl7O\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Assessments\",\"col\":12}},{\"id\":\"hUJIDT89cY\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":5}},{\"id\":\"zG4o2afSls\",\"type\":\"card\",\"data\":{\"card_name\":\"Assessments\",\"col\":5}}]",
   "label": "Exam",
   "public": 1,
   "icon": "lc-clipboard-check",
   "indicator_color": "green",
   "sequence_id": 6.1,
   "roles": [
-    {"role": "Academics User"},
-    {"role": "Education Manager"},
-    {"role": "Instructor"},
-    {"role": "Student"}
+    {
+      "role": "Academics User"
+    },
+    {
+      "role": "Education Manager"
+    },
+    {
+      "role": "Instructor"
+    },
+    {
+      "role": "Student"
+    }
   ]
 }

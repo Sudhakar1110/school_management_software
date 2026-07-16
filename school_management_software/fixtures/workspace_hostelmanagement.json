@@ -18,12 +18,6 @@
     },
     {
       "type": "Link",
-      "label": "Assessment Group",
-      "link_type": "DocType",
-      "link_to": "Assessment Group"
-    },
-    {
-      "type": "Link",
       "label": "Assessment Criteria",
       "link_type": "DocType",
       "link_to": "Assessment Criteria"
@@ -70,92 +64,28 @@
       "type": "Card Break",
       "label": "Doctypes",
       "link_type": "DocType"
-    },
-    {
-      "type": "Link",
-      "label": "Hostel",
-      "link_type": "DocType",
-      "link_to": "Hostel"
-    },
-    {
-      "type": "Link",
-      "label": "Hostel Admission",
-      "link_type": "DocType",
-      "link_to": "Hostel Admission"
-    },
-    {
-      "type": "Link",
-      "label": "Hostel Block",
-      "link_type": "DocType",
-      "link_to": "Hostel Block"
-    },
-    {
-      "type": "Link",
-      "label": "Grievance Box",
-      "link_type": "DocType",
-      "link_to": "Grievance Box"
-    },
-    {
-      "type": "Link",
-      "label": "Hostel Fee",
-      "link_type": "DocType",
-      "link_to": "Hostel Fee"
-    },
-    {
-      "type": "Link",
-      "label": "Hostel Room",
-      "link_type": "DocType",
-      "link_to": "Hostel Room"
-    },
-    {
-      "type": "Link",
-      "label": "Hostel Room Types",
-      "link_type": "DocType",
-      "link_to": "Hostel Room Types"
-    },
-    {
-      "type": "Link",
-      "label": "Hostel Visitor Log",
-      "link_type": "DocType",
-      "link_to": "Hostel Visitor Log"
-    },
-    {
-      "type": "Link",
-      "label": "Hostel leaves",
-      "link_type": "DocType",
-      "link_to": "Hostel leaves"
-    },
-    {
-      "type": "Link",
-      "label": "Warden",
-      "link_type": "DocType",
-      "link_to": "Warden"
-    },
-    {
-      "type": "Link",
-      "label": "Mess Menu",
-      "link_type": "DocType",
-      "link_to": "Mess Menu"
-    },
-    {
-      "type": "Link",
-      "label": "Mess Attendance",
-      "link_type": "DocType",
-      "link_to": "Mess Attendance"
     }
   ],
   "shortcuts": [],
   "title": "Hostel-Management",
-  "content": "[{\"id\":\"aX_-E0sLXc\",\"type\":\"workflow_overview\",\"data\":{\"workflow_overview_name\":\" Hostel Setup\",\"workflows\":[{\"label\":\" Hostel Setup\",\"doctypes\":[{\"doctype\":\"Warden\",\"label\":\"Warden\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"Create Warden \"},{\"doctype\":\"Hostel\",\"label\":\"Hostel\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"Create Hostel \"},{\"doctype\":\"Hostel Block\",\"label\":\"Hostel Block\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\" Create Hostel Blocks  \"},{\"doctype\":\"Hostel Room Types\",\"label\":\"Hostel Room Types\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"Create Room Types\"},{\"doctype\":\"Hostel Room\",\"label\":\"Hostel Room\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"Create Hostel Rooms    \"}]},{\"label\":\"Student Hostel Process\",\"doctypes\":[{\"doctype\":\"Hostel Application\",\"label\":\"Hostel Application\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Hostel Admission\",\"label\":\"Hostel Admission\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Hostel Check-Out\",\"label\":\"Hostel Check-Out\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Active residency\",\"doctypes\":[{\"doctype\":\"Hostel Fee\",\"label\":\"Hostel Attendance\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Hostel Visitor Log\",\"label\":\"Hostel Visitor Log\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Hostel leaves\",\"label\":\"Hostel leaves\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Grievance Box\",\"label\":\"Grievance Box\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Room Transfer\",\"label\":\"Room Transfer\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Mess Attendance\",\"label\":\"Mess Attendance\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]}],\"col\":12}},{\"id\":\"DZNExlFvyY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KXpINMRfSy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Present\",\"col\":3}},{\"id\":\"H69WdVrrz6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Absent\",\"col\":3}},{\"id\":\"AjFAJPgl7O\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Assessments\",\"col\":12}},{\"id\":\"hUJIDT89cY\",\"type\":\"card\",\"data\":{\"card_name\":\"Doctypes\",\"col\":5}},{\"id\":\"zG4o2afSls\",\"type\":\"card\",\"data\":{\"card_name\":\"Assessments\",\"col\":5}}]",
+  "content": "[{\"id\":\"DZNExlFvyY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KXpINMRfSy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Present\",\"col\":3}},{\"id\":\"H69WdVrrz6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Absent\",\"col\":3}},{\"id\":\"AjFAJPgl7O\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Assessments\",\"col\":12}},{\"id\":\"hUJIDT89cY\",\"type\":\"card\",\"data\":{\"card_name\":\"Doctypes\",\"col\":5}},{\"id\":\"zG4o2afSls\",\"type\":\"card\",\"data\":{\"card_name\":\"Assessments\",\"col\":5}}]",
   "label": "Hostel-Management",
   "public": 1,
   "icon": "lc-clipboard-check",
   "indicator_color": "green",
   "sequence_id": 6.1,
   "roles": [
-    {"role": "Academics User"},
-    {"role": "Education Manager"},
-    {"role": "Instructor"},
-    {"role": "Student"}
+    {
+      "role": "Academics User"
+    },
+    {
+      "role": "Education Manager"
+    },
+    {
+      "role": "Instructor"
+    },
+    {
+      "role": "Student"
+    }
   ]
 }

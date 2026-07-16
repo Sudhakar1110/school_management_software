@@ -78,12 +78,6 @@
     },
     {
       "type": "Link",
-      "label": "Assessment Group",
-      "link_type": "DocType",
-      "link_to": "Assessment Group"
-    },
-    {
-      "type": "Link",
       "label": "Assessment Criteria",
       "link_type": "DocType",
       "link_to": "Assessment Criteria"
@@ -129,15 +123,23 @@
   ],
   "shortcuts": [],
   "title": "Attendance & Assessments",
-  "content": "[{\"id\":\"aX_-E0sLXc\",\"type\":\"workflow_overview\",\"data\":{\"workflows\":[{\"label\":\"Attendance workflow\",\"doctypes\":[{\"doctype\":\"Student Group\",\"label\":\"Student Group\",\"icon\":\"lc-users\",\"status_type\":\"Active\"},{\"doctype\":\"Course Schedule\",\"label\":\"Course Schedule\",\"icon\":\"lc-calendar-range\",\"status_type\":\"Active\"},{\"doctype\":\"Student Attendance\",\"label\":\"Attendance\",\"icon\":\"lc-calendar-check\",\"status_type\":\"Active\"}]},{\"label\":\"Assessment workflow\",\"doctypes\":[{\"doctype\":\"Grading Scale\",\"label\":\"Grading scale\",\"icon\":\"lc-chart-bar-increasing\",\"status_type\":\"Active\"},{\"doctype\":\"Assessment Criteria\",\"label\":\"Assessment Criteria\",\"icon\":\"lc-list-checks\",\"status_type\":\"Active\"},{\"doctype\":\"Assessment Group\",\"label\":\"Assessment Group\",\"icon\":\"lc-folder-kanban\",\"status_type\":\"Active\"},{\"doctype\":\"Assessment Plan\",\"label\":\"Assessment Plan\",\"icon\":\"lc-clipboard-list\",\"status_type\":\"Active\"},{\"doctype\":\"Assessment Result Tool\",\"label\":\"Assessment Result tool\",\"icon\":\"lc-file-check\",\"status_type\":\"Active\"}]}],\"col\":12,\"workflow_overview_name\":\"Attendance workflow\"}},{\"id\":\"DZNExlFvyY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KXpINMRfSy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Present\",\"col\":3}},{\"id\":\"H69WdVrrz6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Absent\",\"col\":3}},{\"id\":\"AjFAJPgl7O\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Assessments\",\"col\":12}},{\"id\":\"hUJIDT89cY\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":5}},{\"id\":\"zG4o2afSls\",\"type\":\"card\",\"data\":{\"card_name\":\"Assessments\",\"col\":5}}]",
+  "content": "[{\"id\":\"aX_-E0sLXc\",\"type\":\"workflow_overview\",\"data\":{\"workflows\":[{\"label\":\"Attendance workflow\",\"doctypes\":[{\"doctype\":\"Student Group\",\"label\":\"Student Group\",\"icon\":\"lc-users\",\"status_type\":\"Active\"},{\"doctype\":\"Course Schedule\",\"label\":\"Course Schedule\",\"icon\":\"lc-calendar-range\",\"status_type\":\"Active\"},{\"doctype\":\"Student Attendance\",\"label\":\"Attendance\",\"icon\":\"lc-calendar-check\",\"status_type\":\"Active\"}]},{\"label\":\"Assessment workflow\",\"doctypes\":[{\"doctype\":\"Grading Scale\",\"label\":\"Grading scale\",\"icon\":\"lc-chart-bar-increasing\",\"status_type\":\"Active\"},{\"doctype\":\"Assessment Criteria\",\"label\":\"Assessment Criteria\",\"icon\":\"lc-list-checks\",\"status_type\":\"Active\"},{\"doctype\":\"Assessment Plan\",\"label\":\"Assessment Plan\",\"icon\":\"lc-clipboard-list\",\"status_type\":\"Active\"},{\"doctype\":\"Assessment Result Tool\",\"label\":\"Assessment Result tool\",\"icon\":\"lc-file-check\",\"status_type\":\"Active\"}]}],\"col\":12,\"workflow_overview_name\":\"Attendance workflow\"}},{\"id\":\"DZNExlFvyY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KXpINMRfSy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Present\",\"col\":3}},{\"id\":\"H69WdVrrz6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Absent\",\"col\":3}},{\"id\":\"AjFAJPgl7O\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Assessments\",\"col\":12}},{\"id\":\"hUJIDT89cY\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":5}},{\"id\":\"zG4o2afSls\",\"type\":\"card\",\"data\":{\"card_name\":\"Assessments\",\"col\":5}}]",
   "label": "Attendance & Assessments",
   "public": 1,
   "icon": "lc-clipboard-check",
   "sequence_id": 6,
   "roles": [
-    {"role": "Academics User"},
-    {"role": "Education Manager"},
-    {"role": "Instructor"},
-    {"role": "Student"}
+    {
+      "role": "Academics User"
+    },
+    {
+      "role": "Education Manager"
+    },
+    {
+      "role": "Instructor"
+    },
+    {
+      "role": "Student"
+    }
   ]
 }

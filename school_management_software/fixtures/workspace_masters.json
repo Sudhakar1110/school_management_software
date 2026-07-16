@@ -99,12 +99,6 @@
       "label": "Student Event",
       "link_type": "DocType",
       "link_to": "Student Event"
-    },
-    {
-      "type": "Link",
-      "label": "Student Kit Issue",
-      "link_type": "DocType",
-      "link_to": "Student Kit Issue"
     }
   ],
   "shortcuts": [],
@@ -115,10 +109,20 @@
   "icon": "lc-settings",
   "sequence_id": 3,
   "roles": [
-    {"role": "Academics User"},
-    {"role": "Education Manager"},
-    {"role": "Admission Officer"},
-    {"role": "Instructor"},
-    {"role": "Student"}
+    {
+      "role": "Academics User"
+    },
+    {
+      "role": "Education Manager"
+    },
+    {
+      "role": "Admission Officer"
+    },
+    {
+      "role": "Instructor"
+    },
+    {
+      "role": "Student"
+    }
   ]
 }
