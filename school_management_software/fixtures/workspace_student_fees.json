@@ -2,12 +2,73 @@
   "doctype": "Workspace",
   "name": "Student Fees",
   "module": "Education",
-  "charts": [],
+  "charts": [
+    {
+      "chart_name": "Program Wise Total Fee",
+      "label": "Program Wise Total Fee"
+    }
+  ],
   "cards": [],
-  "links": [],
+  "links": [
+    {
+      "type": "Card Break",
+      "label": "Fees",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Fee Category",
+      "link_type": "DocType",
+      "link_to": "Fee Category"
+    },
+    {
+      "type": "Link",
+      "label": "Fee Structure",
+      "link_type": "DocType",
+      "link_to": "Fee Structure"
+    },
+    {
+      "type": "Link",
+      "label": "Fees",
+      "link_type": "DocType",
+      "link_to": "Fees"
+    },
+    {
+      "type": "Link",
+      "label": "Student Fee Collection Report",
+      "link_type": "Report",
+      "link_to": "Student Fee Collection",
+      "is_query_report": 1
+    },
+    {
+      "type": "Link",
+      "label": "Program wise Fee Collection",
+      "link_type": "Report",
+      "link_to": "Program wise Fee Collection",
+      "is_query_report": 1
+    },
+    {
+      "type": "Link",
+      "label": "Payment Entry",
+      "link_type": "DocType",
+      "link_to": "Payment Entry"
+    },
+    {
+      "type": "Link",
+      "label": "Sales Invoice",
+      "link_type": "DocType",
+      "link_to": "Sales Invoice"
+    },
+    {
+      "type": "Link",
+      "label": "Customer",
+      "link_type": "DocType",
+      "link_to": "Customer"
+    }
+  ],
   "shortcuts": [],
   "title": "Student Fees",
-  "content": "[{\"id\":\"5jQJSDTNjS\",\"type\":\"workflow_overview\",\"data\":{\"workflows\":[{\"label\":\"Fee workflow\",\"doctypes\":[{\"doctype\":\"Fee Category\",\"label\":\"Fee Category\",\"icon\":\"tag\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Fee Structure\",\"label\":\"Fee Structure\",\"icon\":\"lc-clipboard-list\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Student Group\",\"label\":\"Student Group\",\"icon\":\"lc-wallet\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Fee Schedule\",\"label\":\"Fee Schedule\",\"icon\":\"lc-calendar-1\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Sales Invoice\",\"label\":\"Sales Invoice\",\"icon\":\"lc-receipt-indian-rupee\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Payment Entry\",\"label\":\"Payment Entry\",\"icon\":\"lc-banknote\",\"status_type\":\"Active\",\"helper_text\":\"\"}]}],\"col\":12,\"workflow_overview_name\":\"Fee workflow\"}},{\"id\":\"nW2By23EQX\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"BVTsDEj4Tb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Fees This Year\",\"col\":4}},{\"id\":\"ckSOP8B7aD\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Fees Collected This Year\",\"col\":4}},{\"id\":\"gAPT0STR5W\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Fee Outstanding This Year\",\"col\":4}},{\"id\":\"GI0r83e7zl\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Program Wise Total Fee\",\"col\":12}},{\"id\":\"72CzSFdOXu\",\"type\":\"card\",\"data\":{\"card_name\":\"Fees\",\"col\":12}}]",
+  "content": "[{\"id\": \"5jQJSDTNjS\", \"type\": \"workflow_overview\", \"data\": {\"workflows\": [{\"label\": \"Fee workflow\", \"doctypes\": [{\"doctype\": \"Fee Category\", \"label\": \"Fee Category\", \"icon\": \"tag\", \"status_type\": \"Active\", \"helper_text\": \"\"}, {\"doctype\": \"Fee Structure\", \"label\": \"Fee Structure\", \"icon\": \"lc-clipboard-list\", \"status_type\": \"Active\", \"helper_text\": \"\"}, {\"doctype\": \"Student Group\", \"label\": \"Student Group\", \"icon\": \"lc-wallet\", \"status_type\": \"Active\", \"helper_text\": \"\"}, {\"doctype\": \"Fee Schedule\", \"label\": \"Fee Schedule\", \"icon\": \"lc-calendar-1\", \"status_type\": \"Active\", \"helper_text\": \"\"}, {\"doctype\": \"Sales Invoice\", \"label\": \"Sales Invoice\", \"icon\": \"lc-receipt-indian-rupee\", \"status_type\": \"Active\", \"helper_text\": \"\"}, {\"doctype\": \"Payment Entry\", \"label\": \"Payment Entry\", \"icon\": \"lc-banknote\", \"status_type\": \"Active\", \"helper_text\": \"\"}]}], \"col\": 12, \"workflow_overview_name\": \"Fee workflow\"}}, {\"id\": \"nW2By23EQX\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"BVTsDEj4Tb\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Total Fees This Year\", \"col\": 4}}, {\"id\": \"ckSOP8B7aD\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Total Fees Collected This Year\", \"col\": 4}}, {\"id\": \"gAPT0STR5W\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Total Fee Outstanding This Year\", \"col\": 4}}, {\"id\": \"GI0r83e7zl\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Program Wise Total Fee\", \"col\": 12}}, {\"id\": \"72CzSFdOXu\", \"type\": \"card\", \"data\": {\"card_name\": \"Fees\", \"col\": 12}}]",
   "label": "Student Fees",
   "public": 1,
   "icon": "lc-wallet",
