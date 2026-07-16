@@ -2,9 +2,85 @@
   "doctype": "Workspace",
   "name": "Library",
   "module": "Education",
-  "charts": [],
+  "charts": [
+    {
+      "chart_name": "Student Assessments",
+      "label": "Student Assessments"
+    }
+  ],
   "cards": [],
-  "links": [],
+  "links": [
+    {
+      "type": "Card Break",
+      "label": "Attendance",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Library Book",
+      "link_type": "DocType",
+      "link_to": "Library Book"
+    },
+    {
+      "type": "Card Break",
+      "label": "Library",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Library Member",
+      "link_type": "DocType",
+      "link_to": "Library Member"
+    },
+    {
+      "type": "Link",
+      "label": "Book Copy",
+      "link_type": "DocType",
+      "link_to": "Book Copy"
+    },
+    {
+      "type": "Link",
+      "label": "Library Rack",
+      "link_type": "DocType",
+      "link_to": "Library Rack"
+    },
+    {
+      "type": "Link",
+      "label": "Book Category",
+      "link_type": "DocType",
+      "link_to": "Book Category"
+    },
+    {
+      "type": "Link",
+      "label": "Book Issue",
+      "link_type": "DocType",
+      "link_to": "Book Issue"
+    },
+    {
+      "type": "Link",
+      "label": "Book return",
+      "link_type": "DocType",
+      "link_to": "Book return"
+    },
+    {
+      "type": "Link",
+      "label": "Library Book",
+      "link_type": "DocType",
+      "link_to": "Library Book"
+    },
+    {
+      "type": "Link",
+      "label": "Library fine",
+      "link_type": "DocType",
+      "link_to": "Library fine"
+    },
+    {
+      "type": "Link",
+      "label": "Book Author",
+      "link_type": "DocType",
+      "link_to": "Book Author"
+    }
+  ],
   "shortcuts": [],
   "title": "Library",
   "content": "[{\"id\":\"aX_-E0sLXc\",\"type\":\"workflow_overview\",\"data\":{\"workflow_overview_name\":\"Library Setup\",\"workflows\":[{\"label\":\"Library Setup\",\"doctypes\":[{\"doctype\":\"Book Author\",\"label\":\"Book Author\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Book Category\",\"label\":\"Book Category\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Library Rack\",\"label\":\"Library Rack\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Library Book\",\"label\":\"Library Book\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Book Copy\",\"label\":\"Book Copy\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Library Member\",\"label\":\"Library Member\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Library Circulation\",\"doctypes\":[{\"doctype\":\"Library Member\",\"label\":\"Library Member\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Book Issue\",\"label\":\"Book Issue\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Book return\",\"label\":\"Book return\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Library fine\",\"label\":\"Library fine\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]}],\"col\":12}},{\"id\":\"DZNExlFvyY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KXpINMRfSy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Present\",\"col\":3}},{\"id\":\"H69WdVrrz6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Absent\",\"col\":3}},{\"id\":\"AjFAJPgl7O\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Assessments\",\"col\":12}},{\"id\":\"hUJIDT89cY\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":5}},{\"id\":\"zG4o2afSls\",\"type\":\"card\",\"data\":{\"card_name\":\"Library\",\"col\":5}}]",
@@ -12,5 +88,11 @@
   "public": 1,
   "icon": "lc-clipboard-check",
   "indicator_color": "green",
-  "sequence_id": 6.1
+  "sequence_id": 6.1,
+  "roles": [
+    {"role": "Academics User"},
+    {"role": "Education Manager"},
+    {"role": "Instructor"},
+    {"role": "Student"}
+  ]
 }
