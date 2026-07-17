@@ -120,6 +120,17 @@ def after_migrate_setup():
 
     frappe.db.commit()
 
+    # Ensure the Module Def has the correct app_name for sidebar visibility
+    if frappe.db.exists("Module Def", "School Management Software"):
+        current_app = frappe.db.get_value("Module Def", "School Management Software", "app_name")
+        if current_app != app_name:
+            frappe.db.set_value("Module Def", "School Management Software", "app_name", app_name)
+            print(f"Fixed Module Def app_name: {current_app} -> {app_name}")
+        else:
+            print(f"Module Def app_name already correct: {app_name}")
+
+    frappe.db.commit()
+
     # Add Table custom field linking Student to Student Fee Installment
     if frappe.db.exists("DocType", "Student Fee Installment"):
         if not frappe.db.exists("Custom Field", {"dt": "Student", "fieldname": "fee_installments"}):
