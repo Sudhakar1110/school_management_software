@@ -32,7 +32,7 @@ fixtures = [
     {"dt": "Client Script", "path": "client_script"},
 ]
 
-after_migrate = []
+after_migrate = ["school_management_software.after_migrate.after_migrate_setup"]
 
 doc_events = {
     "Program Enrollment": {
