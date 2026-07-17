@@ -3,7 +3,7 @@
   "name": "Student Kit issue",
   "dt": "Student",
   "script_type": "Form",
-  "module": "Education",
+  "module": "School Management Software",
   "enabled": 1,
   "script": "frappe.ui.form.on('Student', {\n    refresh(frm) {\n        frm.add_custom_button('Issue Kit', () => {\n            frappe.new_doc('Student Kit Issue', {\n                student: frm.doc.name,\n                program: frm.doc.program\n            });\n        });\n    }\n});\n"
 }

@@ -3,7 +3,7 @@
   "name": "Hostel fee automation",
   "dt": "Hostel Fee",
   "script_type": "Form",
-  "module": "Education",
+  "module": "School Management Software",
   "enabled": 1,
   "script": "frappe.ui.form.on(\"Hostel Fee\", {\r\n\r\n    refresh(frm) {\r\n\r\n        // Default Payment Status\r\n        if (frm.is_new() && !frm.doc.payment_status) {\r\n            frm.set_value(\"payment_status\", \"Pending\");\r\n        }\r\n\r\n    },\r\n\r\n    hostel_admission(frm) {\r\n\r\n        if (!frm.doc.hostel_admission) {\r\n            return;\r\n        }\r\n\r\n        frappe.db.get_doc(\"Hostel Admission\", frm.doc.hostel_admission)\r\n            .then(doc => {\r\n\r\n                frm.set_value(\"student\", doc.student);\r\n                frm.set_value(\"hostel\", doc.hostel);\r\n                frm.set_value(\"academic_year\", doc.academic_year);\r\n                frm.set_value(\"amount\", doc.monthly_fee);\r\n\r\n            });\r\n\r\n    }\r\n\r\n});"
 }

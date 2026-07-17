@@ -3,7 +3,7 @@
   "name": "update Status to Submitted",
   "dt": "Custom Applicant Form",
   "script_type": "Form",
-  "module": "Education",
+  "module": "School Management Software",
   "enabled": 1,
   "script": "frappe.ui.form.on(\"Applicant Document\", {\r\n    attachment(frm, cdt, cdn) {\r\n        // When student uploads a file, auto-set status to Submitted\r\n        let row = locals[cdt][cdn];\r\n        if (row.attachment) {\r\n            frappe.model.set_value(cdt, cdn, \"document_status\", \"Submitted\");\r\n        }\r\n    }\r\n});"
 }

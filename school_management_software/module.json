@@ -10,7 +10,8 @@
   "app_license": "MIT",
   "required_apps": [
     "frappe",
-    "erpnext"
+    "erpnext",
+    "education"
   ],
   "source_url": "https://github.com/Sudhakar1110/school_management_software"
 }

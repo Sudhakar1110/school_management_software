@@ -1,9 +1,9 @@
 {
   "doctype": "Client Script",
   "name": "auto-fill student_name",
-  "dt": "Custom Student",
+  "dt": "Student",
   "script_type": "Form",
-  "module": "Education",
+  "module": "School Management Software",
   "enabled": 1,
   "script": "frappe.ui.form.on('Custom Student', {\r\n\tfirst_name: function(frm) {\r\n\t\tset_full_name(frm);\r\n\t},\r\n\tmiddle_name: function(frm) {\r\n\t\tset_full_name(frm);\r\n\t},\r\n\tlast_name: function(frm) {\r\n\t\tset_full_name(frm);\r\n\t}\r\n});\r\n\r\nfunction set_full_name(frm) {\r\n\tlet parts = [frm.doc.first_name, frm.doc.middle_name, frm.doc.last_name].filter(Boolean);\r\n\tfrm.set_value('student_name', parts.join(' '));\r\n}"
 }

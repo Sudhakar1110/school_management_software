@@ -5,7 +5,7 @@
   "report_type": "Script Report",
   "is_standard": "No",
   "ref_doctype": "Student Rank",
-  "module": "Education",
+  "module": "School Management Software",
   "color": "#29a2c6",
   "icon": "icon-analysis",
   "disabled": 0,

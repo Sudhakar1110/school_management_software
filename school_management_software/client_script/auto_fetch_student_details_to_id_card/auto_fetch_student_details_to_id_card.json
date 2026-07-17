@@ -3,7 +3,7 @@
   "name": "Auto fetch student details to id card",
   "dt": "Student ID Card",
   "script_type": "Form",
-  "module": "Education",
+  "module": "School Management Software",
   "enabled": 1,
   "script": "frappe.ui.form.on(\"Student ID Card\", {\r\n    student: function(frm) {\r\n\r\n        if (!frm.doc.student) {\r\n            return;\r\n        }\r\n\r\n        frappe.db.get_doc(\"Custom Student\", frm.doc.student).then(function(student) {\r\n\r\n            frm.set_value(\"student_name\", student.student_name);\r\n            frm.set_value(\"academic_year\", student.current_academic_year);\r\n            frm.set_value(\"program\", student.current_program);\r\n            frm.set_value(\"roll_no\", student.roll_no);\r\n            frm.set_value(\"blood_group\", student.blood_group);\r\n            frm.set_value(\"mobile\", student.student_mobile_number);\r\n            frm.set_value(\"photo\", student.image);\r\n\r\n        });\r\n\r\n    }\r\n});"
 }

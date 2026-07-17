@@ -3,7 +3,7 @@
   "name": "auto fetch student room details",
   "dt": "Grievance Box",
   "script_type": "Form",
-  "module": "Education",
+  "module": "School Management Software",
   "enabled": 1,
   "script": "frappe.ui.form.on(\"Grievance Box\", {\r\n    student: function(frm) {\r\n        if (!frm.doc.student) return;\r\n\r\n        frappe.db.get_list(\"Hostel Admission\", {\r\n            filters: { student: frm.doc.student, admission_status: \"Checked In\" },\r\n            fields: [\"hostel\", \"hostel_block\", \"hostel_room\"],\r\n            limit: 1\r\n        }).then(records => {\r\n            if (!records.length) {\r\n                frappe.msgprint(\"No active (Checked In) admission found for this student.\");\r\n                return;\r\n            }\r\n            let a = records[0];\r\n            frm.set_value(\"hostel_room\", a.hostel_room);\r\n            frm.set_value(\"hostel\", a.hostel);\r\n            frm.set_value(\"hostel_block\", a.hostel_block);\r\n\r\n            frappe.db.get_value(\"Warden\", { hostel: a.hostel, status: \"Active\" }, \"name\")\r\n                .then(({message}) => {\r\n                    if (message && message.name) {\r\n                        frm.set_value(\"warden\", message.name);\r\n                    }\r\n                });\r\n        });\r\n    }\r\n});"
 }

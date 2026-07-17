@@ -3,7 +3,7 @@
   "name": "to_render mess summary",
   "dt": "Hostel Admission",
   "script_type": "Form",
-  "module": "Education",
+  "module": "School Management Software",
   "enabled": 1,
   "script": "frappe.ui.form.on('Hostel Admission', { refresh: function(frm) { render\\_mess\\_summary(frm); }, mess\\_required: function(frm) { render\\_mess\\_summary(frm); }, food\\_preference: function(frm) { render\\_mess\\_summary(frm); }, meal\\_plan: function(frm) { render\\_mess\\_summary(frm); }, mess\\_fee: function(frm) { render\\_mess\\_summary(frm); } }); function render\\_mess\\_summary(frm) { let mess\\_required = frm.doc.mess\\_required ? \"Yes\" : \"No\"; let status = frm.doc.mess\\_required ? \"Active\" : \"Inactive\"; let status\\_color = frm.doc.mess\\_required ? \"green\" : \"red\"; let food = frm.doc.food\\_preference || \"-\"; let meal\\_plan = frm.doc.meal\\_plan || \"-\"; let fee = frm.doc.mess\\_fee ? format\\_currency(frm.doc.mess\\_fee, frm.doc.currency) : \"-\"; let html = ` MESS DETAILS  | Mess Required | ${mess\\_required} | | --- | --- | | Food | ${food} | | Meal Plan | ${meal\\_plan} | | Mess Fee | ${fee}${frm.doc.mess\\_fee ? ' / Month' : ''} | | Status | ${status} |   `; frm.set\\_df\\_property('mess\\_summary\\_html', 'options', html); frm.refresh\\_field('mess\\_summary\\_html'); }"
 }

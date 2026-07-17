@@ -3,7 +3,7 @@
   "name": "auto fetch book copy details",
   "dt": "Book Copy",
   "script_type": "Form",
-  "module": "Education",
+  "module": "School Management Software",
   "enabled": 1,
   "script": "frappe.ui.form.on(\"Book Copy\", {\r\n    library_book(frm) {\r\n\r\n        if (!frm.doc.library_book) return;\r\n\r\n        frappe.db.get_doc(\"Library Book\", frm.doc.library_book).then(doc => {\r\n\r\n            frm.set_value(\"rack\", doc.rack_location);\r\n\r\n            if (frm.fields_dict.isbn) {\r\n                frm.set_value(\"isbn\", doc.isbn);\r\n            }\r\n\r\n        });\r\n\r\n    }\r\n});"
 }

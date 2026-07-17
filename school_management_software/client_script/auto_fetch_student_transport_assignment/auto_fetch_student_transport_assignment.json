@@ -3,7 +3,7 @@
   "name": "auto fetch student transport assignment",
   "dt": "Transport Fee",
   "script_type": "Form",
-  "module": "Education",
+  "module": "School Management Software",
   "enabled": 1,
   "script": "frappe.ui.form.on(\"Transport Fee\", {\r\n    student: function(frm) {\r\n\r\n        if (!frm.doc.student) {\r\n            return;\r\n        }\r\n\r\n        frappe.db.get_list(\"Student Transport Assignment\", {\r\n            filters: {\r\n                student: frm.doc.student,\r\n                is_active: 1\r\n            },\r\n            fields: [\r\n                \"name\",\r\n                \"monthly_fee\"\r\n            ],\r\n            limit: 1\r\n        }).then((records) => {\r\n\r\n            if (records.length > 0) {\r\n\r\n                frm.set_value(\"transport_assignment\", records[0].name);\r\n                frm.set_value(\"amount\", records[0].monthly_fee);\r\n\r\n            } else {\r\n\r\n                frm.set_value(\"transport_assignment\", \"\");\r\n                frm.set_value(\"amount\", \"\");\r\n\r\n                frappe.msgprint(\r\n                    __(\"No Active Transport Assignment found for this student.\")\r\n                );\r\n            }\r\n\r\n        });\r\n\r\n    }\r\n});"
 }

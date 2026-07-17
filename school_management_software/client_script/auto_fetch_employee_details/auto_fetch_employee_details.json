@@ -3,7 +3,7 @@
   "name": "Auto Fetch Employee Details",
   "dt": "Employee ID Card",
   "script_type": "Form",
-  "module": "Education",
+  "module": "School Management Software",
   "enabled": 1,
   "script": "frappe.ui.form.on(\"Employee ID Card\", {\r\n\r\n    employee(frm) {\r\n\r\n        if (!frm.doc.employee) return;\r\n\r\n        frappe.db.get_doc(\"Employee\", frm.doc.employee).then((doc) => {\r\n\r\n            frm.set_value(\"employee_name\", doc.employee_name);\r\n            frm.set_value(\"department\", doc.department);\r\n            frm.set_value(\"designation\", doc.designation);\r\n            frm.set_value(\"photo\", doc.image);\r\n\r\n        });\r\n\r\n    }\r\n\r\n});"
 }

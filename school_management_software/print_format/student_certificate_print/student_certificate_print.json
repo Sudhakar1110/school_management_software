@@ -3,7 +3,7 @@
   "name": "Student Certificate Print",
   "doc_type": "Student Certificate",
   "format_type": "HTML",
-  "module": "Education",
+  "module": "School Management Software",
   "css": "body { font-family: Arial; }",
   "html": "<div class=\"student_certificate_print\"><h2>{{ doc.name }}</h2></div>",
   "standard": "No",

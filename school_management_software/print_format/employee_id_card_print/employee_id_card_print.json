@@ -3,7 +3,7 @@
   "name": "Employee ID Card Print",
   "doc_type": "Employee ID Card",
   "format_type": "HTML",
-  "module": "Education",
+  "module": "School Management Software",
   "css": "body { font-family: Arial; }",
   "html": "<div class=\"employee_id_card_print\"><h2>{{ doc.name }}</h2></div>",
   "standard": "No",

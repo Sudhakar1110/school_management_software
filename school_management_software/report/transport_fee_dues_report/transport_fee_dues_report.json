@@ -5,7 +5,7 @@
   "report_type": "Script Report",
   "is_standard": "No",
   "ref_doctype": "Transport Fee",
-  "module": "Education",
+  "module": "School Management Software",
   "color": "#e74c3c",
   "icon": "icon-truck",
   "disabled": 0,

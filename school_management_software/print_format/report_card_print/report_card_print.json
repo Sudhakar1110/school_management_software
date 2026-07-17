@@ -3,7 +3,7 @@
   "name": "Report Card Print",
   "doc_type": "Report Card",
   "format_type": "HTML",
-  "module": "Education",
+  "module": "School Management Software",
   "css": "body { font-family: Arial; }",
   "html": "<div class=\"report_card_print\"><h2>{{ doc.name }}</h2></div>",
   "standard": "No",

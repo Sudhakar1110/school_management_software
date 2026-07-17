@@ -3,7 +3,7 @@
   "name": "Validate Max Book Issue Limit",
   "dt": "Book Issue",
   "script_type": "Form",
-  "module": "Education",
+  "module": "School Management Software",
   "enabled": 1,
   "script": "frappe.ui.form.on('Book Issue', { before\\_save: async function(frm) { if (!frm.doc.library\\_member) return; let member = await frappe.db.get\\_value( 'Library Member', frm.doc.library\\_member, ['max\\_books\\_allowed', 'member\\_name'] ); let max\\_books = member.message.max\\_books\\_allowed || 0; let member\\_name = member.message.member\\_name; if (max\\_books === 0) return; let active\\_issues = await frappe.db.count('Book Issue', { filters: { 'library\\_member': frm.doc.library\\_member, 'issue\\_status': ['in', ['Issued', 'Overdue']], 'name': ['!=', frm.doc.name] } }); if (active\\_issues >= max\\_books) { frappe.throw( '**' + member\\_name + '** has already issued **' + active\\_issues + ' book(s)**., ' + 'Maximum allowed is **' + max\\_books + '**., , ' + 'Please return a book before issuing a new one.' ); } } });"
 }

@@ -1,7 +1,7 @@
 {
   "doctype": "DocType",
   "name": "Transport Fee",
-  "module": "Education",
+  "module": "School Management Software",
   "custom": 1,
   "is_submittable": 0,
   "is_child_table": 0,
@@ -51,7 +51,7 @@
       "reqd": 1,
       "unique": 1,
       "in_list_view": 1,
-      "options": "Custom Student"
+      "options": "Student"
     },
     {
       "fieldname": "transport_assignment",

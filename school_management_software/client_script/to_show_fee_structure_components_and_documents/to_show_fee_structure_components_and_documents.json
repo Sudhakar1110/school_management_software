@@ -1,9 +1,9 @@
 {
   "doctype": "Client Script",
   "name": "to show Fee Structure components and documents",
-  "dt": "Create Admission",
+  "dt": "Student Admission",
   "script_type": "Form",
-  "module": "Education",
+  "module": "School Management Software",
   "enabled": 1,
   "script": "// ── Child Table: Applicant Fee ──────────────────────────────── frappe.ui.form.on(\"Applicant Fee\", { fee\\_structure(frm, cdt, cdn) { let row = locals[cdt][cdn]; if (!row.fee\\_structure) { if (frm.fields\\_dict[\"fees\"]) { frm.fields\\_dict[\"fees\"].grid.wrapper .find(\".fee-components-preview\").remove(); } return; } fetch\\_and\\_render\\_components(frm, row, cdt, cdn); } }); // ── Fetch and Render Fee Components ────────────────────────── function fetch\\_and\\_render\\_components(frm, row, cdt, cdn) { frappe.call({ method: \"frappe.client.get\", args: { doctype: \"Fee Structure\", name: row.fee\\_structure }, callback(r) { if (!r.message) return; let fs = r.message; let total = 0; let rows\\_html = \"\"; (fs.components || []).forEach(c => { total += flt(c.amount); rows\\_html += `| ${c.fees\\_category || \"\"} | ${format\\_currency(c.amount, fs.currency)} | `; }); let html = `  Fee Components — ${row.fee\\_structure}  | Fee Category | Amount | | --- | --- | ${rows\\_html}| Total | ${format\\_currency(total, fs.currency)} | | --- | --- |  `; if (frm.fields\\_dict[\"fees\"]) { frm.fields\\_dict[\"fees\"].grid.wrapper .find(\".fee-components-preview\").remove(); frm.fields\\_dict[\"fees\"].grid.wrapper.append(html); } frappe.model.set\\_value(cdt, cdn, \"total\\_amount\", total); } }); } // ── Re-render Fee Components on Saved Form Load ─────────────── frappe.ui.form.on(\"Create Admission\", { refresh(frm) { (frm.doc.fees || []).forEach(row => { if (row.fee\\_structure) { fetch\\_and\\_render\\_components(frm, row, \"Applicant Fee\", row.name); } }); } });"
 }

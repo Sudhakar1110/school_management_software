@@ -3,7 +3,7 @@
   "name": "filter dropdown to only show allocatable rooms + render the live card",
   "dt": "Hostel Admission",
   "script_type": "Form",
-  "module": "Education",
+  "module": "School Management Software",
   "enabled": 1,
   "script": "frappe.ui.form.on(\"Hostel Admission\", { setup(frm) { // Only show rooms that aren't Full or under Maintenance, // and match the hostel already selected on this admission frm.set\\_query(\"hostel\\_room\", function() { return { filters: { hostel: frm.doc.hostel, room\\_status: \"Available\" } }; }); }, hostel\\_room: function(frm) { if (!frm.doc.hostel\\_room) { frm.set\\_df\\_property(\"room\\_info\\_card\", \"options\", \"\"); frm.refresh\\_field(\"room\\_info\\_card\"); return; } frappe.db.get\\_doc(\"Hostel Room\", frm.doc.hostel\\_room).then(room => { let color = room.room\\_status === \"Full\" ? \"#d9363e\" : room.room\\_status === \"Maintenance\" ? \"#e8a33d\" : \"#2e8b57\"; let card = ` **ROOM DETAILS**  ---  | Room Number | **${room.room\\_number}** | | --- | --- | | Hostel | ${room.hostel || \"-\"} | | Block | ${room.hostel\\_block || \"-\"} | | Floor | ${room.floor\\_number ?? \"-\"} | | Capacity | ${room.total\\_beds} | | Occupied | ${room.occupied\\_beds} | | Available | ${room.available\\_beds} | | Status | ${room.room\\_status} |  `; frm.set\\_df\\_property(\"room\\_info\\_card\", \"options\", card); frm.refresh\\_field(\"room\\_info\\_card\"); // auto-fetch block, floor, monthly fee from room / room type frm.set\\_value(\"hostel\\_block\", room.hostel\\_block); }); } });"
 }

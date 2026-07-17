@@ -3,7 +3,7 @@
   "name": "Occupancy History button",
   "dt": "Hostel Room",
   "script_type": "Form",
-  "module": "Education",
+  "module": "School Management Software",
   "enabled": 1,
   "script": "frappe.ui.form.on(\"Hostel Room\", {\r\n    refresh(frm) {\r\n        if (!frm.is_new()) {\r\n            frm.add_custom_button(\"Occupancy History\", function () {\r\n                frappe.set_route(\"List\", \"Hostel Admission\", {\r\n                    hostel_room: frm.doc.name\r\n                });\r\n            }, \"View\");\r\n        }\r\n    }\r\n});"
 }

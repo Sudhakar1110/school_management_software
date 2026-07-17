@@ -3,7 +3,7 @@
   "name": "Kit status Color",
   "dt": "Student Kit Issue",
   "script_type": "List",
-  "module": "Education",
+  "module": "School Management Software",
   "enabled": 1,
   "script": "frappe.listview_settings['Student Kit Issue'] = {\n    get_indicator: function(doc) {\n        if (doc.status === 'Delivered') {\n            return [__('Delivered'), 'green', 'status,=,Delivered'];\n        } else if (doc.status === 'Pending') {\n            return [__('Pending'), 'yellow', 'status,=,Pending'];\n        } else if (doc.status === 'Returned') {\n            return [__('Returned'), 'red', 'status,=,Returned'];\n        }\n    }\n};\n"
 }

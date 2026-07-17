@@ -1,7 +1,7 @@
 {
   "doctype": "Workspace",
   "name": "Home",
-  "module": "Education",
+  "module": "School Management Software",
   "charts": [
     {
       "chart_name": "Student Enrollments",

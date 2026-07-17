@@ -3,7 +3,7 @@
   "name": "button on Hostel form to trigger",
   "dt": "Hostel",
   "script_type": "Form",
-  "module": "Education",
+  "module": "School Management Software",
   "enabled": 1,
   "script": "frappe.ui.form.on(\"Hostel\", {\r\n    refresh(frm) {\r\n        if (frm.is_new()) return;\r\n\r\n        frm.add_custom_button(\"Generate Monthly Fees\", function() {\r\n            frappe.prompt(\r\n                [\r\n                    {\r\n                        fieldname: \"month\", label: \"Month\", fieldtype: \"Select\",\r\n                        options: \"January\\nFebruary\\nMarch\\nApril\\nMay\\nJune\\nJuly\\nAugust\\nSeptember\\nOctober\\nNovember\\nDecember\",\r\n                        reqd: 1\r\n                    },\r\n                    {\r\n                        fieldname: \"academic_year\", label: \"Academic Year\", fieldtype: \"Link\",\r\n                        options: \"Academic Year\", reqd: 1\r\n                    }\r\n                ],\r\n                (values) => {\r\n                    frappe.call({\r\n                        method: \"generate_monthly_hostel_fees\",\r\n                        args: {\r\n                            hostel: frm.doc.name,\r\n                            month: values.month,\r\n                            academic_year: values.academic_year\r\n                        },\r\n                        freeze: true,\r\n                        freeze_message: \"Generating fees...\",\r\n                        callback: (r) => {\r\n                            frappe.msgprint(r.message);\r\n                        }\r\n                    });\r\n                },\r\n                \"Generate Monthly Fees\"\r\n            );\r\n        }, \"Create\");\r\n    }\r\n});"
 }

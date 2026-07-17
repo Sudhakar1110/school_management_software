@@ -3,7 +3,7 @@
   "name": "Auto-fetch Route Details",
   "dt": "Student Transport Assignment",
   "script_type": "Form",
-  "module": "Education",
+  "module": "School Management Software",
   "enabled": 1,
   "script": "frappe.ui.form.on(\"Student Transport Assignment\", {\r\n\r\n    transport_route(frm) {\r\n\r\n        if (!frm.doc.transport_route) return;\r\n\r\n        frappe.db.get_doc(\"Transport Route\", frm.doc.transport_route)\r\n            .then(doc => {\r\n\r\n                frm.set_value(\"pickup_point\", doc.start_point);\r\n                frm.set_value(\"drop_point\", doc.end_point);\r\n                frm.set_value(\"monthly_fee\", doc.monthly_fee);\r\n\r\n            });\r\n\r\n    }\r\n\r\n});"
 }
