@@ -10,6 +10,10 @@ app_license = "MIT"
 
 required_apps = ["erpnext", "education"]
 
+# Register app modules so Frappe shows them in the sidebar
+app_modules = {
+    "School Management Software": "School Management Software",
+}
 
 # Fixtures for customizations that are not auto-discovered during bench migrate.
 # DocTypes, Reports, Print Formats, and Workspaces are auto-discovered from their
