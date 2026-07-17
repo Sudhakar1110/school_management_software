@@ -787,7 +787,7 @@ def cus_student_cert():
                 VALUES (%s, %s, %s, %s, %s, %s, %s,
                         %s, %s, %s)
             """, (
-                f"SCRT-{frappe.generate_hash()}", now, now, "Administrator", "Administrator", 0, 1,
+                f"SCRT-{frappe.utils.random_string(8).upper()}", now, now, "Administrator", "Administrator", 0, 1,
                 "SCRT-.YYYY.-", stu, "Bonafide Certificate",
             ))
             yield stu
