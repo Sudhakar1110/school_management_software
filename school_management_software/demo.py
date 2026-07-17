@@ -943,27 +943,26 @@ def _create_school_events(dry_run=False):
 
 
 def _create_student_fee_installments(dry_run=False):
-    """Student Fee Installment (custom) — hash naming"""
+    """Student Fee Installment (custom) — hash naming
+    Note: JSON has no student field, just generic fee records"""
     if dry_run:
         yield "[DRY-RUN] Fee installments"
         return
 
-    students = frappe.db.get_all("Student", pluck="name", limit=5)
-    for stu in students:
-        categories_map = {
-            "Tuition Fee": 2500,
-            "Development Fee": 1000,
-            "Library Fee": 300,
-            "Sports Fee": 200,
-        }
-        for cat, amt in categories_map.items():
-            yield _safe_create("Student Fee Installment", {
-                "fee_category": cat,
-                "due_date": random.choice([date(2026, 5, 15), date(2026, 8, 15), date(2026, 11, 15)]),
-                "amount": amt,
-                "status": "Pending",
-                "outstanding_amount": amt,
-            }, dry_run=dry_run)
+    categories_map = {
+        "Tuition Fee": 2500,
+        "Development Fee": 1000,
+        "Library Fee": 300,
+        "Sports Fee": 200,
+    }
+    for cat, amt in categories_map.items():
+        yield _safe_create("Student Fee Installment", {
+            "fee_category": cat,
+            "due_date": random.choice([date(2026, 5, 15), date(2026, 8, 15), date(2026, 11, 15)]),
+            "amount": amt,
+            "status": "Pending",
+            "outstanding_amount": amt,
+        }, dry_run=dry_run)
 
 
 def _create_visitor_logs(dry_run=False):
@@ -1078,18 +1077,18 @@ def _create_grievances(dry_run=False):
 
 
 def _create_student_transport_assignments(dry_run=False):
-    """Student Transport Assignment (custom, submittable)"""
+    """Student Transport Assignment (custom, submittable)
+    Note: JSON has no student (Link) field, only student_name (Data)"""
     if dry_run:
         yield "[DRY-RUN] Transport assignments"
         return
 
-    students = frappe.db.get_all("Student", pluck="name", limit=3)
     routes = frappe.db.get_all("Transport Route", pluck="name", limit=2)
-    for stu in students:
+    names = ["Arjun Mehta", "Sara Khan", "Rohit Sharma"]
+    for name in names:
         route = random.choice(routes) if routes else ""
         yield _safe_create("Student Transport Assignment", {
-            "student": stu,
-            "student_name": stu,
+            "student_name": name,
             "transport_route": route,
             "transport_mode": "School Bus",
             "is_active": 1,
