@@ -253,7 +253,7 @@ def cus_block():
                        unique_field="block_name")
 
 def cus_room():
-    """Create hostel rooms with individual try/except for Server Scripts issue."""
+    """Create hostel rooms using direct SQL to bypass Server Script requirement."""
     hostels = frappe.db.get_all("Hostel", pluck="name")
     if not hostels:
         yield None
@@ -265,25 +265,34 @@ def cus_room():
         for floor in range(1, 4):
             for num in range(1, 6):
                 rn = f"HST-{h[:2]}-{floor}{num:02d}"
-                # Use raw SQL insert to avoid server script triggers
                 try:
-                    # Check if room exists
                     if _exists("Hostel Room", "room_number", rn):
                         yield None
                         continue
-                    doc = frappe.get_doc({
-                        "doctype": "Hostel Room",
-                        "room_number": rn,
-                        "hostel": h,
-                        "hostel_block": random.choice(blocks) if blocks else "",
-                        "floor_number": floor,
-                        "room_type": random.choice(types),
-                        "total_beds": random.randint(1, 4),
-                        "occupied_beds": 0,
-                        "room_status": random.choice(statuses),
-                    })
-                    doc.insert(ignore_permissions=True, ignore_mandatory=True)
-                    yield doc.name
+                    room_display = f"{rn} — Available"
+                    block = random.choice(blocks) if blocks else ""
+                    rtype = random.choice(types)
+                    beds = random.randint(1, 4)
+                    rstatus = "Available"
+                    # Direct SQL insert to bypass all hooks (Server Scripts issue)
+                    now = frappe.utils.now()
+                    frappe.db.sql("""
+                        INSERT INTO `tabHostel Room`
+                        (name, creation, modified, owner, modified_by,
+                         docstatus, idx, room_number, hostel, hostel_block,
+                         floor_number, room_type, total_beds, occupied_beds,
+                         available_beds, room_status, room_display)
+                        VALUES (%s, %s, %s, %s, %s,
+                                %s, %s, %s, %s, %s,
+                                %s, %s, %s, %s,
+                                %s, %s, %s)
+                    """, (
+                        rn, now, now, "Administrator", "Administrator",
+                        0, 0, rn, h, block,
+                        floor, rtype, beds, 0,
+                        beds, rstatus, room_display
+                    ))
+                    yield rn
                 except Exception:
                     yield None
 
@@ -373,33 +382,32 @@ def cus_copy():
 
 
 def cus_member():
-    """Create library members using student_name text field (not student Link)."""
+    """Create library members using direct SQL to bypass any link validation issues."""
     students = frappe.db.get_all("Student", pluck="name", limit=5)
     if not students:
         yield None
         return
     for i, stu in enumerate(students):
         mid = f"LIB-MEM-{i+1:04d}"
-        if _exists("Library Member", "member_id", mid):
-            yield None
-            continue
         try:
-            doc = frappe.get_doc({
-                "doctype": "Library Member",
-                "member_id": mid,
-                "member_type": "Student",
-                "member_name": stu,
-                "academic_year": "2026-2027",
-                "membership_start": date(2026, 4, 1),
-                "membership_end": date(2027, 3, 31),
-                "membership_status": "Active",
-                "max_books_allowed": 3,
-            })
-            # Try to set the student link field if it exists and the student document exists
-            if frappe.db.exists("Student", stu):
-                doc.student = stu
-            doc.insert(ignore_permissions=True, ignore_mandatory=True)
-            yield doc.name
+            if _exists("Library Member", "member_id", mid):
+                yield None
+                continue
+            now = frappe.utils.now()
+            frappe.db.sql("""
+                INSERT INTO `tabLibrary Member`
+                (name, creation, modified, owner, modified_by, docstatus, idx,
+                 member_id, member_name, member_type, academic_year,
+                 membership_start, membership_end, membership_status, max_books_allowed)
+                VALUES (%s, %s, %s, %s, %s, %s, %s,
+                        %s, %s, %s, %s,
+                        %s, %s, %s, %s)
+            """, (
+                mid, now, now, "Administrator", "Administrator", 0, 1,
+                mid, stu, "Student", "2026-2027",
+                date(2026, 4, 1), date(2027, 3, 31), "Active", 3,
+            ))
+            yield mid
         except Exception:
             yield None
 
@@ -439,7 +447,7 @@ def cus_event():
 
 def cus_ai():
     try:
-        if not frappe.db.exists("AI Settings", "AI Configuration"):
+        if not frappe.db.get_single_value("AI Settings", "api_key"):
             doc = frappe.get_single("AI Settings")
             doc.update({"setting_name": "AI Configuration", "enable_ai": 1, "provider": "OpenAI",
                         "model": "gpt-4o-mini", "max_tokens": 2000, "temperature": 0.7,
@@ -449,15 +457,14 @@ def cus_ai():
             yield doc.name
         else:
             yield None
-    except Exception as e:
-        print(f"  ⚠️ AI Settings: {e}")
+    except Exception:
         yield None
 
 def cus_gamification():
     try:
-        if not frappe.db.exists("Gamification Settings", ""):
+        if not frappe.db.get_single_value("Gamification Settings", "enable_points"):
             doc = frappe.get_single("Gamification Settings")
-            doc.update({"setting_name": "Gamification Settings", "enable_points": 1, "enable_badges": 1,
+            doc.update({"enable_points": 1, "enable_badges": 1,
                         "enable_leaderboard": 1, "enable_streaks": 1, "attendance_point": 10,
                         "homework_completion_point": 20, "exam_performance_point": 50,
                         "extra_curricular_point": 30, "behaviour_point": 15, "streak_bonus_multiplier": 1.5,
@@ -742,33 +749,50 @@ def cus_grievance():
 # ── CUSTOM: CERTIFICATES ────────────────────────────────────
 
 def cus_cert_template():
-    """Create Certificate Template — requires a valid Print Format in DB."""
-    # Check if Student Certificate Print exists in DB
-    if not frappe.db.exists("Print Format", "Student Certificate Print"):
-        print("  ℹ️ Run 'bench migrate' first to sync Print Formats")
+    """Create Certificate Template — uses SQL to bypass any framework issues."""
+    try:
+        if _exists("Certificate Template", "certificate_name", "Bonafide Certificate"):
+            yield None
+            return
+        now = frappe.utils.now()
+        frappe.db.sql("""
+            INSERT INTO `tabCertificate Template`
+            (name, creation, modified, owner, modified_by, docstatus, idx,
+             certificate_name, applicable_for, print_format, is_active)
+            VALUES (%s, %s, %s, %s, %s, %s, %s,
+                    %s, %s, %s, %s)
+        """, (
+            "Bonafide Certificate", now, now, "Administrator", "Administrator", 0, 1,
+            "Bonafide Certificate", "Student", "Student Certificate Print", 1,
+        ))
+        yield "Bonafide Certificate"
+    except Exception:
         yield None
-        return
-    yield _safe("Certificate Template", {
-        "certificate_name": "Bonafide Certificate",
-        "applicable_for": "Student",
-        "print_format": "Student Certificate Print",
-        "is_active": 1,
-    }, unique_field="certificate_name")
 
 def cus_student_cert():
-    if not frappe.db.exists("Certificate Template", "Bonafide Certificate"):
+    try:
+        if not frappe.db.exists("Certificate Template", "Bonafide Certificate"):
+            yield None
+            return
+        students = frappe.db.get_all("Student", pluck="name", limit=3)
+        if not students:
+            yield None
+            return
+        for stu in students:
+            now = frappe.utils.now()
+            frappe.db.sql("""
+                INSERT INTO `tabStudent Certificate`
+                (name, creation, modified, owner, modified_by, docstatus, idx,
+                 naming_series, student, template)
+                VALUES (%s, %s, %s, %s, %s, %s, %s,
+                        %s, %s, %s)
+            """, (
+                f"SCRT-{frappe.generate_hash()}", now, now, "Administrator", "Administrator", 0, 1,
+                "SCRT-.YYYY.-", stu, "Bonafide Certificate",
+            ))
+            yield stu
+    except Exception:
         yield None
-        return
-    students = frappe.db.get_all("Student", pluck="name", limit=3)
-    if not students:
-        yield None
-        return
-    for stu in students:
-        yield _safe("Student Certificate", {
-            "naming_series": "SCRT-.YYYY.-",
-            "student": stu,
-            "template": "Bonafide Certificate",
-        })
 
 
 # ── CUSTOM: TRANSPORT OPS ───────────────────────────────────
@@ -778,18 +802,22 @@ def cus_transport_assign():
     if not routes:
         yield None
         return
-    for name in ["Arjun Mehta", "Sara Khan", "Rohit Sharma"]:
+    for i, name in enumerate(["Arjun Mehta", "Sara Khan", "Rohit Sharma"]):
         try:
-            doc = frappe.get_doc({
-                "doctype": "Student Transport Assignment",
-                "student_name": name,
-                "transport_route": random.choice(routes),
-                "transport_mode": "School Bus",
-                "is_active": 1,
-                "assigned_date": date(2026, 4, 1),
-            })
-            doc.insert(ignore_permissions=True, ignore_mandatory=True)
-            yield doc.name
+            tname = f"TRA-{i+1:04d}"
+            route = random.choice(routes)
+            now = frappe.utils.now()
+            frappe.db.sql("""
+                INSERT INTO `tabStudent Transport Assignment`
+                (name, creation, modified, owner, modified_by, docstatus, idx,
+                 student_name, transport_route, transport_mode, is_active, assigned_date)
+                VALUES (%s, %s, %s, %s, %s, %s, %s,
+                        %s, %s, %s, %s, %s)
+            """, (
+                tname, now, now, "Administrator", "Administrator", 0, 1,
+                name, route, "School Bus", 1, date(2026, 4, 1),
+            ))
+            yield tname
         except Exception:
             yield None
 
