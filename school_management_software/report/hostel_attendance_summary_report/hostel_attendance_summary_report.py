@@ -1,4 +1,4 @@
-# Copyright (c) 2025, School Management and contributors
+# Copyright (c) 2026, School Management and contributors
 # For license information, please see license.txt
 
 import frappe
@@ -9,37 +9,51 @@ def execute(filters=None):
     data = get_data(filters)
     return columns, data
 
-
 def get_columns():
     return [
-        _("ID") + ":Link/Hostel Attendance:200",
-        _("Status") + "::150",
-        _("Date") + ":Date:120",
+        _("Student") + ":Link/Student:150",
+        _("Student Name") + "::200",
+        _("Hostel") + ":Link/Hostel:150",
+        _("Room") + ":Link/Hostel Room:120",
+        _("Attendance Date") + ":Date:120",
+        _("Status") + "::100",
+        _("In Time") + "::100",
+        _("Out Time") + "::100",
+        _("Remarks") + "::200"
     ]
-
 
 def get_data(filters):
     conditions = get_conditions(filters)
     query = """
         SELECT
-            name,
-            status,
-            modified
+            ha.student,
+            ha.student_name,
+            ha.hostel,
+            ha.hostel_room,
+            ha.date,
+            ha.status,
+            ha.in_time,
+            ha.out_time,
+            ha.remarks
         FROM
-            `tabHostel Attendance`
+            `tabHostel Attendance` ha
         WHERE
-            docstatus < 2
+            ha.docstatus < 2
             {conditions}
         ORDER BY
-            modified DESC
-    """.format(conditions=conditions or "")
-    return frappe.db.sql(query, filters)
-
+            ha.date DESC
+    """.format(conditions=conditions)
+    return frappe.db.sql(query, filters, as_dict=1)
 
 def get_conditions(filters):
     conditions = []
-    if filters and filters.get("from_date"):
-        conditions.append("AND modified >= %(from_date)s")
-    if filters and filters.get("to_date"):
-        conditions.append("AND modified <= %(to_date)s")
-    return " ".join(conditions)
+    if filters:
+        if filters.get("from_date"):
+            conditions.append("AND ha.date >= %(from_date)s")
+        if filters.get("to_date"):
+            conditions.append("AND ha.date <= %(to_date)s")
+        if filters.get("hostel"):
+            conditions.append("AND ha.hostel = %(hostel)s")
+        if filters.get("status"):
+            conditions.append("AND ha.status = %(status)s")
+    return " " . join(conditions)

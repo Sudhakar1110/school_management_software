@@ -43,7 +43,7 @@ doc_events = {
         "on_update": "school_management_software.school_management_software.events.on_update_auto_create_hostel_admission_on_approve",
         "before_insert": "school_management_software.school_management_software.events.before_insert_block_duplicate_applications"
     },
-    "Hostel leaves": {
+    "Hostel Leaves": {
         "before_insert": "school_management_software.school_management_software.events.before_insert_auto_generate_gate_pass_number_on_approval"
     },
     "Student Applicant": {
@@ -53,7 +53,7 @@ doc_events = {
         "on_submit": "school_management_software.school_management_software.events.on_submit_book_issue___mark_copy_as_issued",
         "before_save": "school_management_software.school_management_software.events.before_save_submitted_document_book_issue___validate___set_due_date"
     },
-    "Book return": {
+    "Book Return": {
         "on_submit": "school_management_software.school_management_software.events.on_submit_book_return___release_book_copy",
         "after_insert": "school_management_software.school_management_software.events.after_insert_create_fine_on_book_return"
     },
@@ -67,7 +67,7 @@ doc_events = {
         "after_save": "school_management_software.school_management_software.events.after_save_submitted_document_handle_the_actual_check_in_transition",
         "on_submit": "school_management_software.school_management_software.events.on_submit_to_update_room_occupancy"
     },
-    "Library fine": {
+    "Library Fine": {
         "validate": "school_management_software.school_management_software.events.validate_library_fine___process_payment"
     },
     "School Event": {

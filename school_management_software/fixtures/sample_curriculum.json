@@ -1,0 +1,186 @@
+[
+  {
+    "doctype": "Question Bank",
+    "question_title": "What is the capital of France?",
+    "subject": "Geography",
+    "question_type": "Single Choice",
+    "question_text": "<p>What is the capital city of France?</p>",
+    "difficulty_level": "Easy",
+    "marks": 1,
+    "board": "CBSE",
+    "tags": "geography, europe, capitals",
+    "options_list": [
+      { "option_label": "London", "is_correct": 0, "explanation": "London is the capital of the United Kingdom, not France." },
+      { "option_label": "Paris", "is_correct": 1, "explanation": "Paris has been the capital of France since the 10th century." },
+      { "option_label": "Berlin", "is_correct": 0, "explanation": "Berlin is the capital of Germany." },
+      { "option_label": "Madrid", "is_correct": 0, "explanation": "Madrid is the capital of Spain." }
+    ],
+    "correct_answer": "Paris",
+    "explanation": "Paris is the capital and most populous city of France."
+  },
+  {
+    "doctype": "Question Bank",
+    "question_title": "Newton's First Law of Motion",
+    "subject": "Physics",
+    "question_type": "Short Answer",
+    "question_text": "<p>State Newton's First Law of Motion and give one example.</p>",
+    "difficulty_level": "Medium",
+    "marks": 3,
+    "board": "CBSE",
+    "tags": "physics, mechanics, newton, laws of motion",
+    "correct_answer": "Newton's First Law states that an object at rest stays at rest and an object in motion stays in motion with the same speed and in the same direction unless acted upon by an unbalanced force. Example: A book lying on a table remains at rest until someone pushes it.",
+    "explanation": "This law is also known as the Law of Inertia."
+  },
+  {
+    "doctype": "Question Bank",
+    "question_title": "Solve: 2x + 5 = 15",
+    "subject": "Mathematics",
+    "question_type": "Numerical",
+    "question_text": "<p>Solve the equation: 2x + 5 = 15. Find the value of x.</p>",
+    "difficulty_level": "Easy",
+    "marks": 2,
+    "board": "CBSE",
+    "tags": "mathematics, algebra, linear equations",
+    "correct_answer": "x = 5",
+    "explanation": "2x + 5 = 15 → 2x = 10 → x = 5"
+  },
+  {
+    "doctype": "Question Bank",
+    "question_title": "Photosynthesis Equation",
+    "subject": "Biology",
+    "question_type": "Short Answer",
+    "question_text": "<p>Write the chemical equation for photosynthesis.</p>",
+    "difficulty_level": "Medium",
+    "marks": 3,
+    "board": "CBSE",
+    "tags": "biology, plants, photosynthesis",
+    "correct_answer": "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ (Carbon dioxide + Water → Glucose + Oxygen, in the presence of sunlight and chlorophyll)",
+    "explanation": "Photosynthesis is the process by which green plants convert light energy into chemical energy."
+  },
+  {
+    "doctype": "Question Bank",
+    "question_title": "Periodic Table - Noble Gases",
+    "subject": "Chemistry",
+    "question_type": "Multiple Choice",
+    "question_text": "<p>Which of the following elements is a noble gas?</p>",
+    "difficulty_level": "Easy",
+    "marks": 1,
+    "board": "CBSE",
+    "tags": "chemistry, periodic table, elements",
+    "options_list": [
+      { "option_label": "Sodium", "is_correct": 0, "explanation": "Sodium is an alkali metal, not a noble gas." },
+      { "option_label": "Chlorine", "is_correct": 0, "explanation": "Chlorine is a halogen, not a noble gas." },
+      { "option_label": "Helium", "is_correct": 1, "explanation": "Helium is a noble gas with atomic number 2." },
+      { "option_label": "Carbon", "is_correct": 0, "explanation": "Carbon is a non-metal, not a noble gas." }
+    ],
+    "correct_answer": "Helium",
+    "explanation": "Noble gases include helium, neon, argon, krypton, xenon, and radon. They have full outer electron shells."
+  },
+  {
+    "doctype": "Question Bank",
+    "question_title": "Indus Valley Civilization",
+    "subject": "History",
+    "question_type": "Short Answer",
+    "question_text": "<p>Describe two key features of the Indus Valley Civilization.</p>",
+    "difficulty_level": "Medium",
+    "marks": 4,
+    "board": "CBSE",
+    "tags": "history, ancient civilizations, indus valley",
+    "correct_answer": "1. Advanced Urban Planning: Cities like Mohenjo-Daro and Harappa had well-planned grid layouts, advanced drainage systems, and brick houses. 2. Trade and Economy: They had a thriving trade network with Mesopotamia and other regions, using standardized weights and measures.",
+    "explanation": "The Indus Valley Civilization (3300-1300 BCE) was one of the three great ancient civilizations."
+  },
+  {
+    "doctype": "Question Bank",
+    "question_title": "Parts of Speech - Identify the Noun",
+    "subject": "English",
+    "question_type": "Single Choice",
+    "question_text": "<p>Identify the noun in the sentence: 'The beautiful butterfly flew across the garden.'</p>",
+    "difficulty_level": "Easy",
+    "marks": 1,
+    "board": "CBSE",
+    "tags": "english, grammar, parts of speech",
+    "options_list": [
+      { "option_label": "Beautiful", "is_correct": 0, "explanation": "Beautiful is an adjective describing the butterfly." },
+      { "option_label": "Butterfly", "is_correct": 1, "explanation": "Butterfly is a noun - it names the subject of the sentence." },
+      { "option_label": "Flew", "is_correct": 0, "explanation": "Flew is a verb describing the action." },
+      { "option_label": "Across", "is_correct": 0, "explanation": "Across is a preposition showing direction." }
+    ],
+    "correct_answer": "Butterfly",
+    "explanation": "A noun is a word that names a person, place, thing, or idea."
+  },
+  {
+    "doctype": "Question Bank",
+    "question_title": "What is a Computer Network?",
+    "subject": "Computer Science",
+    "question_type": "Short Answer",
+    "question_text": "<p>Define a computer network and name three types of networks based on geographical area.</p>",
+    "difficulty_level": "Medium",
+    "marks": 3,
+    "board": "CBSE",
+    "tags": "computer science, networking",
+    "correct_answer": "A computer network is a group of interconnected computers that can communicate and share resources. Three types based on area: 1. LAN (Local Area Network) - covers a small area like a building. 2. MAN (Metropolitan Area Network) - covers a city. 3. WAN (Wide Area Network) - covers large geographical areas like countries.",
+    "explanation": "Networks enable resource sharing, communication, and data transfer between computers."
+  },
+  {
+    "doctype": "Question Bank",
+    "question_title": "The Pythagorean Theorem",
+    "subject": "Mathematics",
+    "question_type": "Long Answer",
+    "question_text": "<p>State the Pythagorean Theorem. In a right-angled triangle, if the two shorter sides are 3 cm and 4 cm, find the length of the longest side. Show all steps.</p>",
+    "difficulty_level": "Medium",
+    "marks": 5,
+    "board": "CBSE",
+    "tags": "mathematics, geometry, pythagorean theorem",
+    "correct_answer": "Pythagorean Theorem: In a right-angled triangle, the square of the hypotenuse (longest side) is equal to the sum of squares of the other two sides. a² + b² = c². Given: a = 3, b = 4. c² = 3² + 4² = 9 + 16 = 25. c = √25 = 5. The longest side (hypotenuse) is 5 cm.",
+    "explanation": "The Pythagorean Theorem is fundamental in geometry and has numerous real-world applications."
+  },
+  {
+    "doctype": "Question Bank",
+    "question_title": "Water Cycle",
+    "subject": "Science",
+    "question_type": "True/False",
+    "question_text": "<p>True or False: Evaporation is the process by which water vapor turns into liquid water.</p>",
+    "difficulty_level": "Easy",
+    "marks": 1,
+    "board": "CBSE",
+    "tags": "science, water cycle, states of matter",
+    "options_list": [
+      { "option_label": "True", "is_correct": 0, "explanation": "The process of water vapor turning into liquid is called condensation, not evaporation." },
+      { "option_label": "False", "is_correct": 1, "explanation": "Evaporation is the process where liquid water turns into water vapor." }
+    ],
+    "correct_answer": "False",
+    "explanation": "Evaporation is liquid to gas. Condensation is gas to liquid."
+  },
+  {
+    "doctype": "Question Bank",
+    "question_title": "National Flag of India",
+    "subject": "General Knowledge",
+    "question_type": "Multiple Choice",
+    "question_text": "<p>What do the three colors of the Indian national flag represent?</p>",
+    "difficulty_level": "Easy",
+    "marks": 1,
+    "board": "CBSE",
+    "tags": "gk, india, national symbols",
+    "options_list": [
+      { "option_label": "Saffron: Courage, White: Peace, Green: Prosperity", "is_correct": 1, "explanation": "This is the correct symbolism of the Indian flag colors." },
+      { "option_label": "Saffron: Religion, White: Purity, Green: Nature", "is_correct": 0, "explanation": "The flag colors represent secular values, not religious ones." },
+      { "option_label": "Saffron: Royalty, White: Snow, Green: Agriculture", "is_correct": 0, "explanation": "These are not the official meanings of the flag colors." },
+      { "option_label": "Saffron: Energy, White: Clouds, Green: Forests", "is_correct": 0, "explanation": "The official symbolism is different from these interpretations." }
+    ],
+    "correct_answer": "Saffron: Courage, White: Peace, Green: Prosperity",
+    "explanation": "The Ashoka Chakra in the center represents the wheel of law and righteousness."
+  },
+  {
+    "doctype": "Question Bank",
+    "question_title": "Constitution of India - Fundamental Rights",
+    "subject": "Civics",
+    "question_type": "Long Answer",
+    "question_text": "<p>List any five Fundamental Rights guaranteed by the Constitution of India.</p>",
+    "difficulty_level": "Hard",
+    "marks": 5,
+    "board": "CBSE",
+    "tags": "civics, constitution, fundamental rights, india",
+    "correct_answer": "Five Fundamental Rights: 1. Right to Equality (Articles 14-18) 2. Right to Freedom (Articles 19-22) 3. Right against Exploitation (Articles 23-24) 4. Right to Freedom of Religion (Articles 25-28) 5. Cultural and Educational Rights (Articles 29-30)",
+    "explanation": "Fundamental Rights are basic human rights guaranteed to all citizens of India."
+  }
+]

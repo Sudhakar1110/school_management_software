@@ -1,0 +1,219 @@
+{
+  "doctype": "DocType",
+  "name": "Asset Register",
+  "module": "School Management Software",
+  "custom": 1,
+  "is_submittable": 1,
+  "is_child_table": 0,
+  "is_single": 0,
+  "is_tree": 0,
+  "editable_grid": 0,
+  "track_changes": 1,
+  "track_seen": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "By fieldname",
+  "autoname": "field:asset_code",
+  "allow_rename": 1,
+  "description": "Master register for tracking school assets throughout their lifecycle",
+  "title_field": "asset_name",
+  "search_fields": "asset_name,asset_code,category,location",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "index_web_pages_for_search": 1,
+  "fields": [
+    {
+      "fieldname": "asset_name",
+      "fieldtype": "Data",
+      "label": "Asset Name",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "asset_code",
+      "fieldtype": "Data",
+      "label": "Asset Code",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "category",
+      "fieldtype": "Select",
+      "label": "Asset Category",
+      "options": "Furniture\nElectronics\nIT Equipment\nLibrary\nSports Equipment\nLaboratory Equipment\nTransport Vehicle\nBuilding\nOther",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "purchase_date",
+      "fieldtype": "Date",
+      "label": "Purchase Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "purchase_cost",
+      "fieldtype": "Currency",
+      "label": "Purchase Cost",
+      "reqd": 1
+    },
+    {
+      "fieldname": "supplier",
+      "fieldtype": "Data",
+      "label": "Supplier/Vendor"
+    },
+    {
+      "fieldname": "column_break_depreciation",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "current_value",
+      "fieldtype": "Currency",
+      "label": "Current Value",
+      "read_only": 1
+    },
+    {
+      "fieldname": "depreciation_method",
+      "fieldtype": "Select",
+      "label": "Depreciation Method",
+      "options": "Straight Line\nWritten Down Value\nNo Depreciation",
+      "default": "Straight Line"
+    },
+    {
+      "fieldname": "useful_life_years",
+      "fieldtype": "Int",
+      "label": "Useful Life (Years)",
+      "default": "5"
+    },
+    {
+      "fieldname": "salvage_value",
+      "fieldtype": "Currency",
+      "label": "Salvage Value",
+      "default": "0"
+    },
+    {
+      "fieldname": "section_break_location",
+      "fieldtype": "Section Break",
+      "label": "Location & Assignment"
+    },
+    {
+      "fieldname": "location",
+      "fieldtype": "Data",
+      "label": "Location / Room"
+    },
+    {
+      "fieldname": "assigned_to",
+      "fieldtype": "Link",
+      "label": "Assigned To",
+      "options": "Employee"
+    },
+    {
+      "fieldname": "column_break_location2",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "department",
+      "fieldtype": "Link",
+      "label": "Department",
+      "options": "Department"
+    },
+    {
+      "fieldname": "condition",
+      "fieldtype": "Select",
+      "label": "Condition",
+      "options": "New\nGood\nFair\nPoor\nDamaged\nObsolete",
+      "default": "Good",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "section_break_status",
+      "fieldtype": "Section Break",
+      "label": "Status & Warranty"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "In Service\nUnder Maintenance\nDisposed\nWritten Off\nStored",
+      "default": "In Service",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "warranty_expiry",
+      "fieldtype": "Date",
+      "label": "Warranty Expiry"
+    },
+    {
+      "fieldname": "column_break_status2",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "disposal_date",
+      "fieldtype": "Date",
+      "label": "Disposal Date"
+    },
+    {
+      "fieldname": "disposal_amount",
+      "fieldtype": "Currency",
+      "label": "Disposal Amount"
+    },
+    {
+      "fieldname": "section_break_image",
+      "fieldtype": "Section Break",
+      "label": "Image & Documents"
+    },
+    {
+      "fieldname": "asset_image",
+      "fieldtype": "Attach Image",
+      "label": "Asset Image"
+    },
+    {
+      "fieldname": "invoice_document",
+      "fieldtype": "Attach",
+      "label": "Purchase Invoice"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Additional Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 1,
+      "write": 1,
+      "submit": 1,
+      "cancel": 1,
+      "amend": 0
+    },
+    {
+      "role": "Accounts User",
+      "create": 1,
+      "delete": 0,
+      "email": 0,
+      "export": 0,
+      "print": 1,
+      "read": 1,
+      "report": 0,
+      "share": 0,
+      "write": 1
+    }
+  ],
+  "actions": [],
+  "links": [],
+  "states": []
+}

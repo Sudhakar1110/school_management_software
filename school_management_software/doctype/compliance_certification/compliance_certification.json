@@ -1,0 +1,176 @@
+{
+  "doctype": "DocType",
+  "name": "Compliance Certification",
+  "module": "School Management Software",
+  "custom": 1,
+  "is_submittable": 1,
+  "is_child_table": 0,
+  "is_single": 0,
+  "is_tree": 0,
+  "editable_grid": 0,
+  "track_changes": 1,
+  "track_seen": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "By fieldname",
+  "autoname": "field:certification_name",
+  "allow_rename": 1,
+  "description": "Manage compliance certifications (ISO, SOC, GDPR, FERPA, etc.)",
+  "title_field": "certification_name",
+  "search_fields": "certification_name,standard_type,certifying_body",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "index_web_pages_for_search": 1,
+  "fields": [
+    {
+      "fieldname": "certification_name",
+      "fieldtype": "Data",
+      "label": "Certification Name",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "standard_type",
+      "fieldtype": "Select",
+      "label": "Standard Type",
+      "options": "ISO 27001\nISO 9001\nISO 14001\nSOC 2\nSOC 3\nGDPR\nFERPA\nCOPPA\nHIPAA\nPCI DSS\nOther",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "certifying_body",
+      "fieldtype": "Data",
+      "label": "Certifying Body",
+      "reqd": 1
+    },
+    {
+      "fieldname": "certification_scope",
+      "fieldtype": "Small Text",
+      "label": "Scope",
+      "description": "Describe the scope of this certification"
+    },
+    {
+      "fieldname": "column_break_dates",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "issue_date",
+      "fieldtype": "Date",
+      "label": "Issue Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "expiry_date",
+      "fieldtype": "Date",
+      "label": "Expiry Date"
+    },
+    {
+      "fieldname": "renewal_date",
+      "fieldtype": "Date",
+      "label": "Next Renewal Date"
+    },
+    {
+      "fieldname": "certificate_file",
+      "fieldtype": "Attach",
+      "label": "Certificate Document"
+    },
+    {
+      "fieldname": "section_break_status",
+      "fieldtype": "Section Break",
+      "label": "Status"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Active\nPending Renewal\nExpired\nRevoked\nApplication in Progress",
+      "default": "Active",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "is_compliant",
+      "fieldtype": "Check",
+      "label": "Fully Compliant",
+      "default": "1"
+    },
+    {
+      "fieldname": "audit_notes",
+      "fieldtype": "Text Editor",
+      "label": "Audit Notes"
+    },
+    {
+      "fieldname": "gap_analysis",
+      "fieldtype": "Text Editor",
+      "label": "Gap Analysis Results"
+    },
+    {
+      "fieldname": "section_break_contacts",
+      "fieldtype": "Section Break",
+      "label": "Contacts"
+    },
+    {
+      "fieldname": "responsible_person",
+      "fieldtype": "Link",
+      "label": "Responsible Person",
+      "options": "Employee"
+    },
+    {
+      "fieldname": "column_break_contacts2",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "auditor_name",
+      "fieldtype": "Data",
+      "label": "Auditor Name"
+    },
+    {
+      "fieldname": "auditor_contact",
+      "fieldtype": "Data",
+      "label": "Auditor Contact"
+    },
+    {
+      "fieldname": "section_break_docs",
+      "fieldtype": "Section Break",
+      "label": "Related Documents"
+    },
+    {
+      "fieldname": "related_policies",
+      "fieldtype": "Table",
+      "label": "Related Policies",
+      "options": "Compliance Policy Link"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Additional Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 1,
+      "write": 1,
+      "submit": 1,
+      "cancel": 1,
+      "amend": 0
+    }
+  ],
+  "actions": [],
+  "links": [],
+  "states": []
+}

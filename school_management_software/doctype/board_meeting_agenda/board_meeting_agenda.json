@@ -1,0 +1,84 @@
+{
+  "doctype": "DocType",
+  "name": "Board Meeting Agenda",
+  "module": "School Management Software",
+  "custom": 1,
+  "is_submittable": 0,
+  "is_child_table": 1,
+  "is_single": 0,
+  "is_tree": 0,
+  "editable_grid": 1,
+  "track_changes": 0,
+  "track_seen": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "Auto",
+  "autoname": "",
+  "allow_rename": 0,
+  "description": "Individual agenda items for board/committee meetings",
+  "title_field": "agenda_title",
+  "search_fields": "",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "index_web_pages_for_search": 1,
+  "fields": [
+    {
+      "fieldname": "agenda_title",
+      "fieldtype": "Data",
+      "label": "Agenda Item",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "presented_by",
+      "fieldtype": "Data",
+      "label": "Presented By"
+    },
+    {
+      "fieldname": "estimated_duration_mins",
+      "fieldtype": "Int",
+      "label": "Duration (min)",
+      "default": "10"
+    },
+    {
+      "fieldname": "column_break_outcome",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "outcome",
+      "fieldtype": "Select",
+      "label": "Outcome",
+      "options": "\nApproved\nRejected\nDeferred\nDiscussion Only\nTabled"
+    },
+    {
+      "fieldname": "resolution",
+      "fieldtype": "Small Text",
+      "label": "Resolution / Decision"
+    },
+    {
+      "fieldname": "action_owner",
+      "fieldtype": "Data",
+      "label": "Action Owner"
+    },
+    {
+      "fieldname": "due_date",
+      "fieldtype": "Date",
+      "label": "Due Date"
+    }
+  ],
+  "permissions": [],
+  "actions": [],
+  "links": [],
+  "states": []
+}

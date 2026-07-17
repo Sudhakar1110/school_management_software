@@ -9,9 +9,13 @@ def execute_script(doc, method=None, script=None):
 
 def before_save_submitted_document_approved(doc, method=None):
     # From Server Script: approved
-    admission_status = frappe.db.get_value("Create Admission", doc.student_admission, "application_status")
+    # Use Create Admission if it exists, otherwise fall back to Student Admission
+    if frappe.db.exists("DocType", "Create Admission"):
+        admission_status = frappe.db.get_value("Create Admission", doc.student_admission, "application_status")
+    else:
+        admission_status = frappe.db.get_value("Student Applicant", doc.student_admission, "application_status") if doc.student_admission else None
     
-    if admission_status != "Approved":
+    if admission_status and admission_status != "Approved":
         frappe.throw("Cannot create/save enrollment. The linked admission application status is '{0}', it must be 'Approved'.".format(admission_status))
 
 def before_save_submitted_document_auto_calculate_everything(doc, method=None):
@@ -39,15 +43,15 @@ def before_save_submitted_document_auto_calculate_everything(doc, method=None):
 def on_update_auto_create_alumni_record_on_student_exit(doc, method=None):
     # From Server Script: Auto Create Alumni Record on Student Exit
     if doc.date_of_leaving and doc.date_of_leaving <= frappe.utils.today():
-        existing = frappe.db.exists("Alumni Record", {"student": doc.name})
+        existing = frappe.db.exists("Alumni Record", {"linked_student": doc.name})
         if not existing:
             alumni = frappe.get_doc({
                 "doctype": "Alumni Record",
-                "student": doc.name,
+                "linked_student": doc.name,
                 "student_name": doc.student_name,
-                "student_email": doc.student_email_id,
+                "email": doc.student_email_id,
                 "graduation_year": frappe.utils.getdate(doc.date_of_leaving).year,
-                "is_active": 1
+                "alumni_status": "Active"
             })
             alumni.insert(ignore_permissions=True)
             frappe.db.commit()
@@ -88,10 +92,21 @@ def on_update_auto_create_hostel_admission_on_approve(doc, method=None):
 
 def on_submit_auto_create_sales_invoice_on_submit(doc, method=None):
     # From Server Script: auto-create Sales Invoice on submit
-    admission = frappe.get_doc("Create Admission", doc.student_admission)
+    # Use Create Admission if exists, else Student Applicant
+    admission = None
+    if doc.student_admission:
+        if frappe.db.exists("DocType", "Create Admission"):
+            admission = frappe.get_doc("Create Admission", doc.student_admission)
+        elif frappe.db.exists("DocType", "Student Applicant"):
+            admission = frappe.get_doc("Student Applicant", doc.student_admission)
     
-    guardian_email = admission.custom_guardian_email or admission.student_email_id
-    guardian_name = f"{admission.first_name} {admission.last_name or ''}".strip()
+    if not admission:
+        return
+    
+    guardian_email = getattr(admission, 'custom_guardian_email', None) or getattr(admission, 'student_email_id', None)
+    first_name = getattr(admission, 'first_name', getattr(admission, 'student_name', 'Guardian'))
+    last_name = getattr(admission, 'last_name', '')
+    guardian_name = f"{first_name} {last_name or ''}".strip()
     
     customer_name = frappe.db.exists("Customer", {"customer_name": guardian_name})
     if not customer_name:
@@ -106,7 +121,7 @@ def on_submit_auto_create_sales_invoice_on_submit(doc, method=None):
         customer_name = customer.name
     
     si_items = []
-    for row in doc.fees:
+    for row in (doc.fees or []):
         fee_structure = frappe.get_doc("Fee Structure", row.fee_structure)
         for component in fee_structure.components:
             si_items.append({
@@ -130,7 +145,11 @@ def on_submit_auto_create_sales_invoice_on_submit(doc, method=None):
     sales_invoice.insert(ignore_permissions=True)
     sales_invoice.submit()
     
-    frappe.db.set_value("Custom Program Enrollment", doc.name, "sales_invoice", sales_invoice.name)
+    # Try to set sales_invoice on the enrollment
+    try:
+        frappe.db.set_value("Program Enrollment", doc.name, "custom_sales_invoice", sales_invoice.name)
+    except Exception:
+        pass
     frappe.msgprint(f"Sales Invoice {sales_invoice.name} created successfully.")
 
 def before_insert_auto_generate_gate_pass_number_on_approval(doc, method=None):
@@ -140,13 +159,13 @@ def before_insert_auto_generate_gate_pass_number_on_approval(doc, method=None):
     if old_doc and old_doc.approval_status != "Approved" and doc.approval_status == "Approved":
         if not doc.gate_pass_number:
             year = frappe.utils.nowdate()[:4]
-            count = frappe.db.count("Hostel leaves", {
+            count = frappe.db.count("Hostel Leaves", {
                 "approval_status": "Approved",
                 "gate_pass_number": ["like", f"GP-{year}-%"]
             }) + 1
             gate_pass_number = f"GP-{year}-{str(count).zfill(5)}"
     
-            frappe.db.set_value("Hostel leaves", doc.name, "gate_pass_number", gate_pass_number)
+            frappe.db.set_value("Hostel Leaves", doc.name, "gate_pass_number", gate_pass_number)
             doc.gate_pass_number = gate_pass_number
     
             frappe.msgprint(f"Gate Pass generated: {gate_pass_number}")
@@ -348,23 +367,25 @@ def after_insert_create_fine_on_book_return(doc, method=None):
 def on_submit_fee_auto_calculation(doc, method=None):
     # From Server Script: fee auto calculation
     if doc.student:
-        student = frappe.get_doc("Custom Student", doc.student)
-        existing = [r for r in student.fee_installments if r.sales_invoice == doc.name]
-        if existing:
-            row = existing[0]
-        else:
-            row = student.append("fee_installments", {})
-            row.sales_invoice = doc.name
-        row.due_date = doc.due_date
-        row.amount = doc.grand_total
-        row.outstanding_amount = doc.outstanding_amount
-        row.paid_amount = (doc.grand_total or 0) - (doc.outstanding_amount or 0)
-        row.status = doc.status
-        student.total_fee_payable = sum([r.amount or 0 for r in student.fee_installments])
-        student.total_fee_paid = sum([r.paid_amount or 0 for r in student.fee_installments])
-        student.fee_balance = student.total_fee_payable - student.total_fee_paid
-        student.save(ignore_permissions=True)
-        frappe.db.commit()
+        student = frappe.get_doc("Student", doc.student)
+        # Check if student has fee_installments table (from custom field)
+        if hasattr(student, 'fee_installments'):
+            existing = [r for r in student.fee_installments if r.sales_invoice == doc.name]
+            if existing:
+                row = existing[0]
+            else:
+                row = student.append("fee_installments", {})
+                row.sales_invoice = doc.name
+            row.due_date = doc.due_date
+            row.amount = doc.grand_total
+            row.outstanding_amount = doc.outstanding_amount
+            row.paid_amount = (doc.grand_total or 0) - (doc.outstanding_amount or 0)
+            row.status = doc.status
+            student.total_fee_payable = sum([r.amount or 0 for r in student.fee_installments])
+            student.total_fee_paid = sum([r.paid_amount or 0 for r in student.fee_installments])
+            student.fee_balance = student.total_fee_payable - student.total_fee_paid
+            student.save(ignore_permissions=True)
+            frappe.db.commit()
 
 def on_submit_frees_the_room_if_the_student_check_out(doc, method=None):
     # From Server Script: frees the room if the student check-out
@@ -531,41 +552,48 @@ def on_submit_student_event_celebration(doc, method=None):
 def before_submit_sync_data_when_enrollment_is_submitted(doc, method=None):
     # From Server Script: sync data when enrollment is submitted
     if not doc.custom_student:
-    	matched_student = None
-    	email = None
+        matched_student = None
+        email = None
     
-    	if doc.student_admission and "@" in doc.student_admission:
-    		email = doc.student_admission
+        if doc.student_admission and "@" in doc.student_admission:
+            email = doc.student_admission
     
-    	if not email and doc.student_admission:
-    		admission_dict = frappe.get_doc("Create Admission", doc.student_admission).as_dict()
-    		email = admission_dict.get("student_email_id") or admission_dict.get("email")
+        if not email and doc.student_admission:
+            # Try Create Admission or Student Applicant
+            if frappe.db.exists("DocType", "Create Admission"):
+                if frappe.db.exists("Create Admission", doc.student_admission):
+                    admission_dict = frappe.get_doc("Create Admission", doc.student_admission).as_dict()
+                    email = admission_dict.get("student_email_id") or admission_dict.get("email")
+            elif frappe.db.exists("DocType", "Student Applicant"):
+                if frappe.db.exists("Student Applicant", doc.student_admission):
+                    admission_dict = frappe.get_doc("Student Applicant", doc.student_admission).as_dict()
+                    email = admission_dict.get("student_email_id") or admission_dict.get("email")
     
-    	if email:
-    		matched_student = frappe.db.get_value("Custom Student", {"student_email_id": email}, "name")
+        if email:
+            matched_student = frappe.db.get_value("Student", {"student_email_id": email}, "name")
     
-    	if not matched_student and doc.student_name:
-    		cleaned_name = doc.student_name.strip()
-    		matched_student = frappe.db.get_value("Custom Student", {"student_name": cleaned_name}, "name")
+        if not matched_student and doc.student_name:
+            cleaned_name = doc.student_name.strip()
+            matched_student = frappe.db.get_value("Student", {"student_name": cleaned_name}, "name")
     
-    	if not matched_student:
-    		full_name = (doc.student_name or "Unknown").strip()
-    		name_parts = full_name.split(" ")
-    		first = name_parts[0] if len(name_parts) > 0 else full_name
-    		last = name_parts[-1] if len(name_parts) > 1 else ""
+        if not matched_student:
+            full_name = (doc.student_name or "Unknown").strip()
+            name_parts = full_name.split(" ")
+            first = name_parts[0] if len(name_parts) > 0 else full_name
+            last = name_parts[-1] if len(name_parts) > 1 else ""
     
-    		new_student = frappe.get_doc({
-    			"doctype": "Custom Student",
-    			"first_name": first,
-    			"last_name": last,
-    			"student_name": full_name,
-    			"student_email_id": email,
-    			"enabled": 1
-    		})
-    		new_student.insert(ignore_permissions=True)
-    		matched_student = new_student.name
+            new_student = frappe.get_doc({
+                "doctype": "Student",
+                "first_name": first,
+                "last_name": last,
+                "student_name": full_name,
+                "student_email_id": email,
+                "enabled": 1
+            })
+            new_student.insert(ignore_permissions=True)
+            matched_student = new_student.name
     
-    	doc.custom_student = matched_student
+        doc.custom_student = matched_student
 
 def validate_to_keep_room_display_updated_automatically(doc, method=None):
     # From Server Script: to keep room_display updated automatically

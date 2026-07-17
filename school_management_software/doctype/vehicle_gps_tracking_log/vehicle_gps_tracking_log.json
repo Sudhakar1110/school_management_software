@@ -1,0 +1,163 @@
+{
+  "doctype": "DocType",
+  "name": "Vehicle GPS Tracking Log",
+  "module": "School Management Software",
+  "custom": 1,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "is_single": 0,
+  "is_tree": 0,
+  "editable_grid": 0,
+  "track_changes": 0,
+  "track_seen": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "Auto",
+  "autoname": "",
+  "allow_rename": 1,
+  "description": "Track GPS location data for transport vehicles in real-time",
+  "title_field": "vehicle",
+  "search_fields": "vehicle,route_name,status",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "index_web_pages_for_search": 1,
+  "fields": [
+    {
+      "fieldname": "vehicle",
+      "fieldtype": "Link",
+      "label": "Vehicle",
+      "options": "Transport Vehicle",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "route_name",
+      "fieldtype": "Link",
+      "label": "Route",
+      "options": "Transport Route"
+    },
+    {
+      "fieldname": "driver_name",
+      "fieldtype": "Data",
+      "label": "Driver Name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_location",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "latitude",
+      "fieldtype": "Float",
+      "label": "Latitude",
+      "reqd": 1
+    },
+    {
+      "fieldname": "longitude",
+      "fieldtype": "Float",
+      "label": "Longitude",
+      "reqd": 1
+    },
+    {
+      "fieldname": "speed",
+      "fieldtype": "Float",
+      "label": "Speed (km/h)"
+    },
+    {
+      "fieldname": "heading",
+      "fieldtype": "Int",
+      "label": "Heading (degrees)"
+    },
+    {
+      "fieldname": "section_break_status",
+      "fieldtype": "Section Break",
+      "label": "Trip Status"
+    },
+    {
+      "fieldname": "timestamp",
+      "fieldtype": "Datetime",
+      "label": "Timestamp",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Vehicle Status",
+      "options": "On Route\nStopped\nArrived\nDeparted\nOffline",
+      "default": "On Route",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "next_stop",
+      "fieldtype": "Data",
+      "label": "Next Stop",
+      "read_only": 1
+    },
+    {
+      "fieldname": "estimated_arrival",
+      "fieldtype": "Time",
+      "label": "Estimated Arrival",
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_battery",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "battery_level",
+      "fieldtype": "Percent",
+      "label": "Device Battery",
+      "default": "100"
+    },
+    {
+      "fieldname": "signal_strength",
+      "fieldtype": "Select",
+      "label": "Signal Strength",
+      "options": "Excellent\nGood\nFair\nPoor\nNo Signal",
+      "default": "Good"
+    },
+    {
+      "fieldname": "is_processed",
+      "fieldtype": "Check",
+      "label": "Processed",
+      "default": "0"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 1,
+      "write": 1
+    },
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 0,
+      "email": 0,
+      "export": 0,
+      "print": 1,
+      "read": 1,
+      "report": 0,
+      "share": 0,
+      "write": 1
+    }
+  ],
+  "actions": [],
+  "links": [],
+  "states": []
+}

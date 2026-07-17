@@ -1,0 +1,145 @@
+{
+  "doctype": "DocType",
+  "name": "Committee Definition",
+  "module": "School Management Software",
+  "custom": 1,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "is_single": 0,
+  "is_tree": 0,
+  "editable_grid": 0,
+  "track_changes": 1,
+  "track_seen": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "By fieldname",
+  "autoname": "field:committee_name",
+  "allow_rename": 1,
+  "description": "Define committees and governing bodies for the institution",
+  "title_field": "committee_name",
+  "search_fields": "committee_name,committee_type",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "index_web_pages_for_search": 1,
+  "fields": [
+    {
+      "fieldname": "committee_name",
+      "fieldtype": "Data",
+      "label": "Committee Name",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "committee_type",
+      "fieldtype": "Select",
+      "label": "Committee Type",
+      "options": "Board of Trustees\nSchool Management Committee\nAcademic Council\nFinance Committee\nDisciplinary Committee\nPTA Executive\nSports Committee\nCultural Committee\nAdmissions Committee\nOther",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "purpose",
+      "fieldtype": "Text Editor",
+      "label": "Purpose & Charter",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_tenure",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "formation_date",
+      "fieldtype": "Date",
+      "label": "Formation Date"
+    },
+    {
+      "fieldname": "tenure_years",
+      "fieldtype": "Int",
+      "label": "Tenure (Years)",
+      "default": "2"
+    },
+    {
+      "fieldname": "next_review_date",
+      "fieldtype": "Date",
+      "label": "Next Review Date"
+    },
+    {
+      "fieldname": "section_break_members",
+      "fieldtype": "Section Break",
+      "label": "Members"
+    },
+    {
+      "fieldname": "chairperson",
+      "fieldtype": "Data",
+      "label": "Chairperson"
+    },
+    {
+      "fieldname": "vice_chairperson",
+      "fieldtype": "Data",
+      "label": "Vice Chairperson"
+    },
+    {
+      "fieldname": "secretary",
+      "fieldtype": "Data",
+      "label": "Secretary"
+    },
+    {
+      "fieldname": "column_break_details",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "total_members",
+      "fieldtype": "Int",
+      "label": "Total Members",
+      "default": "5"
+    },
+    {
+      "fieldname": "quorum_required",
+      "fieldtype": "Int",
+      "label": "Quorum Required",
+      "default": "3"
+    },
+    {
+      "fieldname": "meeting_frequency",
+      "fieldtype": "Select",
+      "label": "Meeting Frequency",
+      "options": "Weekly\nMonthly\nQuarterly\nHalf-Yearly\nAnnually\nAs Needed",
+      "default": "Monthly"
+    },
+    {
+      "fieldname": "is_active",
+      "fieldtype": "Check",
+      "label": "Active",
+      "default": "1"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Additional Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "actions": [],
+  "links": [],
+  "states": []
+}

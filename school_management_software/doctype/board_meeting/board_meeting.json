@@ -1,0 +1,205 @@
+{
+  "doctype": "DocType",
+  "name": "Board Meeting",
+  "module": "School Management Software",
+  "custom": 1,
+  "is_submittable": 1,
+  "is_child_table": 0,
+  "is_single": 0,
+  "is_tree": 0,
+  "editable_grid": 0,
+  "track_changes": 1,
+  "track_seen": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "Auto",
+  "autoname": "naming_series:",
+  "allow_rename": 1,
+  "description": "Manage board meetings, agendas, minutes, and resolutions",
+  "title_field": "title",
+  "search_fields": "title,meeting_type,meeting_status",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "index_web_pages_for_search": 1,
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "BMEET-.YYYY.-",
+      "default": "BMEET-.YYYY.-",
+      "reqd": 1
+    },
+    {
+      "fieldname": "title",
+      "fieldtype": "Data",
+      "label": "Meeting Title",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "meeting_type",
+      "fieldtype": "Select",
+      "label": "Meeting Type",
+      "options": "Board Meeting\nCommittee Meeting\nAnnual General Meeting\nEmergency Meeting\nExecutive Meeting\nTrustee Meeting",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "committee",
+      "fieldtype": "Link",
+      "label": "Committee",
+      "options": "Committee Definition"
+    },
+    {
+      "fieldname": "column_break_schedule",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "date",
+      "fieldtype": "Date",
+      "label": "Meeting Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "time",
+      "fieldtype": "Time",
+      "label": "Meeting Time",
+      "reqd": 1
+    },
+    {
+      "fieldname": "duration_hours",
+      "fieldtype": "Float",
+      "label": "Duration (Hours)",
+      "default": "1"
+    },
+    {
+      "fieldname": "venue",
+      "fieldtype": "Data",
+      "label": "Venue / Online Link",
+      "reqd": 1
+    },
+    {
+      "fieldname": "section_break_attendees",
+      "fieldtype": "Section Break",
+      "label": "Attendees"
+    },
+    {
+      "fieldname": "attendees",
+      "fieldtype": "Table",
+      "label": "Attendees",
+      "options": "Meeting Attendee",
+      "reqd": 0
+    },
+    {
+      "fieldname": "column_break_attendees2",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "chairperson",
+      "fieldtype": "Data",
+      "label": "Chairperson"
+    },
+    {
+      "fieldname": "secretary",
+      "fieldtype": "Data",
+      "label": "Secretary"
+    },
+    {
+      "fieldname": "section_break_agenda",
+      "fieldtype": "Section Break",
+      "label": "Agenda & Minutes"
+    },
+    {
+      "fieldname": "agenda_items",
+      "fieldtype": "Table",
+      "label": "Agenda Items",
+      "options": "Board Meeting Agenda"
+    },
+    {
+      "fieldname": "minutes",
+      "fieldtype": "Text Editor",
+      "label": "Meeting Minutes"
+    },
+    {
+      "fieldname": "key_decisions",
+      "fieldtype": "Text Editor",
+      "label": "Key Decisions / Resolutions"
+    },
+    {
+      "fieldname": "action_items",
+      "fieldtype": "Text Editor",
+      "label": "Action Items"
+    },
+    {
+      "fieldname": "section_break_status",
+      "fieldtype": "Section Break",
+      "label": "Status"
+    },
+    {
+      "fieldname": "meeting_status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Scheduled\nIn Progress\nCompleted\nPostponed\nCancelled",
+      "default": "Scheduled",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "minutes_approved",
+      "fieldtype": "Check",
+      "label": "Minutes Approved"
+    },
+    {
+      "fieldname": "minutes_approval_date",
+      "fieldtype": "Date",
+      "label": "Minutes Approval Date",
+      "depends_on": "eval:doc.minutes_approved"
+    },
+    {
+      "fieldname": "column_break_docs",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "meeting_documents",
+      "fieldtype": "Attach",
+      "label": "Meeting Documents"
+    },
+    {
+      "fieldname": "minutes_document",
+      "fieldtype": "Attach",
+      "label": "Minutes Document (PDF)"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Additional Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 1,
+      "write": 1,
+      "submit": 1,
+      "cancel": 1,
+      "amend": 0
+    }
+  ],
+  "actions": [],
+  "links": [],
+  "states": []
+}
