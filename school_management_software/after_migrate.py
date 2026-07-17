@@ -84,6 +84,7 @@ def after_migrate_setup():
     # Note: Manual folder mapping needed because frappe.scrub() keeps & in names
     workspace_folders = {
         "Home": "home",
+        "School Management Software": "school_management_software",
         "Admissions": "admissions",
         "Attendance & Assessments": "attendance_assessments",
         "Exam": "exam",

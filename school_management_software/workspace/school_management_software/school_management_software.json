@@ -1,0 +1,216 @@
+{
+  "doctype": "Workspace",
+  "name": "School Management Software",
+  "module": "School Management Software",
+  "charts": [],
+  "cards": [],
+  "custom_blocks": [],
+  "links": [
+    {
+      "type": "Card Break",
+      "label": "Overview",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Student",
+      "link_type": "DocType",
+      "link_to": "Student"
+    },
+    {
+      "type": "Link",
+      "label": "Instructor",
+      "link_type": "DocType",
+      "link_to": "Instructor"
+    },
+    {
+      "type": "Link",
+      "label": "Guardian",
+      "link_type": "DocType",
+      "link_to": "Guardian"
+    },
+    {
+      "type": "Link",
+      "label": "Employee",
+      "link_type": "DocType",
+      "link_to": "Employee"
+    },
+    {
+      "type": "Card Break",
+      "label": "Academic Masters",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Program",
+      "link_type": "DocType",
+      "link_to": "Program"
+    },
+    {
+      "type": "Link",
+      "label": "Course",
+      "link_type": "DocType",
+      "link_to": "Course"
+    },
+    {
+      "type": "Link",
+      "label": "Academic Year",
+      "link_type": "DocType",
+      "link_to": "Academic Year"
+    },
+    {
+      "type": "Link",
+      "label": "Academic Term",
+      "link_type": "DocType",
+      "link_to": "Academic Term"
+    },
+    {
+      "type": "Link",
+      "label": "Student Group",
+      "link_type": "DocType",
+      "link_to": "Student Group"
+    },
+    {
+      "type": "Link",
+      "label": "Course Schedule",
+      "link_type": "DocType",
+      "link_to": "Course Schedule"
+    },
+    {
+      "type": "Card Break",
+      "label": "Reports",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Student Fee Collection Report",
+      "link_type": "Report",
+      "link_to": "Student Fee Collection",
+      "is_query_report": 1
+    },
+    {
+      "type": "Link",
+      "label": "Student Monthly Attendance Report",
+      "link_type": "Report",
+      "link_to": "Student Monthly Attendance Sheet",
+      "is_query_report": 1
+    },
+    {
+      "type": "Link",
+      "label": "Certificate Issuance Report",
+      "link_type": "Report",
+      "link_to": "Certificate Issuance Report",
+      "is_query_report": 1
+    },
+    {
+      "type": "Link",
+      "label": "Exam Result Analysis Report",
+      "link_type": "Report",
+      "link_to": "Exam Result Analysis Report",
+      "is_query_report": 1
+    },
+    {
+      "type": "Link",
+      "label": "Hostel Occupancy Report",
+      "link_type": "Report",
+      "link_to": "Hostel Occupancy Report",
+      "is_query_report": 1
+    },
+    {
+      "type": "Link",
+      "label": "Library Circulation Report",
+      "link_type": "Report",
+      "link_to": "Library Circulation Report",
+      "is_query_report": 1
+    },
+    {
+      "type": "Link",
+      "label": "Transport Fee Dues Report",
+      "link_type": "Report",
+      "link_to": "Transport Fee Dues Report",
+      "is_query_report": 1
+    },
+    {
+      "type": "Link",
+      "label": "Mess Attendance & Meal Count Report",
+      "link_type": "Report",
+      "link_to": "Mess Attendance & Meal Count Report",
+      "is_query_report": 1
+    }
+  ],
+  "shortcuts": [
+    {
+      "type": "DocType",
+      "link_to": "Student",
+      "doc_view": "List",
+      "label": "Students",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Instructor",
+      "doc_view": "List",
+      "label": "Instructors",
+      "color": "Pink"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Program",
+      "doc_view": "List",
+      "label": "Grades",
+      "color": "Purple"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Course",
+      "doc_view": "List",
+      "label": "Courses",
+      "color": "Yellow"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Student Attendance",
+      "doc_view": "List",
+      "label": "Attendance",
+      "color": "Grey"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Fees",
+      "doc_view": "List",
+      "label": "Fees",
+      "color": "Green"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Student Certificate",
+      "doc_view": "List",
+      "label": "Certificates",
+      "color": "Orange"
+    }
+  ],
+  "title": "School Management Software",
+  "content": "[{\"id\":\"sms_1\",\"type\":\"card\",\"data\":{\"card_name\":\"Overview\",\"col\":4}},{\"id\":\"sms_2\",\"type\":\"card\",\"data\":{\"card_name\":\"Academic Masters\",\"col\":4}},{\"id\":\"sms_3\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+  "label": "School Management Software",
+  "public": 1,
+  "icon": "lc-school",
+  "indicator_color": "blue",
+  "sequence_id": 1,
+  "roles": [
+    {
+      "role": "Education Manager"
+    },
+    {
+      "role": "Academics User"
+    },
+    {
+      "role": "Instructor"
+    },
+    {
+      "role": "Student"
+    },
+    {
+      "role": "System Manager"
+    }
+  ]
+}
