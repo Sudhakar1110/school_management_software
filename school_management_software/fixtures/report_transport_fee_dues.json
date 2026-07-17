@@ -1,0 +1,13 @@
+{
+ "doctype": "Report",
+ "name": "Transport Fee Dues Report",
+ "module": "Education",
+ "report_type": "Script Report",
+ "is_standard": "No",
+ "ref_doctype": "Student Transport Assignment",
+ "query": "",
+ "script": "def execute(filters=None):\n    columns = [\n        {\"label\": \"Student\", \"fieldname\": \"student\", \"fieldtype\": \"Link\", \"options\": \"Custom Student\", \"width\": 120},\n        {\"label\": \"Student Name\", \"fieldname\": \"student_name\", \"fieldtype\": \"Data\", \"width\": 150},\n        {\"label\": \"Route\", \"fieldname\": \"transport_route\", \"fieldtype\": \"Link\", \"options\": \"Transport Route\", \"width\": 120},\n        {\"label\": \"Monthly Fee\", \"fieldname\": \"monthly_fee\", \"fieldtype\": \"Currency\", \"width\": 100},\n        {\"label\": \"Fee Status\", \"fieldname\": \"fee_status\", \"fieldtype\": \"Data\", \"width\": 100},\n        {\"label\": \"Academic Year\", \"fieldname\": \"academic_year\", \"fieldtype\": \"Data\", \"width\": 100}\n    ]\n    data = frappe.db.sql(\"\"\"\n        SELECT sta.student, sta.student_name, sta.transport_route,\n               sta.monthly_fee, sta.fee_status, sta.academic_year\n        FROM `tabStudent Transport Assignment` sta\n        WHERE sta.is_active = 1 AND sta.fee_status IN ('Pending', 'Overdue', 'Partial')\n        ORDER BY sta.fee_status, sta.student_name\n    \"\"\", as_dict=True)\n    return columns, data\n",
+ "charts": [],
+ "filters": [{"fieldname": "fee_status", "label": "Fee Status", "fieldtype": "Select", "options": "\\nPending\\nPaid\\nPartial\\nOverdue", "default": ""}],
+ "roles": [{"role": "System Manager"}, {"role": "Education Manager"}]
+}

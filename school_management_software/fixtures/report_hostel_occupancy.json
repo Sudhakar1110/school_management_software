@@ -1,0 +1,13 @@
+{
+ "doctype": "Report",
+ "name": "Hostel Occupancy Report",
+ "module": "Education",
+ "report_type": "Script Report",
+ "is_standard": "No",
+ "ref_doctype": "Hostel Room",
+ "query": "",
+ "script": "def execute(filters=None):\n    columns = [\n        {\"label\": \"Hostel\", \"fieldname\": \"hostel\", \"fieldtype\": \"Data\", \"width\": 150},\n        {\"label\": \"Block\", \"fieldname\": \"block\", \"fieldtype\": \"Data\", \"width\": 120},\n        {\"label\": \"Room\", \"fieldname\": \"room\", \"fieldtype\": \"Data\", \"width\": 100},\n        {\"label\": \"Room Type\", \"fieldname\": \"room_type\", \"fieldtype\": \"Data\", \"width\": 120},\n        {\"label\": \"Total Beds\", \"fieldname\": \"total_beds\", \"fieldtype\": \"Int\", \"width\": 100},\n        {\"label\": \"Occupied\", \"fieldname\": \"occupied\", \"fieldtype\": \"Int\", \"width\": 100},\n        {\"label\": \"Available\", \"fieldname\": \"available\", \"fieldtype\": \"Int\", \"width\": 100},\n        {\"label\": \"Occupancy %\", \"fieldname\": \"occupancy_pct\", \"fieldtype\": \"Percent\", \"width\": 100}\n    ]\n    data = frappe.db.sql(\"\"\"\n        SELECT hr.hostel, hr.hostel_block AS block, hr.room_number AS room,\n               hr.room_type, hr.total_beds, hr.occupied_beds AS occupied,\n               hr.available_beds AS available,\n               CASE WHEN hr.total_beds > 0\n                    THEN ROUND(hr.occupied_beds * 100.0 / hr.total_beds, 1)\n                    ELSE 0 END AS occupancy_pct\n        FROM `tabHostel Room` hr\n        ORDER BY hr.hostel, hr.hostel_block, hr.room_number\n    \"\"\", as_dict=True)\n    return columns, data\n",
+ "charts": [],
+ "filters": [],
+ "roles": [{"role": "System Manager"}, {"role": "Education Manager"}, {"role": "Warden"}]
+}

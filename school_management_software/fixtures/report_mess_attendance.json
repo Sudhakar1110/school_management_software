@@ -1,0 +1,13 @@
+{
+ "doctype": "Report",
+ "name": "Mess Attendance & Meal Count Report",
+ "module": "Education",
+ "report_type": "Script Report",
+ "is_standard": "No",
+ "ref_doctype": "Mess Attendance",
+ "query": "",
+ "script": "def execute(filters=None):\n    columns = [\n        {\"label\": \"Date\", \"fieldname\": \"date\", \"fieldtype\": \"Date\", \"width\": 100},\n        {\"label\": \"Meal Type\", \"fieldname\": \"meal_type\", \"fieldtype\": \"Data\", \"width\": 100},\n        {\"label\": \"Total Students\", \"fieldname\": \"total\", \"fieldtype\": \"Int\", \"width\": 100},\n        {\"label\": \"Present\", \"fieldname\": \"present\", \"fieldtype\": \"Int\", \"width\": 80},\n        {\"label\": \"Absent\", \"fieldname\": \"absent\", \"fieldtype\": \"Int\", \"width\": 80}\n    ]\n    data = frappe.db.sql(\"\"\"\n        SELECT ma.date, ma.meal_type,\n               COUNT(*) AS total,\n               SUM(CASE WHEN ma.status = 'Present' THEN 1 ELSE 0 END) AS present,\n               SUM(CASE WHEN ma.status = 'Absent' THEN 1 ELSE 0 END) AS absent\n        FROM `tabMess Attendance` ma\n        GROUP BY ma.date, ma.meal_type\n        ORDER BY ma.date DESC, ma.meal_type\n    \"\"\", as_dict=True)\n    return columns, data\n",
+ "charts": [{"chart_name": "Meal Count", "chart_type": "Bar", "x_field": "date", "y_fields": "present"}],
+ "filters": [{"fieldname": "from_date", "label": "From Date", "fieldtype": "Date"}, {"fieldname": "to_date", "label": "To Date", "fieldtype": "Date"}, {"fieldname": "meal_type", "label": "Meal Type", "fieldtype": "Select", "options": "\\nBreakfast\\nLunch\\nDinner"}],
+ "roles": [{"role": "System Manager"}, {"role": "Warden"}]
+}

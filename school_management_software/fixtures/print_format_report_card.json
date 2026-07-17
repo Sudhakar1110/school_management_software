@@ -1,0 +1,16 @@
+{
+ "doctype": "Print Format",
+ "name": "Report Card Print",
+ "module": "Education",
+ "doc_type": "Report Card",
+ "print_format_type": "Jinja",
+ "format_data": "[{\"fieldname\": \"print_heading_template\", \"fieldtype\": \"Custom HTML\", \"options\": \"<div style=\\\"text-align: center;\\\"><h2>REPORT CARD</h2><h4>{{ doc.academic_year }} - {{ doc.exam_term }}</h4><hr></div>\"}, {\"fieldtype\": \"Section Break\", \"fieldname\": \"section_main\"}, {\"fieldtype\": \"Column Break\", \"fieldname\": \"col_left\"}, {\"fieldname\": \"student_name\", \"fieldtype\": \"Data\"}, {\"fieldname\": \"student_group\", \"fieldtype\": \"Data\"}, {\"fieldtype\": \"Column Break\", \"fieldname\": \"col_right\"}, {\"fieldname\": \"overall_grade\", \"fieldtype\": \"Data\"}, {\"fieldname\": \"percentage\", \"fieldtype\": \"Data\"}, {\"fieldtype\": \"Section Break\", \"fieldname\": \"section_subjects\"}, {\"fieldname\": \"subjects\", \"fieldtype\": \"Table\"}, {\"fieldtype\": \"Section Break\", \"fieldname\": \"section_traits\"}, {\"fieldname\": \"traits\", \"fieldtype\": \"Table\"}, {\"fieldtype\": \"Section Break\", \"fieldname\": \"section_remarks\"}, {\"fieldname\": \"teacher_remark\", \"fieldtype\": \"Data\"}, {\"fieldname\": \"principal_remark\", \"fieldtype\": \"Data\"}]",
+ "css": "body { font-family: Arial; font-size: 13px; } table { width: 100%; border-collapse: collapse; } th, td { border: 1px solid #ccc; padding: 6px; text-align: left; }",
+ "standard": "No",
+ "custom_format": 1,
+ "align_labels_right": 0,
+ "absolute_value": 0,
+ "default_print_language": "en",
+ "page_number": "Hide",
+ "show_title": 0
+}

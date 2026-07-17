@@ -1,0 +1,12 @@
+{
+ "doctype": "Report",
+ "name": "Fee Outstanding Report",
+ "module": "Education",
+ "report_type": "Query Report",
+ "is_standard": "No",
+ "ref_doctype": "Sales Invoice",
+ "query": "SELECT si.customer AS \"Student:Link/Custom Student:150\",\n       si.customer_name AS \"Student Name:Data:150\",\n       si.posting_date AS \"Invoice Date:Date:100\",\n       si.due_date AS \"Due Date:Date:100\",\n       si.grand_total AS \"Total Amount:Currency:100\",\n       si.outstanding_amount AS \"Outstanding:Currency:120\",\n       DATEDIFF(CURDATE(), si.due_date) AS \"Overdue Days:Int:80\",\n       si.status AS \"Status:Data:80\"\nFROM `tabSales Invoice` si\nWHERE si.outstanding_amount > 0\n  AND si.docstatus = 1\nORDER BY si.due_date ASC",
+ "charts": [],
+ "filters": [{"fieldname": "status", "label": "Status", "fieldtype": "Select", "options": "\\nOverdue\\nUnpaid\\nPartly Paid"}],
+ "roles": [{"role": "System Manager"}, {"role": "Accounts Manager"}, {"role": "Accounts User"}]
+}

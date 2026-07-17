@@ -1,0 +1,13 @@
+{
+ "doctype": "Report",
+ "name": "Library Circulation Report",
+ "module": "Education",
+ "report_type": "Script Report",
+ "is_standard": "No",
+ "ref_doctype": "Book Issue",
+ "query": "",
+ "script": "def execute(filters=None):\n    columns = [\n        {\"label\": \"Book\", \"fieldname\": \"book\", \"fieldtype\": \"Link\", \"options\": \"Library Book\", \"width\": 150},\n        {\"label\": \"Copy\", \"fieldname\": \"book_copy\", \"fieldtype\": \"Data\", \"width\": 80},\n        {\"label\": \"Member\", \"fieldname\": \"library_member\", \"fieldtype\": \"Link\", \"options\": \"Library Member\", \"width\": 120},\n        {\"label\": \"Issue Date\", \"fieldname\": \"issue_date\", \"fieldtype\": \"Date\", \"width\": 100},\n        {\"label\": \"Due Date\", \"fieldname\": \"due_date\", \"fieldtype\": \"Date\", \"width\": 100},\n        {\"label\": \"Overdue Days\", \"fieldname\": \"overdue_days\", \"fieldtype\": \"Int\", \"width\": 100},\n        {\"label\": \"Status\", \"fieldname\": \"status\", \"fieldtype\": \"Data\", \"width\": 100}\n    ]\n    data = frappe.db.sql(\"\"\"\n        SELECT bi.book, bi.book_copy, bi.library_member,\n               bi.issue_date, bi.due_date,\n               CASE WHEN bi.due_date < CURDATE() THEN DATEDIFF(CURDATE(), bi.due_date) ELSE 0 END AS overdue_days,\n               bi.status\n        FROM `tabBook Issue` bi\n        WHERE bi.status = 'Issued'\n        ORDER BY bi.due_date ASC\n    \"\"\", as_dict=True)\n    return columns, data\n",
+ "charts": [],
+ "filters": [],
+ "roles": [{"role": "System Manager"}, {"role": "Education Manager"}, {"role": "Librarian"}]
+}

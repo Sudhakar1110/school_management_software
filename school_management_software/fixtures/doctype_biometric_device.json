@@ -1,0 +1,163 @@
+{
+  "doctype": "DocType",
+  "name": "Biometric Device",
+  "module": "Education",
+  "custom": 1,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "is_single": 0,
+  "is_tree": 0,
+  "is_calendar_and_gantt": 0,
+  "editable_grid": 1,
+  "quick_entry": 0,
+  "track_changes": 0,
+  "track_seen": 0,
+  "track_views": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "By fieldname",
+  "autoname": "field:device_name",
+  "allow_rename": 1,
+  "description": "Manage biometric/RFID attendance devices",
+  "title_field": "device_name",
+  "search_fields": "device_name,device_type,location",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "default_view": "List",
+  "icon": "",
+  "image_field": "",
+  "timeline_field": "",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_sidebar": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "has_web_view": 0,
+  "allow_guest_to_view": 0,
+  "index_web_pages_for_search": 1,
+  "route": "",
+  "is_published_field": "",
+  "website_search_field": "",
+  "email_template": "",
+  "restrict_to_domain": "",
+  "document_type": "",
+  "fields": [
+    {
+      "fieldname": "device_name",
+      "fieldtype": "Data",
+      "label": "Device Name",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "device_type",
+      "fieldtype": "Select",
+      "label": "Device Type",
+      "options": "\nFingerprint\nRFID\nFace Recognition\nIris\nCard Swipe",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "vendor",
+      "fieldtype": "Select",
+      "label": "Vendor",
+      "options": "\nZKTeco\nMantra\nBioMatric\nHikvision\nOther",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "ip_address",
+      "fieldtype": "Data",
+      "label": "Device IP Address"
+    },
+    {
+      "fieldname": "port",
+      "fieldtype": "Int",
+      "label": "Port",
+      "default": "4370"
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break",
+      "label": ""
+    },
+    {
+      "fieldname": "location",
+      "fieldtype": "Data",
+      "label": "Location (Gate/Classroom)",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "api_endpoint",
+      "fieldtype": "Data",
+      "label": "API Endpoint",
+      "description": "REST API URL for cloud-based devices"
+    },
+    {
+      "fieldname": "api_key",
+      "fieldtype": "Password",
+      "label": "API Key/Secret"
+    },
+    {
+      "fieldname": "section_break_2",
+      "fieldtype": "Section Break",
+      "label": ""
+    },
+    {
+      "fieldname": "attendance_type",
+      "fieldtype": "Select",
+      "label": "Attendance Type",
+      "options": "\nStudent\nEmployee\nBoth",
+      "default": "Both"
+    },
+    {
+      "fieldname": "sync_interval_minutes",
+      "fieldtype": "Int",
+      "label": "Sync Interval (Minutes)",
+      "default": "15"
+    },
+    {
+      "fieldname": "last_sync",
+      "fieldtype": "Datetime",
+      "label": "Last Sync",
+      "read_only": 1
+    },
+    {
+      "fieldname": "is_active",
+      "fieldtype": "Check",
+      "label": "Is Active",
+      "default": "1",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 1,
+      "write": 1,
+      "amend": 0,
+      "cancel": 0,
+      "submit": 0,
+      "import": 0,
+      "select": 0,
+      "level": 0
+    }
+  ],
+  "actions": [],
+  "links": [],
+  "states": []
+}

@@ -1,0 +1,13 @@
+{
+ "doctype": "Report",
+ "name": "Exam Result Analysis Report",
+ "module": "Education",
+ "report_type": "Script Report",
+ "is_standard": "No",
+ "ref_doctype": "Assessment Result",
+ "query": "",
+ "script": "def execute(filters=None):\n    columns = [\n        {\"label\": \"Student Group\", \"fieldname\": \"student_group\", \"fieldtype\": \"Data\", \"width\": 150},\n        {\"label\": \"Course\", \"fieldname\": \"course\", \"fieldtype\": \"Data\", \"width\": 150},\n        {\"label\": \"Total Students\", \"fieldname\": \"total\", \"fieldtype\": \"Int\", \"width\": 100},\n        {\"label\": \"Passed\", \"fieldname\": \"passed\", \"fieldtype\": \"Int\", \"width\": 80},\n        {\"label\": \"Failed\", \"fieldname\": \"failed\", \"fieldtype\": \"Int\", \"width\": 80},\n        {\"label\": \"Pass %\", \"fieldname\": \"pass_pct\", \"fieldtype\": \"Percent\", \"width\": 80},\n        {\"label\": \"Average Score\", \"fieldname\": \"avg_score\", \"fieldtype\": \"Float\", \"width\": 100}\n    ]\n    data = frappe.db.sql(\"\"\"\n        SELECT ar.student_group, ar.course,\n               COUNT(*) AS total,\n               SUM(CASE WHEN ar.grade IN ('A', 'B', 'C', 'Pass') THEN 1 ELSE 0 END) AS passed,\n               SUM(CASE WHEN ar.grade IN ('D', 'F', 'Fail') THEN 1 ELSE 0 END) AS failed,\n               ROUND(AVG(ar.score) * 100, 1) AS avg_score\n        FROM `tabAssessment Result` ar\n        GROUP BY ar.student_group, ar.course\n        ORDER BY ar.student_group, ar.course\n    \"\"\", as_dict=True)\n    for d in data:\n        d[\"pass_pct\"] = round((d[\"passed\"] / d[\"total\"]) * 100, 1) if d[\"total\"] > 0 else 0\n    return columns, data\n",
+ "charts": [{"chart_name": "Pass Percentage by Course", "chart_type": "Bar", "x_field": "course", "y_fields": "pass_pct"}],
+ "filters": [{"fieldname": "student_group", "label": "Student Group", "fieldtype": "Link", "options": "Student Group"}],
+ "roles": [{"role": "System Manager"}, {"role": "Education Manager"}, {"role": "Instructor"}]
+}

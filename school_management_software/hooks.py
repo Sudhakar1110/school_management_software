@@ -10,6 +10,8 @@ app_license = "MIT"
 
 # Server script names - fixtures for this app (extracted from actual fixture files)
 server_script_names = [
+    "Auto Create Alumni Record on Student Exit",
+    "Biometric Attendance Sync",
     "approved",
     "auto-calculate everything",
     "auto-create Hostel Admission on Approve",
@@ -197,6 +199,29 @@ fixtures = [
         "Warden"
     ]]]},
 
+    # NEW DocTypes added in v1.0.0 gap analysis
+    {"dt": "DocType", "filters": [["name", "in", [
+        "Admission Enquiry",
+        "AI Settings",
+        "Alumni Record",
+        "Assignment",
+        "Assignment Rubric",
+        "Assignment Submission",
+        "Badge Definition",
+        "Biometric Attendance Log",
+        "Biometric Device",
+        "Call Log",
+        "Course Module",
+        "Course Module Content",
+        "Course Module Prerequisite",
+        "Gamification Settings",
+        "Postal Record",
+        "Question Bank",
+        "Response Template",
+        "Student Points Ledger",
+        "Visitor Log"
+    ]]]},
+
     # Custom Server Scripts (listed by name to avoid conflicts with other apps)
     {"dt": "Server Script", "filters": [
         ["name", "in", server_script_names]
@@ -221,7 +246,28 @@ fixtures = [
         "Student Fees",
         "Student & Scheduling",
         "Transport"
-    ]]]}
+    ]]},
+
+    # Custom Print Formats
+    {"dt": "Print Format", "filters": [["name", "in", [
+        "Student Certificate Print",
+        "Student ID Card Print",
+        "Employee ID Card Print",
+        "Hall Ticket Print",
+        "Report Card Print"
+    ]]},
+
+    # Custom Reports
+    {"dt": "Report", "filters": [["name", "in", [
+        "Certificate Issuance Report",
+        "Exam Result Analysis Report",
+        "Fee Outstanding Report",
+        "Hostel Attendance Summary Report",
+        "Hostel Occupancy Report",
+        "Library Circulation Report",
+        "Mess Attendance & Meal Count Report",
+        "Transport Fee Dues Report"
+    ]]}
 ]
 
 # No after_migrate needed - all customizations are handled via fixtures

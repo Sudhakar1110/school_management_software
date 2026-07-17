@@ -1,0 +1,16 @@
+{
+ "doctype": "Print Format",
+ "name": "Employee ID Card Print",
+ "module": "Education",
+ "doc_type": "Employee ID Card",
+ "print_format_type": "Jinja",
+ "format_data": "[{\"fieldname\": \"print_heading_template\", \"fieldtype\": \"Custom HTML\", \"options\": \"<div style=\\\"text-align: center;\\\"><h3>EMPLOYEE ID CARD</h3></div>\"}, {\"fieldtype\": \"Section Break\", \"fieldname\": \"section_main\"}, {\"fieldtype\": \"Column Break\", \"fieldname\": \"col_left\"}, {\"fieldname\": \"photo\", \"fieldtype\": \"Image\"}, {\"fieldtype\": \"Column Break\", \"fieldname\": \"col_right\"}, {\"fieldname\": \"employee_name\", \"fieldtype\": \"Data\"}, {\"fieldname\": \"department\", \"fieldtype\": \"Data\"}, {\"fieldname\": \"designation\", \"fieldtype\": \"Data\"}, {\"fieldname\": \"employee\", \"fieldtype\": \"Data\"}]",
+ "css": "body { font-family: Arial; font-size: 12px; } .print-format { width: 85mm; height: 54mm; padding: 5mm; }",
+ "standard": "No",
+ "custom_format": 1,
+ "align_labels_right": 0,
+ "absolute_value": 0,
+ "default_print_language": "en",
+ "page_number": "Hide",
+ "show_title": 0
+}

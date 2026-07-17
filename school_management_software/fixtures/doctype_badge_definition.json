@@ -1,0 +1,143 @@
+{
+  "doctype": "DocType",
+  "name": "Badge Definition",
+  "module": "Education",
+  "custom": 1,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "is_single": 0,
+  "is_tree": 0,
+  "is_calendar_and_gantt": 0,
+  "editable_grid": 1,
+  "quick_entry": 0,
+  "track_changes": 0,
+  "track_seen": 0,
+  "track_views": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "By fieldname",
+  "autoname": "field:badge_name",
+  "allow_rename": 1,
+  "description": "Define badges that students can earn through gamification",
+  "title_field": "badge_name",
+  "search_fields": "badge_name,tier,criteria_type",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "default_view": "List",
+  "icon": "",
+  "image_field": "badge_icon",
+  "timeline_field": "",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_sidebar": 0,
+  "hide_copy": 0,
+  "allow_import": 1,
+  "allow_auto_repeat": 0,
+  "has_web_view": 0,
+  "allow_guest_to_view": 0,
+  "index_web_pages_for_search": 1,
+  "route": "",
+  "is_published_field": "",
+  "website_search_field": "",
+  "email_template": "",
+  "restrict_to_domain": "",
+  "document_type": "",
+  "fields": [
+    {
+      "fieldname": "badge_name",
+      "fieldtype": "Data",
+      "label": "Badge Name",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "badge_icon",
+      "fieldtype": "Attach Image",
+      "label": "Badge Icon"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "criteria_type",
+      "fieldtype": "Select",
+      "label": "Criteria Type",
+      "options": "\nPoints Threshold\nStreak\nAchievement\nEvent\nAttendance\nQuiz Score\nOverall Performance",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "criteria_value",
+      "fieldtype": "Int",
+      "label": "Criteria Value",
+      "description": "Points threshold, number of streaks, etc."
+    },
+    {
+      "fieldname": "tier",
+      "fieldtype": "Select",
+      "label": "Tier",
+      "options": "\nBronze\nSilver\nGold\nPlatinum\nDiamond\nSpecial",
+      "default": "Bronze",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break",
+      "label": ""
+    },
+    {
+      "fieldname": "color",
+      "fieldtype": "Select",
+      "label": "Color",
+      "options": "\nBronze\nSilver\nGold\nBlue\nGreen\nPurple\nRed\nRainbow",
+      "default": "Gold"
+    },
+    {
+      "fieldname": "is_active",
+      "fieldtype": "Check",
+      "label": "Is Active",
+      "default": "1",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "is_repeatable",
+      "fieldtype": "Check",
+      "label": "Is Repeatable",
+      "default": "0",
+      "description": "Can this badge be earned multiple times?"
+    },
+    {
+      "fieldname": "icon_class",
+      "fieldtype": "Data",
+      "label": "Icon Class",
+      "description": "FontAwesome or emoji icon class"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 1,
+      "email": 0,
+      "export": 1,
+      "print": 0,
+      "read": 1,
+      "report": 1,
+      "share": 0,
+      "write": 1,
+      "amend": 0,
+      "cancel": 0,
+      "submit": 0,
+      "import": 1,
+      "select": 0,
+      "level": 0
+    }
+  ],
+  "actions": [],
+  "links": [],
+  "states": []
+}

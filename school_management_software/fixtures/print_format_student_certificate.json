@@ -1,0 +1,16 @@
+{
+ "doctype": "Print Format",
+ "name": "Student Certificate Print",
+ "module": "Education",
+ "doc_type": "Student Certificate",
+ "print_format_type": "Jinja",
+ "format_data": "[{\"fieldname\": \"print_heading_template\", \"fieldtype\": \"Custom HTML\", \"options\": \"<div style=\\\"text-align: center;\\\"><h2>{{ doc.student_name }}</h2></div>\"}, {\"fieldtype\": \"Section Break\", \"fieldname\": \"section_main\"}, {\"fieldtype\": \"Column Break\", \"fieldname\": \"col_main\"}, {\"fieldname\": \"student\", \"fieldtype\": \"Data\"}, {\"fieldname\": \"student_name\", \"fieldtype\": \"Data\"}, {\"fieldname\": \"class\", \"fieldtype\": \"Data\"}, {\"fieldname\": \"academic_year\", \"fieldtype\": \"Data\"}, {\"fieldtype\": \"Column Break\", \"fieldname\": \"col_side\"}, {\"fieldname\": \"template\", \"fieldtype\": \"Data\"}, {\"fieldname\": \"generated_on\", \"fieldtype\": \"Data\"}, {\"fieldname\": \"status\", \"fieldtype\": \"Data\"}]",
+ "css": "body { font-family: Arial; padding: 40px; }",
+ "standard": "No",
+ "custom_format": 1,
+ "align_labels_right": 0,
+ "absolute_value": 0,
+ "default_print_language": "en",
+ "page_number": "Hide",
+ "show_title": 0
+}

@@ -1,0 +1,13 @@
+{
+ "doctype": "Report",
+ "name": "Hostel Attendance Summary Report",
+ "module": "Education",
+ "report_type": "Script Report",
+ "is_standard": "No",
+ "ref_doctype": "Hostel Attendance",
+ "query": "",
+ "script": "def execute(filters=None):\n    columns = [\n        {\"label\": \"Hostel\", \"fieldname\": \"hostel\", \"fieldtype\": \"Data\", \"width\": 120},\n        {\"label\": \"Date\", \"fieldname\": \"date\", \"fieldtype\": \"Date\", \"width\": 100},\n        {\"label\": \"Total Students\", \"fieldname\": \"total\", \"fieldtype\": \"Int\", \"width\": 100},\n        {\"label\": \"Present\", \"fieldname\": \"present\", \"fieldtype\": \"Int\", \"width\": 80},\n        {\"label\": \"Absent\", \"fieldname\": \"absent\", \"fieldtype\": \"Int\", \"width\": 80},\n        {\"label\": \"Attendance %\", \"fieldname\": \"attendance_pct\", \"fieldtype\": \"Percent\", \"width\": 100}\n    ]\n    data = frappe.db.sql(\"\"\"\n        SELECT ha.hostel, ha.date,\n               COUNT(*) AS total,\n               SUM(CASE WHEN ha.status = 'Present' THEN 1 ELSE 0 END) AS present,\n               SUM(CASE WHEN ha.status = 'Absent' THEN 1 ELSE 0 END) AS absent\n        FROM `tabHostel Attendance` ha\n        GROUP BY ha.hostel, ha.date\n        ORDER BY ha.date DESC, ha.hostel\n    \"\"\", as_dict=True)\n    for d in data:\n        d[\"attendance_pct\"] = round((d[\"present\"] / d[\"total\"]) * 100, 1) if d[\"total\"] > 0 else 0\n    return columns, data\n",
+ "charts": [{"chart_name": "Daily Attendance", "chart_type": "Line", "x_field": "date", "y_fields": "attendance_pct"}],
+ "filters": [{"fieldname": "from_date", "label": "From Date", "fieldtype": "Date"}, {"fieldname": "to_date", "label": "To Date", "fieldtype": "Date"}, {"fieldname": "hostel", "label": "Hostel", "fieldtype": "Link", "options": "Hostel"}],
+ "roles": [{"role": "System Manager"}, {"role": "Warden"}, {"role": "Education Manager"}]
+}
