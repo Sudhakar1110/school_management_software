@@ -10,14 +10,6 @@ app_license = "MIT"
 
 required_apps = ["erpnext", "education"]
 
-# Register modules so Frappe creates them during migration
-app_modules = {
-    "School Compliance": "Compliance & Certification Management",
-    "School Governance": "Board & Committee Governance Tools",
-    "School Assets": "Asset Lifecycle Management",
-    "School Transport": "Transport & GPS Tracking",
-    "Student Fees": "Student Fee Management",
-}
 
 # Fixtures for customizations that are not auto-discovered during bench migrate.
 # DocTypes, Reports, Print Formats, and Workspaces are auto-discovered from their
