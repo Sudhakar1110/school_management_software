@@ -1,7 +1,7 @@
 {
   "doctype": "DocType",
   "name": "Vehicle GPS Tracking Log",
-  "module": "School Management Software",
+  "module": "School Transport",
   "custom": 1,
   "is_submittable": 0,
   "is_child_table": 0,
