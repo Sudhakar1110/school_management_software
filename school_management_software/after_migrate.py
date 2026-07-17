@@ -80,6 +80,46 @@ def after_migrate_setup():
 
     frappe.db.commit()
 
+    # Sync all workspace JSONs so module pages appear in sidebar
+    all_workspaces = [
+        "Home",
+        "Admissions",
+        "Attendance & Assessments",
+        "Exam",
+        "Hostel-Management",
+        "Library",
+        "Masters",
+        "Overview",
+        "School Events",
+        "Student Fees",
+        "Student & Scheduling",
+        "Transport",
+        "School Governance",
+        "School Compliance",
+        "School Assets",
+        "School Transport",
+    ]
+
+    for workspace_name in all_workspaces:
+        workspace_folder = frappe.scrub(workspace_name)
+        json_path = os.path.join(app_path, "workspace", workspace_folder, f"{workspace_folder}.json")
+
+        if not os.path.exists(json_path):
+            print(f"Workspace JSON not found: {json_path}")
+            continue
+
+        try:
+            import_file_by_path(json_path, force=True)
+            print(f"Synced workspace: {workspace_name}")
+        except Exception as e:
+            frappe.log_error(
+                message=f"Error syncing workspace {workspace_name}: {e}",
+                title="School Management - after_migrate",
+            )
+            print(f"ERROR: workspace {workspace_name} - {e}")
+
+    frappe.db.commit()
+
     # Add Table custom field linking Student to Student Fee Installment
     if frappe.db.exists("DocType", "Student Fee Installment"):
         if not frappe.db.exists("Custom Field", {"dt": "Student", "fieldname": "fee_installments"}):
