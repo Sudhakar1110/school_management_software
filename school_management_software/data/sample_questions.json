@@ -1,0 +1,32 @@
+{
+  "description": "Sample curriculum questions for the Question Bank. Import this file using the Data Import tool in Frappe (select 'Question Bank' as the DocType).",
+  "note": "Before importing, ensure Course records exist for: Geography, Physics, Mathematics, Biology, Chemistry, History, English, Computer Science, Science, General Knowledge, Civics",
+  "questions": [
+    {
+      "name": "What is the capital of France?",
+      "question_title": "What is the capital of France?",
+      "subject": "Geography",
+      "question_type": "Single Choice",
+      "question_text": "<p>What is the capital city of France?</p>",
+      "difficulty_level": "Easy",
+      "marks": 1,
+      "board": "CBSE",
+      "tags": "geography, europe, capitals",
+      "correct_answer": "Paris",
+      "explanation": "Paris is the capital and most populous city of France."
+    },
+    {
+      "name": "Newton's First Law of Motion",
+      "question_title": "Newton's First Law of Motion",
+      "subject": "Physics",
+      "question_type": "Short Answer",
+      "question_text": "<p>State Newton's First Law of Motion and give one example.</p>",
+      "difficulty_level": "Medium",
+      "marks": 3,
+      "board": "CBSE",
+      "tags": "physics, mechanics, newton, laws of motion",
+      "correct_answer": "Newton's First Law states that an object at rest stays at rest and an object in motion stays in motion with the same speed and in the same direction unless acted upon by an unbalanced force.",
+      "explanation": "This law is also known as the Law of Inertia."
+    }
+  ]
+}

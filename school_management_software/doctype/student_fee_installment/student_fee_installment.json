@@ -1,0 +1,82 @@
+{
+  "doctype": "DocType",
+  "name": "Student Fee Installment",
+  "module": "School Management Software",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_child_table": 1,
+  "is_single": 0,
+  "is_tree": 0,
+  "editable_grid": 1,
+  "track_changes": 0,
+  "track_seen": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "Auto",
+  "autoname": "",
+  "allow_rename": 0,
+  "description": "Child table for storing student fee installment details",
+  "title_field": "fee_category",
+  "search_fields": "",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "index_web_pages_for_search": 1,
+  "fields": [
+    {
+      "fieldname": "fee_category",
+      "fieldtype": "Data",
+      "label": "Fee Category",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "due_date",
+      "fieldtype": "Date",
+      "label": "Due Date",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_status",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Pending\nInvoiced\nPaid\nOverdue",
+      "default": "Pending",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "paid_amount",
+      "fieldtype": "Currency",
+      "label": "Paid Amount"
+    },
+    {
+      "fieldname": "outstanding_amount",
+      "fieldtype": "Currency",
+      "label": "Outstanding Amount"
+    },
+    {
+      "fieldname": "sales_invoice",
+      "fieldtype": "Link",
+      "label": "Sales Invoice",
+      "options": "Sales Invoice"
+    }
+  ],
+  "permissions": [],
+  "actions": [],
+  "links": [],
+  "states": []
+}
