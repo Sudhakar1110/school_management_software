@@ -70,6 +70,34 @@ def after_migrate_setup():
 
     frappe.db.commit()
 
+    # ── 3. Add Table custom field linking Student → Student Fee Installment ──
+    if frappe.db.exists("DocType", "Student Fee Installment"):
+        if not frappe.db.exists(
+            "Custom Field", {"dt": "Student", "fieldname": "fee_installments"}
+        ):
+            try:
+                cf = frappe.get_doc({
+                    "doctype": "Custom Field",
+                    "dt": "Student",
+                    "fieldname": "fee_installments",
+                    "label": "Fee Installments",
+                    "fieldtype": "Table",
+                    "options": "Student Fee Installment",
+                    "insert_after": "fee_staus",
+                    "module": "Student Fees",
+                })
+                cf.insert(ignore_permissions=True)
+                print(f"✅ Added Fee Installments table field to Student")
+                frappe.db.commit()
+            except Exception as e:
+                frappe.log_error(
+                    message=f"Error creating Fee Installments table field: {e}",
+                    title="School Management - after_migrate",
+                )
+                print(f"❌ Error creating Fee Installments table field: {e}")
+        else:
+            print(f"⏭️  Fee Installments table field already exists on Student")
+
     if created_modules:
         print(
             f"\n🎉 Created {len(created_modules)} new modules: {', '.join(created_modules)}"

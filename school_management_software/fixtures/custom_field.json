@@ -64,17 +64,6 @@
   },
   {
     "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "fee_installments",
-    "label": "Fee Installments",
-    "fieldtype": "Table",
-    "options": "Student Fee Installment",
-    "insert_after": "fee_staus",
-    "module": "School Management Software",
-    "name": "Student-fee_installments"
-  },
-  {
-    "doctype": "Custom Field",
     "dt": "Program Enrollment",
     "fieldname": "sales_invoice",
     "label": "Sales Invoice",
