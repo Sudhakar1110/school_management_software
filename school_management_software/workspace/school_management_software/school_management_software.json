@@ -195,7 +195,7 @@
   "public": 1,
   "icon": "lc-school",
   "indicator_color": "blue",
-  "sequence_id": 1,
+  "sequence_id": 1.5,
   "roles": [
     {
       "role": "Education Manager"
