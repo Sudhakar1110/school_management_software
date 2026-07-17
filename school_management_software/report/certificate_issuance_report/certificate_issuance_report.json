@@ -5,8 +5,6 @@
  "report_type": "Script Report",
  "is_standard": "No",
  "ref_doctype": "Student Certificate",
- "query": "",
- "charts": [],
  "filters": [{"fieldname": "from_date", "label": "From Date", "fieldtype": "Date"}, {"fieldname": "to_date", "label": "To Date", "fieldtype": "Date"}, {"fieldname": "template", "label": "Certificate Type", "fieldtype": "Link", "options": "Certificate Template"}],
  "roles": [{"role": "System Manager"}, {"role": "Education Manager"}]
 }

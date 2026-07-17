@@ -5,8 +5,6 @@
  "report_type": "Script Report",
  "is_standard": "No",
  "ref_doctype": "Student Transport Assignment",
- "query": "",
- "charts": [],
- "filters": [{"fieldname": "fee_status", "label": "Fee Status", "fieldtype": "Select", "options": "\\nPending\\nPaid\\nPartial\\nOverdue", "default": ""}],
+ "filters": [{"fieldname": "fee_status", "label": "Fee Status", "fieldtype": "Select", "options": "\nPending\nPaid\nPartial\nOverdue"}],
  "roles": [{"role": "System Manager"}, {"role": "Education Manager"}]
 }
