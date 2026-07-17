@@ -2,140 +2,81 @@
   "doctype": "Workspace",
   "name": "Transport",
   "module": "School Management Software",
-  "charts": [
-    {
-      "chart_name": "Student Assessments",
-      "label": "Student Assessments"
-    }
-  ],
+  "charts": [],
   "cards": [],
   "custom_blocks": [],
   "links": [
     {
       "type": "Card Break",
-      "label": "Attendance",
+      "label": "Transport Setup",
       "link_type": "DocType"
     },
     {
       "type": "Link",
-      "label": "Mark Bulk Attendance",
+      "label": "Transport Route",
       "link_type": "DocType",
-      "link_to": "Student Attendance Tool"
+      "link_to": "Transport Route"
     },
     {
       "type": "Link",
-      "label": "Student Attendance",
+      "label": "Transport Stop",
       "link_type": "DocType",
-      "link_to": "Student Attendance"
+      "link_to": "Transport Stop"
     },
     {
       "type": "Link",
-      "label": "Student Leave Application",
+      "label": "Transport Vehicle",
       "link_type": "DocType",
-      "link_to": "Student Leave Application"
+      "link_to": "Transport Vehicle"
     },
     {
       "type": "Link",
-      "label": "Monthly Attendance Report",
-      "link_type": "Report",
-      "link_to": "Student Monthly Attendance Sheet",
-      "is_query_report": 1
-    },
-    {
-      "type": "Link",
-      "label": "Absent Student Report",
-      "link_type": "Report",
-      "link_to": "Absent Student Report",
-      "is_query_report": 1
-    },
-    {
-      "type": "Link",
-      "label": "Today Present",
-      "link_type": "Report",
-      "link_to": "Student_Present_Today",
-      "is_query_report": 1
-    },
-    {
-      "type": "Link",
-      "label": "Today Absent",
-      "link_type": "Report",
-      "link_to": "Student_Absent_Today",
-      "is_query_report": 1
-    },
-    {
-      "type": "Link",
-      "label": "Student Batch-Wise Attendance",
-      "link_type": "Report",
-      "link_to": "Student Batch-Wise Attendance",
-      "is_query_report": 1
+      "label": "Vehicle GPS Tracking Log",
+      "link_type": "DocType",
+      "link_to": "Vehicle GPS Tracking Log"
     },
     {
       "type": "Card Break",
-      "label": "Doctypes",
+      "label": "Transport Operations",
       "link_type": "DocType"
     },
     {
       "type": "Link",
-      "label": "Assessment Criteria",
+      "label": "Student Transport Assignment",
       "link_type": "DocType",
-      "link_to": "Assessment Criteria"
+      "link_to": "Student Transport Assignment"
     },
     {
       "type": "Link",
-      "label": "Assessment Result",
+      "label": "Transport Fee",
       "link_type": "DocType",
-      "link_to": "Assessment Result"
+      "link_to": "Transport Fee"
     },
     {
       "type": "Link",
-      "label": "Assessment Result Tool",
-      "link_type": "DocType",
-      "link_to": "Assessment Result Tool"
-    },
-    {
-      "type": "Link",
-      "label": "Course wise Assessment Report",
+      "label": "Transport Fee Dues Report",
       "link_type": "Report",
-      "link_to": "Course wise Assessment Report",
+      "link_to": "Transport Fee Dues Report",
       "is_query_report": 1
-    },
-    {
-      "type": "Link",
-      "label": "Final Assessment Report",
-      "link_type": "Report",
-      "link_to": "Final Assessment Grades",
-      "is_query_report": 1
-    },
-    {
-      "type": "Link",
-      "label": "Student ReportCard Generation",
-      "link_type": "DocType",
-      "link_to": "Student Report Generation Tool"
-    },
-    {
-      "type": "Link",
-      "label": "Asessment plan",
-      "link_type": "DocType",
-      "link_to": "Assessment Plan"
     }
   ],
   "shortcuts": [],
   "title": "Transport",
-  "content": "[{\"id\":\"aX_-E0sLXc\",\"type\":\"workflow_overview\",\"data\":{\"workflow_overview_name\":\"Transport Setup\",\"workflows\":[{\"label\":\"Transport Setup\",\"doctypes\":[{\"doctype\":\"Driver\",\"label\":\"Transport Route\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"Create Drivers\"}]},{\"label\":\"Student Transport Process\",\"doctypes\":[{\"doctype\":\"Student\",\"label\":\"Student\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Transport Operations\",\"doctypes\":[{\"doctype\":\"Vehicle Log\",\"label\":\"Vehicle Log\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Route History\",\"label\":\"Route History\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]}],\"col\":12}},{\"id\":\"DZNExlFvyY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KXpINMRfSy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Present\",\"col\":3}},{\"id\":\"H69WdVrrz6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Absent\",\"col\":3}},{\"id\":\"AjFAJPgl7O\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Assessments\",\"col\":12}},{\"id\":\"hUJIDT89cY\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":5}},{\"id\":\"zG4o2afSls\",\"type\":\"card\",\"data\":{\"card_name\":\"Doctypes\",\"col\":5}}]",
+  "content": "[{\"id\":\"t1\",\"type\":\"card\",\"data\":{\"card_name\":\"Transport Setup\",\"col\":6}},{\"id\":\"t2\",\"type\":\"card\",\"data\":{\"card_name\":\"Transport Operations\",\"col\":6}}]",
   "label": "Transport",
   "public": 1,
-  "icon": "lc-clipboard-check",
+  "icon": "lc-bus",
   "indicator_color": "green",
-  "sequence_id": 6.1,
+  "sequence_id": 8,
   "roles": [
     {
-      "role": "Academics User"
+      "role": "System Manager"
     },
     {
       "role": "Education Manager"
     },
     {
-      "role": "Instructor"
+      "role": "Transport Manager"
     },
     {
       "role": "Student"

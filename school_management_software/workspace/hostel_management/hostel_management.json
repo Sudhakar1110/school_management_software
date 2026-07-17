@@ -2,87 +2,186 @@
   "doctype": "Workspace",
   "name": "Hostel-Management",
   "module": "School Management Software",
-  "charts": [
-    {
-      "chart_name": "Student Assessments",
-      "label": "Student Assessments"
-    }
-  ],
+  "charts": [],
   "cards": [],
   "custom_blocks": [],
   "links": [
     {
       "type": "Card Break",
-      "label": "Assessments",
+      "label": "Hostel Setup",
       "link_type": "DocType"
     },
     {
       "type": "Link",
-      "label": "Assessment Criteria",
+      "label": "Hostel",
       "link_type": "DocType",
-      "link_to": "Assessment Criteria"
+      "link_to": "Hostel"
     },
     {
       "type": "Link",
-      "label": "Assessment Result",
+      "label": "Hostel Block",
       "link_type": "DocType",
-      "link_to": "Assessment Result"
+      "link_to": "Hostel Block"
     },
     {
       "type": "Link",
-      "label": "Assessment Result Tool",
+      "label": "Hostel Room",
       "link_type": "DocType",
-      "link_to": "Assessment Result Tool"
+      "link_to": "Hostel Room"
     },
     {
       "type": "Link",
-      "label": "Course wise Assessment Report",
-      "link_type": "Report",
-      "link_to": "Course wise Assessment Report",
-      "is_query_report": 1
-    },
-    {
-      "type": "Link",
-      "label": "Final Assessment Report",
-      "link_type": "Report",
-      "link_to": "Final Assessment Grades",
-      "is_query_report": 1
-    },
-    {
-      "type": "Link",
-      "label": "Student ReportCard Generation",
+      "label": "Hostel Room Types",
       "link_type": "DocType",
-      "link_to": "Student Report Generation Tool"
+      "link_to": "Hostel Room Types"
     },
     {
       "type": "Link",
-      "label": "Asessment plan",
+      "label": "Hostel Bed",
       "link_type": "DocType",
-      "link_to": "Assessment Plan"
+      "link_to": "Hostel Bed"
     },
     {
       "type": "Card Break",
-      "label": "Doctypes",
+      "label": "Hostel Operations",
       "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Hostel Admission",
+      "link_type": "DocType",
+      "link_to": "Hostel Admission"
+    },
+    {
+      "type": "Link",
+      "label": "Hostel Application",
+      "link_type": "DocType",
+      "link_to": "Hostel Application"
+    },
+    {
+      "type": "Link",
+      "label": "Hostel Check-Out",
+      "link_type": "DocType",
+      "link_to": "Hostel Check-Out"
+    },
+    {
+      "type": "Link",
+      "label": "Room Transfer",
+      "link_type": "DocType",
+      "link_to": "Room Transfer"
+    },
+    {
+      "type": "Link",
+      "label": "Hostel Card",
+      "link_type": "DocType",
+      "link_to": "Hostel Card"
+    },
+    {
+      "type": "Card Break",
+      "label": "Hostel Services",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Hostel Fee",
+      "link_type": "DocType",
+      "link_to": "Hostel Fee"
+    },
+    {
+      "type": "Link",
+      "label": "Hostel Attendance",
+      "link_type": "DocType",
+      "link_to": "Hostel Attendance"
+    },
+    {
+      "type": "Link",
+      "label": "Hostel Leaves",
+      "link_type": "DocType",
+      "link_to": "Hostel Leaves"
+    },
+    {
+      "type": "Link",
+      "label": "Hostel Visitor Log",
+      "link_type": "DocType",
+      "link_to": "Hostel Visitor Log"
+    },
+    {
+      "type": "Link",
+      "label": "Hostel Medical Incident",
+      "link_type": "DocType",
+      "link_to": "Hostel Medical Incident"
+    },
+    {
+      "type": "Link",
+      "label": "Hostel Asset Issue",
+      "link_type": "DocType",
+      "link_to": "Hostel Asset Issue"
+    },
+    {
+      "type": "Card Break",
+      "label": "Mess",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Mess Menu",
+      "link_type": "DocType",
+      "link_to": "Mess Menu"
+    },
+    {
+      "type": "Link",
+      "label": "Mess Attendance",
+      "link_type": "DocType",
+      "link_to": "Mess Attendance"
+    },
+    {
+      "type": "Link",
+      "label": "Mess Attendance & Meal Count Report",
+      "link_type": "Report",
+      "link_to": "Mess Attendance & Meal Count Report",
+      "is_query_report": 1
+    },
+    {
+      "type": "Card Break",
+      "label": "Other",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Grievance Box",
+      "link_type": "DocType",
+      "link_to": "Grievance Box"
+    },
+    {
+      "type": "Link",
+      "label": "Warden",
+      "link_type": "DocType",
+      "link_to": "Warden"
+    },
+    {
+      "type": "Link",
+      "label": "Room Inspection",
+      "link_type": "DocType",
+      "link_to": "Room Inspection"
     }
   ],
   "shortcuts": [],
   "title": "Hostel-Management",
-  "content": "[{\"id\":\"DZNExlFvyY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KXpINMRfSy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Present\",\"col\":3}},{\"id\":\"H69WdVrrz6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Absent\",\"col\":3}},{\"id\":\"AjFAJPgl7O\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Assessments\",\"col\":12}},{\"id\":\"hUJIDT89cY\",\"type\":\"card\",\"data\":{\"card_name\":\"Doctypes\",\"col\":5}},{\"id\":\"zG4o2afSls\",\"type\":\"card\",\"data\":{\"card_name\":\"Assessments\",\"col\":5}}]",
+  "content": "[{\"id\":\"h1\",\"type\":\"card\",\"data\":{\"card_name\":\"Hostel Setup\",\"col\":4}},{\"id\":\"h2\",\"type\":\"card\",\"data\":{\"card_name\":\"Hostel Operations\",\"col\":4}},{\"id\":\"h3\",\"type\":\"card\",\"data\":{\"card_name\":\"Hostel Services\",\"col\":4}},{\"id\":\"h4\",\"type\":\"card\",\"data\":{\"card_name\":\"Mess\",\"col\":4}},{\"id\":\"h5\",\"type\":\"card\",\"data\":{\"card_name\":\"Other\",\"col\":4}}]",
   "label": "Hostel-Management",
   "public": 1,
-  "icon": "lc-clipboard-check",
-  "indicator_color": "green",
+  "icon": "lc-building",
+  "indicator_color": "blue",
   "sequence_id": 6.1,
   "roles": [
     {
-      "role": "Academics User"
+      "role": "System Manager"
     },
     {
       "role": "Education Manager"
     },
     {
-      "role": "Instructor"
+      "role": "Warden"
     },
     {
       "role": "Student"

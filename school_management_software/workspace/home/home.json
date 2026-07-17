@@ -64,30 +64,93 @@
     },
     {
       "type": "Link",
-      "label": "Student_Rreportcard_Generation",
-      "link_type": "DocType",
-      "link_to": "Student Report Generation Tool"
+      "label": "Certificate Issuance Report",
+      "link_type": "Report",
+      "link_to": "Certificate Issuance Report",
+      "is_query_report": 1
+    },
+    {
+      "type": "Link",
+      "label": "Exam Result Analysis Report",
+      "link_type": "Report",
+      "link_to": "Exam Result Analysis Report",
+      "is_query_report": 1
+    },
+    {
+      "type": "Link",
+      "label": "Hostel Occupancy Report",
+      "link_type": "Report",
+      "link_to": "Hostel Occupancy Report",
+      "is_query_report": 1
+    },
+    {
+      "type": "Link",
+      "label": "Library Circulation Report",
+      "link_type": "Report",
+      "link_to": "Library Circulation Report",
+      "is_query_report": 1
     },
     {
       "type": "Card Break",
-      "label": "Admission",
+      "label": "Front Office & Admissions",
       "link_type": "DocType"
     },
     {
       "type": "Link",
-      "label": "Admissions",
+      "label": "Admission Enquiry",
+      "link_type": "DocType",
+      "link_to": "Admission Enquiry"
+    },
+    {
+      "type": "Link",
+      "label": "Student Admission",
       "link_type": "DocType",
       "link_to": "Student Admission"
     },
     {
       "type": "Link",
-      "label": "Student Application",
+      "label": "Student Applicant",
       "link_type": "DocType",
       "link_to": "Student Applicant"
     },
     {
       "type": "Link",
-      "label": "Grade Enrollment",
+      "label": "Call Log",
+      "link_type": "DocType",
+      "link_to": "Call Log"
+    },
+    {
+      "type": "Link",
+      "label": "Postal Record",
+      "link_type": "DocType",
+      "link_to": "Postal Record"
+    },
+    {
+      "type": "Link",
+      "label": "Visitor Log",
+      "link_type": "DocType",
+      "link_to": "Visitor Log"
+    },
+    {
+      "type": "Link",
+      "label": "Complaint / Grievance Box",
+      "link_type": "DocType",
+      "link_to": "Grievance Box"
+    },
+    {
+      "type": "Link",
+      "label": "Response Template",
+      "link_type": "DocType",
+      "link_to": "Response Template"
+    },
+    {
+      "type": "Card Break",
+      "label": "Academics",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Program Enrollment",
       "link_type": "DocType",
       "link_to": "Program Enrollment"
     },
@@ -99,21 +162,155 @@
     },
     {
       "type": "Link",
-      "label": "Fees",
+      "label": "Assignment",
       "link_type": "DocType",
-      "link_to": "Fees"
+      "link_to": "Assignment"
     },
     {
       "type": "Link",
-      "label": "Student list",
+      "label": "Assignment Rubric",
       "link_type": "DocType",
-      "link_to": "Student"
+      "link_to": "Assignment Rubric"
     },
     {
       "type": "Link",
-      "label": "Grade Enrollment Tool",
+      "label": "Assignment Submission",
       "link_type": "DocType",
-      "link_to": "Program Enrollment Tool"
+      "link_to": "Assignment Submission"
+    },
+    {
+      "type": "Link",
+      "label": "Assessment Group",
+      "link_type": "DocType",
+      "link_to": "Assessment Group"
+    },
+    {
+      "type": "Link",
+      "label": "Question Bank",
+      "link_type": "DocType",
+      "link_to": "Question Bank"
+    },
+    {
+      "type": "Link",
+      "label": "Course Module",
+      "link_type": "DocType",
+      "link_to": "Course Module"
+    },
+    {
+      "type": "Card Break",
+      "label": "Alumni & Certificates",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Student Certificate",
+      "link_type": "DocType",
+      "link_to": "Student Certificate"
+    },
+    {
+      "type": "Link",
+      "label": "Employee Certificate",
+      "link_type": "DocType",
+      "link_to": "Employee Certificate"
+    },
+    {
+      "type": "Link",
+      "label": "Alumni Record",
+      "link_type": "DocType",
+      "link_to": "Alumni Record"
+    },
+    {
+      "type": "Card Break",
+      "label": "Governance & Compliance",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Board Meeting",
+      "link_type": "DocType",
+      "link_to": "Board Meeting"
+    },
+    {
+      "type": "Link",
+      "label": "Committee Definition",
+      "link_type": "DocType",
+      "link_to": "Committee Definition"
+    },
+    {
+      "type": "Link",
+      "label": "Compliance Certification",
+      "link_type": "DocType",
+      "link_to": "Compliance Certification"
+    },
+    {
+      "type": "Link",
+      "label": "Compliance Policy Link",
+      "link_type": "DocType",
+      "link_to": "Compliance Policy Link"
+    },
+    {
+      "type": "Card Break",
+      "label": "Assets & Transport",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Asset Register",
+      "link_type": "DocType",
+      "link_to": "Asset Register"
+    },
+    {
+      "type": "Link",
+      "label": "Asset Maintenance",
+      "link_type": "DocType",
+      "link_to": "Asset Maintenance"
+    },
+    {
+      "type": "Link",
+      "label": "Transport Route",
+      "link_type": "DocType",
+      "link_to": "Transport Route"
+    },
+    {
+      "type": "Link",
+      "label": "Transport Vehicle",
+      "link_type": "DocType",
+      "link_to": "Transport Vehicle"
+    },
+    {
+      "type": "Link",
+      "label": "Vehicle GPS Tracking Log",
+      "link_type": "DocType",
+      "link_to": "Vehicle GPS Tracking Log"
+    },
+    {
+      "type": "Link",
+      "label": "Student Transport Assignment",
+      "link_type": "DocType",
+      "link_to": "Student Transport Assignment"
+    },
+    {
+      "type": "Card Break",
+      "label": "Biometric & AI",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Biometric Device",
+      "link_type": "DocType",
+      "link_to": "Biometric Device"
+    },
+    {
+      "type": "Link",
+      "label": "Biometric Attendance Log",
+      "link_type": "DocType",
+      "link_to": "Biometric Attendance Log"
+    },
+    {
+      "type": "Link",
+      "label": "AI Settings",
+      "link_type": "DocType",
+      "link_to": "AI Settings"
     },
     {
       "type": "Card Break",
@@ -146,90 +343,135 @@
     },
     {
       "type": "Link",
-      "label": "Time Table",
-      "link_type": "DocType",
-      "link_to": "Course Schedule"
-    },
-    {
-      "type": "Link",
       "label": "Fee Structure",
       "link_type": "DocType",
       "link_to": "Fee Structure"
     },
     {
       "type": "Link",
-      "label": "Student Guardian",
+      "label": "Instructor",
+      "link_type": "DocType",
+      "link_to": "Instructor"
+    },
+    {
+      "type": "Link",
+      "label": "Guardian",
       "link_type": "DocType",
       "link_to": "Guardian"
     },
     {
-      "type": "Link",
-      "label": "Class Room",
-      "link_type": "DocType",
-      "link_to": "Room"
-    },
-    {
-      "type": "Link",
-      "label": "Student_Group_Creation_Tool",
-      "link_type": "DocType",
-      "link_to": "Student Group Creation Tool"
-    },
-    {
       "type": "Card Break",
-      "label": "Attendance & Assessments",
+      "label": "Exam & Results",
       "link_type": "DocType"
     },
     {
       "type": "Link",
-      "label": "Student Attendance",
+      "label": "Exam Term",
       "link_type": "DocType",
-      "link_to": "Student Attendance"
+      "link_to": "Exam Term"
     },
     {
       "type": "Link",
-      "label": "Student Leave",
+      "label": "Exam Schedule",
       "link_type": "DocType",
-      "link_to": "Student Leave Application"
+      "link_to": "Exam Schedule"
     },
     {
       "type": "Link",
-      "label": "Assessment Plan",
+      "label": "Hall Ticket",
       "link_type": "DocType",
-      "link_to": "Assessment Plan"
+      "link_to": "Hall Ticket"
     },
     {
       "type": "Link",
-      "label": "Assessment creteria",
+      "label": "Student Rank",
       "link_type": "DocType",
-      "link_to": "Assessment Criteria"
+      "link_to": "Student Rank"
     },
     {
       "type": "Link",
-      "label": "Assessment Result",
+      "label": "Report Card",
       "link_type": "DocType",
-      "link_to": "Assessment Result"
-    },
-    {
-      "type": "Link",
-      "label": "Enter Student Assessment",
-      "link_type": "DocType",
-      "link_to": "Assessment Result Tool"
-    },
-    {
-      "type": "Link",
-      "label": "Student Attendance summary",
-      "link_type": "Report",
-      "link_to": "Student Attendance Summary",
-      "is_query_report": 1
+      "link_to": "Report Card"
     }
   ],
   "shortcuts": [
     {
       "type": "DocType",
-      "link_to": "Topic",
+      "link_to": "Student",
       "doc_view": "List",
-      "label": "Topic",
+      "label": "Students",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Instructor",
+      "doc_view": "List",
+      "label": "Instructors",
+      "color": "Pink"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Program",
+      "doc_view": "List",
+      "label": "Grades",
+      "color": "Purple"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Course",
+      "doc_view": "List",
+      "label": "Courses",
       "color": "Yellow"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Student Attendance",
+      "doc_view": "List",
+      "label": "Attendance",
+      "color": "Grey"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Fees",
+      "doc_view": "List",
+      "label": "Fees",
+      "color": "Green"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Student Certificate",
+      "doc_view": "List",
+      "label": "Certificates",
+      "color": "Orange"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Board Meeting",
+      "doc_view": "List",
+      "label": "Board Meetings",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Asset Register",
+      "doc_view": "List",
+      "label": "Assets",
+      "color": "Orange"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Compliance Certification",
+      "doc_view": "List",
+      "label": "Compliance",
+      "color": "Green"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Question Bank",
+      "doc_view": "List",
+      "label": "Question Bank",
+      "color": "Teal"
     },
     {
       "type": "Report",
@@ -237,52 +479,10 @@
       "doc_view": "List",
       "label": "Monthly Attendance Report",
       "color": "Grey"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Instructor",
-      "doc_view": "List",
-      "label": "Instructor",
-      "color": "Pink"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Program",
-      "doc_view": "List",
-      "label": "Grade",
-      "color": "Blue"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Course",
-      "doc_view": "List",
-      "label": "Course",
-      "color": "Yellow"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Student Attendance Tool",
-      "doc_view": "List",
-      "label": "Mark Bulk Attendance",
-      "color": "Grey"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Grading Scale",
-      "doc_view": "List",
-      "label": "Grading Scale",
-      "color": "Green"
-    },
-    {
-      "type": "DocType",
-      "link_to": "Course Scheduling Tool",
-      "doc_view": "List",
-      "label": "Time Table Scheduling",
-      "color": "Grey"
     }
   ],
   "title": "Home",
-  "content": "[{\"id\":\"spTai5KZLH\",\"type\":\"workflow_overview\",\"data\":{\"workflow_overview_name\":\"Admissions\",\"workflows\":[{\"label\":\"Admissions\",\"doctypes\":[{\"doctype\":\"Student Admission\",\"label\":\"Student Admission\",\"icon\":\"lc-graduation-cap\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Attendance\",\"doctypes\":[{\"doctype\":\"Student Group\",\"label\":\"Student Group\",\"icon\":\"lc-network\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Course Schedule\",\"label\":\"Course Schedule\",\"icon\":\"lc-calendar-clock\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Student Attendance\",\"label\":\"Student Attendance\",\"icon\":\"lc-clipboard-check\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Assesssment\",\"doctypes\":[{\"doctype\":\"Grading Scale\",\"label\":\"Grading Scale\",\"icon\":\"lc-award\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Assessment Criteria\",\"label\":\"Assessment Criteria\",\"icon\":\"lc-sliders-horizontal\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Assessment Plan\",\"label\":\"Assessment Plan\",\"icon\":\"lc-clipboard-list\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Assessment Result Tool\",\"label\":\"Assessment Result Tool\",\"icon\":\"lc-clipboard-check\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Fees\",\"doctypes\":[{\"doctype\":\"Fee Category\",\"label\":\"Fee Category\",\"icon\":\"lc-tag\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Fee Structure\",\"label\":\"Fee Structure\",\"icon\":\"lc-clipboard-list\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Student Group\",\"label\":\"Student Group\",\"icon\":\"lc-network\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Fee Schedule\",\"label\":\"Fee Schedule\",\"icon\":\"lc-calendar-1\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Sales Invoice\",\"label\":\"Sales Invoice\",\"icon\":\"lc-receipt-indian-rupee\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Payment Entry\",\"label\":\"Payment Entry\",\"icon\":\"lc-banknote\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Certificate\",\"doctypes\":[{\"doctype\":\"Student Certificate\",\"label\":\"Student Certificate\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]}],\"col\":12}},{\"id\":\"GvBuoQKoKh\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Enrollments\",\"col\":6}},{\"id\":\"cBlifpOI-w\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Program Wise Total Fee\",\"col\":6}},{\"id\":\"Odzd1rARao\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"V1whbeJfv4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Grade\",\"col\":3}},{\"id\":\"zaUGzgW3IN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Course\",\"col\":3}},{\"id\":\"laGg2NGEMM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Topic\",\"col\":3}},{\"id\":\"3C5jmGqv4l\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Instructor\",\"col\":3}},{\"id\":\"418zenz-ZP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Time Table Scheduling\",\"col\":3}},{\"id\":\"qS7l3enfMP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mark Bulk Attendance\",\"col\":3}},{\"id\":\"q7HBcFYD8C\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Monthly Attendance Report\",\"col\":3}},{\"id\":\"4dOgdZjS7R\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Grading Scale\",\"col\":3}},{\"id\":\"e5tqzeNtU7\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":3}},{\"id\":\"idrCNbpOX7\",\"type\":\"card\",\"data\":{\"card_name\":\"Admission\",\"col\":3}},{\"id\":\"k-KwObmL8j\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance & Assessments\",\"col\":3}},{\"id\":\"6AJ1pAghNX\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":3}}]",
+  "content": "[{\"id\":\"spTai5KZLH\",\"type\":\"workflow_overview\",\"data\":{\"workflow_overview_name\":\"Admissions\",\"workflows\":[{\"label\":\"Admissions\",\"doctypes\":[{\"doctype\":\"Student Admission\",\"label\":\"Student Admission\",\"icon\":\"lc-graduation-cap\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Attendance\",\"doctypes\":[{\"doctype\":\"Student Group\",\"label\":\"Student Group\",\"icon\":\"lc-network\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Course Schedule\",\"label\":\"Course Schedule\",\"icon\":\"lc-calendar-clock\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Student Attendance\",\"label\":\"Student Attendance\",\"icon\":\"lc-clipboard-check\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Assesssment\",\"doctypes\":[{\"doctype\":\"Grading Scale\",\"label\":\"Grading Scale\",\"icon\":\"lc-award\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Assessment Criteria\",\"label\":\"Assessment Criteria\",\"icon\":\"lc-sliders-horizontal\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Assessment Plan\",\"label\":\"Assessment Plan\",\"icon\":\"lc-clipboard-list\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Assessment Result Tool\",\"label\":\"Assessment Result Tool\",\"icon\":\"lc-clipboard-check\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Fees\",\"doctypes\":[{\"doctype\":\"Fee Category\",\"label\":\"Fee Category\",\"icon\":\"lc-tag\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Fee Structure\",\"label\":\"Fee Structure\",\"icon\":\"lc-clipboard-list\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Student Group\",\"label\":\"Student Group\",\"icon\":\"lc-network\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Fee Schedule\",\"label\":\"Fee Schedule\",\"icon\":\"lc-calendar-1\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Sales Invoice\",\"label\":\"Sales Invoice\",\"icon\":\"lc-receipt-indian-rupee\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Payment Entry\",\"label\":\"Payment Entry\",\"icon\":\"lc-banknote\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Certificate\",\"doctypes\":[{\"doctype\":\"Student Certificate\",\"label\":\"Student Certificate\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]}],\"col\":12}},{\"id\":\"GvBuoQKoKh\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Enrollments\",\"col\":6}},{\"id\":\"cBlifpOI-w\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Program Wise Total Fee\",\"col\":6}},{\"id\":\"Odzd1rARao\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"V1whbeJfv4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Students\",\"col\":3}},{\"id\":\"zaUGzgW3IN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Grades\",\"col\":3}},{\"id\":\"laGg2NGEMM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Courses\",\"col\":3}},{\"id\":\"3C5jmGqv4l\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Instructors\",\"col\":3}},{\"id\":\"418zenz-ZP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Attendance\",\"col\":3}},{\"id\":\"qS7l3enfMP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Fees\",\"col\":3}},{\"id\":\"q7HBcFYD8C\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Certificates\",\"col\":3}},{\"id\":\"4dOgdZjS7R\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Board Meetings\",\"col\":3}},{\"id\":\"e5tqzeNtU7\",\"type\":\"card\",\"data\":{\"card_name\":\"Front Office & Admissions\",\"col\":3}},{\"id\":\"idrCNbpOX7\",\"type\":\"card\",\"data\":{\"card_name\":\"Academics\",\"col\":3}},{\"id\":\"k-KwObmL8j\",\"type\":\"card\",\"data\":{\"card_name\":\"Alumni & Certificates\",\"col\":3}},{\"id\":\"6AJ1pAghNX\",\"type\":\"card\",\"data\":{\"card_name\":\"Governance & Compliance\",\"col\":3}},{\"id\":\"e5tqzeNtU7\",\"type\":\"card\",\"data\":{\"card_name\":\"Assets & Transport\",\"col\":3}},{\"id\":\"idrCNbpOX7\",\"type\":\"card\",\"data\":{\"card_name\":\"Exam & Results\",\"col\":3}},{\"id\":\"k-KwObmL8j\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":3}},{\"id\":\"6AJ1pAghNX\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":3}}]",
   "label": "Home",
   "public": 1,
   "icon": "lc-house",
