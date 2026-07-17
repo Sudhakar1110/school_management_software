@@ -895,7 +895,12 @@ CUSTOM_DOCTYPES = [
 
 
 def _clear_data():
-    """Delete all existing custom doctype records for a fresh start."""
+    """Delete all custom doctype records using direct SQL (guaranteed cleanup).
+
+    Uses SQL DELETE instead of frappe.delete_doc() to bypass all hooks,
+    permissions, submit-state checks, and link validations that can cause
+    silent failures.
+    """
     total = 0
     for dt in CUSTOM_DOCTYPES:
         try:
@@ -903,17 +908,14 @@ def _clear_data():
                 continue
         except Exception:
             continue
+        table = f"tab{dt}"
         try:
-            names = frappe.db.get_all(dt, pluck="name", limit_page_length=99999)
+            n = frappe.db.sql(f"SELECT COUNT(*) FROM `{table}`")[0][0]
+            if n:
+                frappe.db.sql(f"DELETE FROM `{table}`")
+                total += n
         except Exception:
             continue  # table may not exist yet
-        if names:
-            for n in names:
-                try:
-                    frappe.delete_doc(dt, n, ignore_permissions=True, force=True)
-                    total += 1
-                except Exception:
-                    pass
     return total
 
 
