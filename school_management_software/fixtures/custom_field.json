@@ -7,7 +7,8 @@
     "fieldtype": "Select",
     "options": "STU-.YYYY.-",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-naming_series"
   },
   {
     "doctype": "Custom Field",
@@ -16,7 +17,8 @@
     "label": "Enabled",
     "fieldtype": "Check",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-enabled"
   },
   {
     "doctype": "Custom Field",
@@ -26,7 +28,8 @@
     "fieldtype": "Link",
     "options": "Instructor",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-class_teacher"
   },
   {
     "doctype": "Custom Field",
@@ -36,7 +39,8 @@
     "fieldtype": "Data",
     "options": "Email",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-custom_guardian_email"
   },
   {
     "doctype": "Custom Field",
@@ -45,7 +49,8 @@
     "label": "Student Mobile Number",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-student_mobile_number"
   },
   {
     "doctype": "Custom Field",
@@ -54,7 +59,8 @@
     "label": "Class",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-class_name"
   },
   {
     "doctype": "Custom Field",
@@ -63,7 +69,8 @@
     "label": "Section",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-section_name"
   },
   {
     "doctype": "Custom Field",
@@ -72,7 +79,8 @@
     "label": "Register No",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-register_no"
   },
   {
     "doctype": "Custom Field",
@@ -81,7 +89,8 @@
     "label": "Roll No",
     "fieldtype": "Int",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-roll_no"
   },
   {
     "doctype": "Custom Field",
@@ -90,7 +99,8 @@
     "label": "Admission Date",
     "fieldtype": "Date",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-admission_date"
   },
   {
     "doctype": "Custom Field",
@@ -99,7 +109,8 @@
     "label": "PAN No",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-pan_no"
   },
   {
     "doctype": "Custom Field",
@@ -108,7 +119,8 @@
     "label": "Phone No",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-phone_no"
   },
   {
     "doctype": "Custom Field",
@@ -117,7 +129,8 @@
     "label": "Transport Stoppage",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-transport_stoppage"
   },
   {
     "doctype": "Custom Field",
@@ -126,7 +139,8 @@
     "label": "Religion",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-religion"
   },
   {
     "doctype": "Custom Field",
@@ -135,7 +149,8 @@
     "label": "Caste",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-caste"
   },
   {
     "doctype": "Custom Field",
@@ -144,7 +159,8 @@
     "label": "Mother Tongue",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-mother_tongue"
   },
   {
     "doctype": "Custom Field",
@@ -153,7 +169,8 @@
     "label": "Mother's Name",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-mother_name"
   },
   {
     "doctype": "Custom Field",
@@ -162,7 +179,8 @@
     "label": "Father's Name",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-father_name"
   },
   {
     "doctype": "Custom Field",
@@ -171,7 +189,8 @@
     "label": "Address Line 1",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-address_line_1"
   },
   {
     "doctype": "Custom Field",
@@ -180,7 +199,8 @@
     "label": "Address Line 2",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-address_line_2"
   },
   {
     "doctype": "Custom Field",
@@ -189,7 +209,8 @@
     "label": "Pincode",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-pincode"
   },
   {
     "doctype": "Custom Field",
@@ -198,7 +219,8 @@
     "label": "City",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-city"
   },
   {
     "doctype": "Custom Field",
@@ -207,7 +229,8 @@
     "label": "State",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-state"
   },
   {
     "doctype": "Custom Field",
@@ -217,7 +240,8 @@
     "fieldtype": "Link",
     "options": "Country",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-country"
   },
   {
     "doctype": "Custom Field",
@@ -227,7 +251,8 @@
     "fieldtype": "Table",
     "options": "Custom Student Guardian",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-guardians"
   },
   {
     "doctype": "Custom Field",
@@ -237,7 +262,8 @@
     "fieldtype": "Table",
     "options": "Custom Student Sibling",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-siblings"
   },
   {
     "doctype": "Custom Field",
@@ -247,7 +273,8 @@
     "fieldtype": "Link",
     "options": "Payment Entry",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student-fee_staus"
   },
   {
     "doctype": "Custom Field",
@@ -256,7 +283,8 @@
     "label": "Enrollment Date",
     "fieldtype": "Date",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Program Enrollment-enrollment_date"
   },
   {
     "doctype": "Custom Field",
@@ -266,7 +294,8 @@
     "fieldtype": "Link",
     "options": "Student Category",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Program Enrollment-student_category"
   },
   {
     "doctype": "Custom Field",
@@ -276,7 +305,8 @@
     "fieldtype": "Table",
     "options": "Applicant Fee",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Program Enrollment-fees"
   },
   {
     "doctype": "Custom Field",
@@ -286,7 +316,8 @@
     "fieldtype": "Link",
     "options": "Sales Invoice",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Program Enrollment-sales_invoice"
   },
   {
     "doctype": "Custom Field",
@@ -296,7 +327,8 @@
     "fieldtype": "Link",
     "options": "Custom Program Enrollment",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Program Enrollment-amended_from"
   },
   {
     "doctype": "Custom Field",
@@ -306,7 +338,8 @@
     "fieldtype": "Table",
     "options": "Program Enrollment Course",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Program Enrollment-courses"
   },
   {
     "doctype": "Custom Field",
@@ -316,7 +349,8 @@
     "fieldtype": "Select",
     "options": "CSCH-.YYYY.-",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Course Schedule-naming_series"
   },
   {
     "doctype": "Custom Field",
@@ -326,7 +360,8 @@
     "fieldtype": "Link",
     "options": "Branch",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Course Schedule-branch"
   },
   {
     "doctype": "Custom Field",
@@ -336,7 +371,8 @@
     "fieldtype": "Link",
     "options": "Academic Year",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Course Schedule-academic_year"
   },
   {
     "doctype": "Custom Field",
@@ -346,7 +382,8 @@
     "fieldtype": "Link",
     "options": "Program",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Course Schedule-program"
   },
   {
     "doctype": "Custom Field",
@@ -356,7 +393,8 @@
     "fieldtype": "Link",
     "options": "Academic Term",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Course Schedule-academic_term"
   },
   {
     "doctype": "Custom Field",
@@ -366,7 +404,8 @@
     "fieldtype": "Link",
     "options": "Student Group",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Course Schedule-student_group"
   },
   {
     "doctype": "Custom Field",
@@ -375,7 +414,8 @@
     "label": "Timetable Preview",
     "fieldtype": "HTML",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Course Schedule-timetable_preview"
   },
   {
     "doctype": "Custom Field",
@@ -385,7 +425,8 @@
     "fieldtype": "Table",
     "options": "Course Schedule Slot",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Course Schedule-weekly_slots"
   },
   {
     "doctype": "Custom Field",
@@ -394,7 +435,8 @@
     "label": "Middle Name",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-middle_name"
   },
   {
     "doctype": "Custom Field",
@@ -403,7 +445,8 @@
     "label": "Last Name",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-last_name"
   },
   {
     "doctype": "Custom Field",
@@ -413,7 +456,8 @@
     "fieldtype": "Data",
     "options": "Email",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-custom_guardian_email"
   },
   {
     "doctype": "Custom Field",
@@ -423,7 +467,8 @@
     "fieldtype": "Select",
     "options": "EDU-APP-.YYYY.-",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-naming_series"
   },
   {
     "doctype": "Custom Field",
@@ -432,7 +477,8 @@
     "label": "Application Date",
     "fieldtype": "Date",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-application_date"
   },
   {
     "doctype": "Custom Field",
@@ -442,7 +488,8 @@
     "fieldtype": "Select",
     "options": "Applied\nApproved\nRejected\nAdmitted",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-application_status"
   },
   {
     "doctype": "Custom Field",
@@ -452,7 +499,8 @@
     "fieldtype": "Link",
     "options": "Program",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-program"
   },
   {
     "doctype": "Custom Field",
@@ -462,7 +510,8 @@
     "fieldtype": "Data",
     "options": "Email",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-student_email_id"
   },
   {
     "doctype": "Custom Field",
@@ -472,7 +521,8 @@
     "fieldtype": "Link",
     "options": "Student Admission",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-student_admission"
   },
   {
     "doctype": "Custom Field",
@@ -482,7 +532,8 @@
     "fieldtype": "Link",
     "options": "Student Category",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-student_category"
   },
   {
     "doctype": "Custom Field",
@@ -491,7 +542,8 @@
     "label": "Photo",
     "fieldtype": "Attach Image",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-image"
   },
   {
     "doctype": "Custom Field",
@@ -501,7 +553,8 @@
     "fieldtype": "Link",
     "options": "Academic Year",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-academic_year"
   },
   {
     "doctype": "Custom Field",
@@ -511,7 +564,8 @@
     "fieldtype": "Link",
     "options": "Academic Term",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-academic_term"
   },
   {
     "doctype": "Custom Field",
@@ -520,7 +574,8 @@
     "label": "Paid",
     "fieldtype": "Check",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-paid"
   },
   {
     "doctype": "Custom Field",
@@ -529,7 +584,8 @@
     "label": "Title",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-title"
   },
   {
     "doctype": "Custom Field",
@@ -539,7 +595,8 @@
     "fieldtype": "Link",
     "options": "Create Admission",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-amended_from"
   },
   {
     "doctype": "Custom Field",
@@ -548,7 +605,8 @@
     "label": "Date of Birth",
     "fieldtype": "Date",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-date_of_birth"
   },
   {
     "doctype": "Custom Field",
@@ -558,7 +616,8 @@
     "fieldtype": "Link",
     "options": "Gender",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-gender"
   },
   {
     "doctype": "Custom Field",
@@ -568,7 +627,8 @@
     "fieldtype": "Select",
     "options": "\nA+\nA-\nB+\nB-\nO+\nO-\nAB+\nAB-",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-blood_group"
   },
   {
     "doctype": "Custom Field",
@@ -578,7 +638,8 @@
     "fieldtype": "Data",
     "options": "Phone",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-student_mobile_number"
   },
   {
     "doctype": "Custom Field",
@@ -587,7 +648,8 @@
     "label": "Nationality",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-nationality"
   },
   {
     "doctype": "Custom Field",
@@ -597,7 +659,8 @@
     "fieldtype": "Table",
     "options": "Student Guardian",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-guardians"
   },
   {
     "doctype": "Custom Field",
@@ -607,7 +670,8 @@
     "fieldtype": "Table",
     "options": "Student Sibling",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-siblings"
   },
   {
     "doctype": "Custom Field",
@@ -616,7 +680,8 @@
     "label": "Address Line 1",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-address_line_1"
   },
   {
     "doctype": "Custom Field",
@@ -625,7 +690,8 @@
     "label": "Address Line 2",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-address_line_2"
   },
   {
     "doctype": "Custom Field",
@@ -634,7 +700,8 @@
     "label": "City",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-city"
   },
   {
     "doctype": "Custom Field",
@@ -643,7 +710,8 @@
     "label": "State",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-state"
   },
   {
     "doctype": "Custom Field",
@@ -652,7 +720,8 @@
     "label": "Pincode",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-pincode"
   },
   {
     "doctype": "Custom Field",
@@ -662,7 +731,8 @@
     "fieldtype": "Link",
     "options": "Country",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-country"
   },
   {
     "doctype": "Custom Field",
@@ -672,7 +742,8 @@
     "fieldtype": "Table",
     "options": "student documents",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-student_documents"
   },
   {
     "doctype": "Custom Field",
@@ -682,7 +753,8 @@
     "fieldtype": "Table",
     "options": "Applicant Fee",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Admission-fees"
   },
   {
     "doctype": "Custom Field",
@@ -691,7 +763,8 @@
     "label": "Fee Category",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Fee Installment-fee_category"
   },
   {
     "doctype": "Custom Field",
@@ -700,7 +773,8 @@
     "label": "Due Date",
     "fieldtype": "Date",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Fee Installment-due_date"
   },
   {
     "doctype": "Custom Field",
@@ -709,7 +783,8 @@
     "label": "Amount",
     "fieldtype": "Currency",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Fee Installment-amount"
   },
   {
     "doctype": "Custom Field",
@@ -719,7 +794,8 @@
     "fieldtype": "Data",
     "options": "Pending\nInvoiced\nPaid\nOverdue",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Fee Installment-status"
   },
   {
     "doctype": "Custom Field",
@@ -729,7 +805,8 @@
     "fieldtype": "Link",
     "options": "Sales Invoice",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Fee Installment-sales_invoice"
   },
   {
     "doctype": "Custom Field",
@@ -738,7 +815,8 @@
     "label": "Paid Amount",
     "fieldtype": "Currency",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Fee Installment-paid_amount"
   },
   {
     "doctype": "Custom Field",
@@ -747,7 +825,8 @@
     "label": "Outstanding Amount",
     "fieldtype": "Currency",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Student Fee Installment-outstanding_amount"
   },
   {
     "doctype": "Custom Field",
@@ -756,7 +835,8 @@
     "label": "Period",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Course Schedule-period"
   },
   {
     "doctype": "Custom Field",
@@ -766,7 +846,8 @@
     "fieldtype": "Link",
     "options": "Course",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Course Schedule-subject"
   },
   {
     "doctype": "Custom Field",
@@ -775,7 +856,8 @@
     "label": "From Time",
     "fieldtype": "Time",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Course Schedule-from_time"
   },
   {
     "doctype": "Custom Field",
@@ -784,7 +866,8 @@
     "label": "To Time",
     "fieldtype": "Time",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Course Schedule-to_time"
   },
   {
     "doctype": "Custom Field",
@@ -794,7 +877,8 @@
     "fieldtype": "Link",
     "options": "Instructor",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Course Schedule-instructor"
   },
   {
     "doctype": "Custom Field",
@@ -803,7 +887,8 @@
     "label": "Room",
     "fieldtype": "Data",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Course Schedule-room"
   },
   {
     "doctype": "Custom Field",
@@ -813,6 +898,7 @@
     "fieldtype": "Select",
     "options": "Blue\nGreen\nRed\nOrange\nPurple",
     "insert_after": "",
-    "module": "School Management Software"
+    "module": "School Management Software",
+    "name": "Course Schedule-color"
   }
 ]
