@@ -855,7 +855,7 @@ CUSTOM_DOCTYPES = [
     "Transport Route", "Transport Stop", "Transport Vehicle",
     "Transport Fee", "Student Transport Assignment", "Vehicle GPS Tracking Log",
     "Book Author", "Book Category", "Library Rack", "Library Book",
-    "Book Copy", "Library Member", "Library Fine", "Book Issue", "Book return",
+    "Book Copy", "Library Member",    "Library fine", "Book Issue", "Book return",
     "Exam Term", "Exam Hall", "Exam Schedule", "Exam Attendance",
     "Event Type", "School Event", "Event Attachment", "Event Gallery",
     "Event Participant",
@@ -898,15 +898,22 @@ def _clear_data():
     """Delete all existing custom doctype records for a fresh start."""
     total = 0
     for dt in CUSTOM_DOCTYPES:
-        if frappe.db.exists("DocType", dt):
-            names = frappe.db.get_all(dt, pluck="name")
-            if names:
-                for n in names:
-                    try:
-                        frappe.delete_doc(dt, n, ignore_permissions=True, force=True)
-                        total += 1
-                    except Exception:
-                        pass
+        try:
+            if not frappe.db.exists("DocType", dt):
+                continue
+        except Exception:
+            continue
+        try:
+            names = frappe.db.get_all(dt, pluck="name", limit_page_length=99999)
+        except Exception:
+            continue  # table may not exist yet
+        if names:
+            for n in names:
+                try:
+                    frappe.delete_doc(dt, n, ignore_permissions=True, force=True)
+                    total += 1
+                except Exception:
+                    pass
     return total
 
 
