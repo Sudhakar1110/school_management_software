@@ -181,42 +181,22 @@ def aca_room(dry_run):
 
 
 def aca_grading_scale(dry_run):
-    """Grading Scale — skip child table (grading intervals) to avoid DB errors."""
-    scale = _safe_create("Grading Scale", {
+    """Grading Scale — create without intervals to avoid threshold validation errors."""
+    yield _safe_create("Grading Scale", {
         "grading_scale_name": "Standard A-F Scale",
-        "description": "Standard academic grading scale",
+        "description": "Standard academic grading scale. Add intervals manually.",
     }, unique_field="grading_scale_name", dry_run=dry_run)
-
-    if scale and not dry_run:
-        try:
-            doc = frappe.get_doc("Grading Scale", scale)
-            for code, lo, hi, desc in [
-                ("A+", 90, 100, "Outstanding"),
-                ("A", 80, 89, "Excellent"),
-                ("B+", 70, 79, "Very Good"),
-                ("B", 60, 69, "Good"),
-                ("C+", 50, 59, "Above Average"),
-                ("C", 40, 49, "Average"),
-                ("D", 33, 39, "Below Average"),
-                ("F", 0, 32, "Fail"),
-            ]:
-                row = doc.append("intervals", {
-                    "grade_code": code,
-                    "min_score": lo,
-                    "max_score": hi,
-                    "grade_description": desc,
-                })
-            doc.save(ignore_permissions=True)
-        except Exception as e:
-            print(f"  ⚠️ Grading intervals: {e}")
-    yield scale
 
 
 def aca_fee_category(dry_run):
     for fc in ["Tuition Fee", "Development Fee", "Computer Lab Fee",
                "Library Fee", "Sports Fee", "Transport Fee", "Exam Fee"]:
-        yield _safe_create("Fee Category", {"fee_category": fc},
-                           unique_field="fee_category", dry_run=dry_run)
+        try:
+            yield _safe_create("Fee Category", {"fee_category": fc},
+                               unique_field="fee_category", dry_run=dry_run)
+        except Exception as e:
+            print(f"  ⚠️ Fee Category '{fc}': {e}")
+            yield None
 
 
 def aca_guardian(dry_run):
@@ -353,6 +333,9 @@ def cus_hostel_room(dry_run):
         yield None
         return
     hostels = frappe.db.get_all("Hostel", pluck="name")
+    if not hostels:
+        yield None
+        return
     room_types = ["1 Sharing AC", "2 Sharing-AC", "3 Sharing-AC", "4 Sharing-AC"]
     statuses = ["Available", "Nearly Full", "Full", "Reserved", "Maintenance"]
     for h in hostels:
@@ -360,16 +343,21 @@ def cus_hostel_room(dry_run):
         for floor in range(1, 4):
             for num in range(1, 6):
                 rn = f"RM-{h[:3]}-{floor}{num:02d}"
-                yield _safe_create("Hostel Room", {
-                    "room_number": rn,
-                    "hostel": h,
-                    "hostel_block": random.choice(blocks) if blocks else "",
-                    "floor_number": floor,
-                    "room_type": random.choice(room_types),
-                    "total_beds": random.choice([1, 2, 3, 4]),
-                    "occupied_beds": random.randint(0, 3),
-                    "room_status": random.choice(statuses),
-                }, unique_field="room_number", dry_run=dry_run)
+                try:
+                    yield _safe_create("Hostel Room", {
+                        "room_number": rn,
+                        "hostel": h,
+                        "hostel_block": random.choice(blocks) if blocks else "",
+                        "floor_number": floor,
+                        "room_type": random.choice(room_types),
+                        "total_beds": random.choice([1, 2, 3, 4]),
+                        "occupied_beds": random.randint(0, 3),
+                        "room_status": random.choice(statuses),
+                    }, unique_field="room_number", dry_run=dry_run)
+                except Exception as e:
+                    if "Server Script" in str(e):
+                        print(f"  ⚠️ Hostel Room: Server Scripts disabled — enable via 'bench enable-scheduler' then run")
+                    yield None
 
 
 def cus_mess_menu(dry_run):
@@ -514,19 +502,29 @@ def cus_library_member(dry_run):
         yield None
         return
     students = frappe.db.get_all("Student", pluck="name", limit=10)
+    if not students:
+        yield None
+        return
     for i, stu in enumerate(students):
         mid = f"LIB-MEM-{i+1:04d}"
-        yield _safe_create("Library Member", {
-            "member_id": mid,
-            "member_type": "Student",
-            "student": stu,
-            "member_name": stu,
-            "academic_year": "2026-2027",
-            "membership_start": date(2026, 4, 1),
-            "membership_end": date(2027, 3, 31),
-            "membership_status": "Active",
-            "max_books_allowed": 3,
-        }, unique_field="member_id", dry_run=dry_run)
+        if not frappe.db.exists("Student", stu):
+            print(f"  ⚠️ Student '{stu}' not found, skipping library member")
+            continue
+        try:
+            yield _safe_create("Library Member", {
+                "member_id": mid,
+                "member_type": "Student",
+                "student": stu,
+                "member_name": stu,
+                "academic_year": "2026-2027",
+                "membership_start": date(2026, 4, 1),
+                "membership_end": date(2027, 3, 31),
+                "membership_status": "Active",
+                "max_books_allowed": 3,
+            }, unique_field="member_id", dry_run=dry_run)
+        except Exception as e:
+            print(f"  ⚠️ Library Member {mid} (student={stu}): {e}")
+            yield None
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -721,20 +719,25 @@ def gov_board_meeting(dry_run):
 
 
 def gov_compliance(dry_run):
+    """Compliance Certification — insert only (skip submit to avoid child table 'parent' column bug)."""
     for name, stype, body in [
         ("ISO 27001:2022", "ISO 27001", "TUV Rheinland"),
         ("GDPR Readiness", "GDPR", "Data Protection Office"),
         ("FERPA Compliance", "FERPA", "Education Department"),
     ]:
-        yield _safe_create("Compliance Certification", {
-            "certification_name": name,
-            "standard_type": stype,
-            "certifying_body": body,
-            "issue_date": date(2025, 1, 1),
-            "expiry_date": date(2028, 1, 1),
-            "status": "Active",
-            "is_compliant": 1,
-        }, unique_field="certification_name", submit=True, dry_run=dry_run)
+        try:
+            yield _safe_create("Compliance Certification", {
+                "certification_name": name,
+                "standard_type": stype,
+                "certifying_body": body,
+                "issue_date": date(2025, 1, 1),
+                "expiry_date": date(2028, 1, 1),
+                "status": "Active",
+                "is_compliant": 1,
+            }, unique_field="certification_name", submit=False, dry_run=dry_run)
+        except Exception as e:
+            print(f"  ⚠️ Compliance '{name}': {e}")
+            yield None
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -874,20 +877,27 @@ def cus_assignment(dry_run):
         yield None
         return
     courses = frappe.db.get_all("Course", pluck="name", limit=4)
+    if not courses:
+        yield None
+        return
     for i, title in enumerate([
         "Mathematics Homework - Week 1",
         "Science Lab Report",
         "English Essay Assignment",
         "History Project",
     ]):
-        course = courses[i % len(courses)] if courses else ""
-        yield _safe_create("Assignment", {
-            "assignment_title": title,
-            "course": course,
-            "description": f"Complete the {title}.",
-            "due_date": date(2026, 5, 15 + i * 7),
-            "max_score": 100,
-        }, unique_field="assignment_title", submit=True, dry_run=dry_run)
+        course = courses[i % len(courses)]
+        try:
+            yield _safe_create("Assignment", {
+                "assignment_title": title,
+                "course": course,
+                "description": f"Complete the {title}.",
+                "due_date": date(2026, 5, 15 + i * 7),
+                "max_score": 100,
+            }, unique_field="assignment_title", submit=False, dry_run=dry_run)
+        except Exception as e:
+            print(f"  ⚠️ Assignment '{title}': {e}")
+            yield None
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -958,18 +968,21 @@ def fro_admission_enquiry(dry_run):
 
 
 def fro_response_template(dry_run):
-    for name, ctype, msg in [
-        ("Fee Reminder", "Fee", "Dear Parent, kindly pay the pending fee."),
-        ("Attendance Alert", "Attendance",
+    """Response Template — fields are: template_title, template_type, body (NOT template_name, type, message)"""
+    for title, ttype, body_text in [
+        ("Fee Reminder", "Email", "Dear Parent, kindly pay the pending fee."),
+        ("Attendance Alert", "SMS",
          "Your ward was absent on {date}. Kindly send a leave note."),
-        ("Event Notification", "Event",
+        ("Event Notification", "WhatsApp",
          "Dear Parent, {event_name} is scheduled on {date}."),
     ]:
         yield _safe_create("Response Template", {
-            "template_name": name,
-            "type": ctype,
-            "message": msg,
-        }, unique_field="template_name", dry_run=dry_run)
+            "template_title": title,
+            "template_type": ttype,
+            "body": body_text,
+            "category": "General",
+            "is_active": 1,
+        }, unique_field="template_title", dry_run=dry_run)
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -1040,13 +1053,18 @@ def cus_transport_assignment(dry_run):
     routes = frappe.db.get_all("Transport Route", pluck="name", limit=2)
     for name in ["Arjun Mehta", "Sara Khan", "Rohit Sharma"]:
         route = random.choice(routes) if routes else ""
-        yield _safe_create("Student Transport Assignment", {
-            "student_name": name,
-            "transport_route": route,
-            "transport_mode": "School Bus",
-            "is_active": 1,
-            "assigned_date": date(2026, 4, 1),
-        }, submit=True, dry_run=dry_run)
+        try:
+            yield _safe_create("Student Transport Assignment", {
+                "student_name": name,
+                "transport_route": route,
+                "transport_mode": "School Bus",
+                "is_active": 1,
+                "assigned_date": date(2026, 4, 1),
+            }, submit=False, dry_run=dry_run)
+        except Exception as e:
+            if "Server Script" in str(e):
+                print(f"  ⚠️ Transport Assignment: Server Scripts disabled")
+            yield None
 
 
 def cus_gps_log(dry_run):
