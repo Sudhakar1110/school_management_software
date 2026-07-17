@@ -1,7 +1,7 @@
 {
   "doctype": "Workspace",
   "name": "Student Fees",
-  "module": "School Management Software",
+  "module": "Student Fees",
   "charts": [
     {
       "chart_name": "Program Wise Total Fee",

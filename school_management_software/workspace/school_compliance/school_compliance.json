@@ -1,0 +1,45 @@
+{
+  "doctype": "Workspace",
+  "name": "School Compliance",
+  "module": "School Compliance",
+  "charts": [],
+  "cards": [],
+  "custom_blocks": [],
+  "links": [
+    {
+      "type": "Card Break",
+      "label": "Compliance",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Compliance Certification",
+      "link_type": "DocType",
+      "link_to": "Compliance Certification"
+    }
+  ],
+  "shortcuts": [
+    {
+      "type": "DocType",
+      "link_to": "Compliance Certification",
+      "doc_view": "List",
+      "label": "Certifications",
+      "color": "Green"
+    }
+  ],
+  "title": "School Compliance",
+  "content": "[{\"id\":\"compliance_1\",\"type\":\"card\",\"data\":{\"card_name\":\"Compliance\",\"col\":12}}]",
+  "label": "School Compliance",
+  "public": 1,
+  "icon": "lc-shield-check",
+  "indicator_color": "green",
+  "sequence_id": 10,
+  "roles": [
+    {
+      "role": "System Manager"
+    },
+    {
+      "role": "Education Manager"
+    }
+  ]
+}

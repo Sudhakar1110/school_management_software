@@ -1,0 +1,45 @@
+{
+  "doctype": "Workspace",
+  "name": "School Transport",
+  "module": "School Transport",
+  "charts": [],
+  "cards": [],
+  "custom_blocks": [],
+  "links": [
+    {
+      "type": "Card Break",
+      "label": "Fleet Tracking",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Vehicle GPS Tracking Log",
+      "link_type": "DocType",
+      "link_to": "Vehicle GPS Tracking Log"
+    }
+  ],
+  "shortcuts": [
+    {
+      "type": "DocType",
+      "link_to": "Vehicle GPS Tracking Log",
+      "doc_view": "List",
+      "label": "GPS Logs",
+      "color": "Teal"
+    }
+  ],
+  "title": "School Transport",
+  "content": "[{\"id\":\"fleet_1\",\"type\":\"card\",\"data\":{\"card_name\":\"Fleet Tracking\",\"col\":12}}]",
+  "label": "School Transport",
+  "public": 1,
+  "icon": "lc-map-pin",
+  "indicator_color": "teal",
+  "sequence_id": 12,
+  "roles": [
+    {
+      "role": "System Manager"
+    },
+    {
+      "role": "Transport Manager"
+    }
+  ]
+}

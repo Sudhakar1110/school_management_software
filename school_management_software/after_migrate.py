@@ -8,7 +8,7 @@ def after_migrate_setup():
     app_name = "school_management_software"
     created_modules = []
 
-    # ── 1. Create Module Def records for new modules ──
+    # 1. Create Module Def records for new modules
     modules = {
         "School Compliance": "Compliance & Certification Management",
         "School Governance": "Board & Committee Governance Tools",
@@ -29,9 +29,9 @@ def after_migrate_setup():
             )
             module_doc.insert(ignore_permissions=True, ignore_if_duplicate=True)
             created_modules.append(module_name)
-            print(f"✅ Created Module Def: {module_name}")
+            print(f"Created Module Def: {module_name}")
 
-    # ── 2. Force-sync all new doctypes from JSON files ──
+    # 2. Force-sync all new doctypes from JSON files
     new_doctypes = [
         "Compliance Certification",
         "Compliance Policy Link",
@@ -54,23 +54,69 @@ def after_migrate_setup():
         )
 
         if not os.path.exists(json_path):
-            print(f"⚠️ JSON not found: {json_path}")
+            print(f"JSON not found: {json_path}")
             continue
 
         try:
             import_file_by_path(json_path, force=True)
             status = "Re-synced" if frappe.db.exists("DocType", doctype_name) else "Created"
-            print(f"✅ {status}: {doctype_name}")
+            print(f"{status}: {doctype_name}")
         except Exception as e:
             frappe.log_error(
                 message=f"Error syncing {doctype_name}: {e}",
                 title="School Management - after_migrate",
             )
-            print(f"❌ Error syncing {doctype_name}: {e}")
+            print(f"Error syncing {doctype_name}: {e}")
 
     frappe.db.commit()
 
-    # ── 3. Add Table custom field linking Student → Student Fee Installment ──
+    # 3. Sync workspace JSONs for new modules
+    new_workspaces = [
+        "School Governance",
+        "School Compliance",
+        "School Assets",
+        "School Transport",
+    ]
+
+    for workspace_name in new_workspaces:
+        workspace_folder = frappe.scrub(workspace_name)
+        json_path = os.path.join(
+            app_path, "workspace", workspace_folder, f"{workspace_folder}.json"
+        )
+
+        if not os.path.exists(json_path):
+            print(f"Workspace JSON not found: {json_path}")
+            continue
+
+        try:
+            import_file_by_path(json_path, force=True)
+            print(f"Synced workspace: {workspace_name}")
+        except Exception as e:
+            frappe.log_error(
+                message=f"Error syncing workspace {workspace_name}: {e}",
+                title="School Management - after_migrate",
+            )
+            print(f"Error syncing workspace {workspace_name}: {e}")
+
+    frappe.db.commit()
+
+    # 4. Also sync the student_fees workspace (updated module)
+    student_fees_path = os.path.join(
+        app_path, "workspace", "student_fees", "student_fees.json"
+    )
+    if os.path.exists(student_fees_path):
+        try:
+            import_file_by_path(student_fees_path, force=True)
+            print("Synced workspace: Student Fees")
+        except Exception as e:
+            frappe.log_error(
+                message=f"Error syncing Student Fees workspace: {e}",
+                title="School Management - after_migrate",
+            )
+
+    frappe.db.commit()
+
+    # 5. Add Table custom field linking Student to Student Fee Installment
     if frappe.db.exists("DocType", "Student Fee Installment"):
         if not frappe.db.exists(
             "Custom Field", {"dt": "Student", "fieldname": "fee_installments"}
@@ -87,20 +133,18 @@ def after_migrate_setup():
                     "module": "Student Fees",
                 })
                 cf.insert(ignore_permissions=True)
-                print(f"✅ Added Fee Installments table field to Student")
+                print("Added Fee Installments table field to Student")
                 frappe.db.commit()
             except Exception as e:
                 frappe.log_error(
                     message=f"Error creating Fee Installments table field: {e}",
                     title="School Management - after_migrate",
                 )
-                print(f"❌ Error creating Fee Installments table field: {e}")
+                print(f"Error creating Fee Installments table field: {e}")
         else:
-            print(f"⏭️  Fee Installments table field already exists on Student")
+            print("Fee Installments table field already exists on Student")
 
     if created_modules:
-        print(
-            f"\n🎉 Created {len(created_modules)} new modules: {', '.join(created_modules)}"
-        )
+        print(f"Created {len(created_modules)} new modules: {', '.join(created_modules)}")
     else:
-        print("\n📋 All modules already exist.")
+        print("All modules already exist.")

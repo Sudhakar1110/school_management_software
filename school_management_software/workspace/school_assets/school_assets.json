@@ -1,0 +1,61 @@
+{
+  "doctype": "Workspace",
+  "name": "School Assets",
+  "module": "School Assets",
+  "charts": [],
+  "cards": [],
+  "custom_blocks": [],
+  "links": [
+    {
+      "type": "Card Break",
+      "label": "Asset Management",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Asset Register",
+      "link_type": "DocType",
+      "link_to": "Asset Register"
+    },
+    {
+      "type": "Link",
+      "label": "Asset Maintenance",
+      "link_type": "DocType",
+      "link_to": "Asset Maintenance"
+    }
+  ],
+  "shortcuts": [
+    {
+      "type": "DocType",
+      "link_to": "Asset Register",
+      "doc_view": "List",
+      "label": "All Assets",
+      "color": "Orange"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Asset Maintenance",
+      "doc_view": "List",
+      "label": "Maintenance Records",
+      "color": "Red"
+    }
+  ],
+  "title": "School Assets",
+  "content": "[{\"id\":\"assets_1\",\"type\":\"card\",\"data\":{\"card_name\":\"Asset Management\",\"col\":12}}]",
+  "label": "School Assets",
+  "public": 1,
+  "icon": "lc-boxes",
+  "indicator_color": "orange",
+  "sequence_id": 11,
+  "roles": [
+    {
+      "role": "System Manager"
+    },
+    {
+      "role": "Accounts User"
+    },
+    {
+      "role": "Education Manager"
+    }
+  ]
+}

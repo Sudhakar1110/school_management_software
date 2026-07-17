@@ -1,0 +1,58 @@
+{
+  "doctype": "Workspace",
+  "name": "School Governance",
+  "module": "School Governance",
+  "charts": [],
+  "cards": [],
+  "custom_blocks": [],
+  "links": [
+    {
+      "type": "Card Break",
+      "label": "Governance",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Board Meeting",
+      "link_type": "DocType",
+      "link_to": "Board Meeting"
+    },
+    {
+      "type": "Link",
+      "label": "Committee Definition",
+      "link_type": "DocType",
+      "link_to": "Committee Definition"
+    }
+  ],
+  "shortcuts": [
+    {
+      "type": "DocType",
+      "link_to": "Board Meeting",
+      "doc_view": "List",
+      "label": "Board Meetings",
+      "color": "Blue"
+    },
+    {
+      "type": "DocType",
+      "link_to": "Committee Definition",
+      "doc_view": "List",
+      "label": "Committees",
+      "color": "Purple"
+    }
+  ],
+  "title": "School Governance",
+  "content": "[{\"id\":\"governance_1\",\"type\":\"card\",\"data\":{\"card_name\":\"Governance\",\"col\":12}}]",
+  "label": "School Governance",
+  "public": 1,
+  "icon": "lc-bank",
+  "indicator_color": "blue",
+  "sequence_id": 9,
+  "roles": [
+    {
+      "role": "System Manager"
+    },
+    {
+      "role": "Education Manager"
+    }
+  ]
+}
