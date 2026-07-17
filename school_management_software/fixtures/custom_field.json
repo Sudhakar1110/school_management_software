@@ -55,12 +55,23 @@
     "doctype": "Custom Field",
     "dt": "Student",
     "fieldname": "fee_staus",
-    "label": "fee Staus",
+    "label": "Fee Status",
     "fieldtype": "Link",
     "options": "Payment Entry",
     "insert_after": "",
     "module": "School Management Software",
     "name": "Student-fee_staus"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "Student",
+    "fieldname": "fee_installments",
+    "label": "Fee Installments",
+    "fieldtype": "Table",
+    "options": "Student Fee Installment",
+    "insert_after": "fee_staus",
+    "module": "School Management Software",
+    "name": "Student-fee_installments"
   },
   {
     "doctype": "Custom Field",
@@ -114,77 +125,5 @@
     "insert_after": "",
     "module": "School Management Software",
     "name": "Student Admission-paid"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Fee Installment",
-    "fieldname": "fee_category",
-    "label": "Fee Category",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Fee Installment-fee_category"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Fee Installment",
-    "fieldname": "due_date",
-    "label": "Due Date",
-    "fieldtype": "Date",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Fee Installment-due_date"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Fee Installment",
-    "fieldname": "amount",
-    "label": "Amount",
-    "fieldtype": "Currency",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Fee Installment-amount"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Fee Installment",
-    "fieldname": "status",
-    "label": "Status",
-    "fieldtype": "Data",
-    "options": "Pending\nInvoiced\nPaid\nOverdue",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Fee Installment-status"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Fee Installment",
-    "fieldname": "sales_invoice",
-    "label": "Sales Invoice",
-    "fieldtype": "Link",
-    "options": "Sales Invoice",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Fee Installment-sales_invoice"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Fee Installment",
-    "fieldname": "paid_amount",
-    "label": "Paid Amount",
-    "fieldtype": "Currency",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Fee Installment-paid_amount"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Fee Installment",
-    "fieldname": "outstanding_amount",
-    "label": "Outstanding Amount",
-    "fieldtype": "Currency",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Fee Installment-outstanding_amount"
   }
 ]
