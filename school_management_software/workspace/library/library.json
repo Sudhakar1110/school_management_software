@@ -2,50 +2,20 @@
   "doctype": "Workspace",
   "name": "Library",
   "module": "School Management Software",
-  "charts": [
-    {
-      "chart_name": "Student Assessments",
-      "label": "Student Assessments"
-    }
-  ],
+  "charts": [],
   "cards": [],
   "custom_blocks": [],
   "links": [
     {
       "type": "Card Break",
-      "label": "Attendance",
-      "link_type": "DocType",
-      "link_count": 1
+      "label": "Library Setup",
+      "link_type": "DocType"
     },
     {
       "type": "Link",
-      "label": "Library Book",
+      "label": "Book Author",
       "link_type": "DocType",
-      "link_to": "Library Book"
-    },
-    {
-      "type": "Card Break",
-      "label": "Library",
-      "link_type": "DocType",
-      "link_count": 9
-    },
-    {
-      "type": "Link",
-      "label": "Library Member",
-      "link_type": "DocType",
-      "link_to": "Library Member"
-    },
-    {
-      "type": "Link",
-      "label": "Book Copy",
-      "link_type": "DocType",
-      "link_to": "Book Copy"
-    },
-    {
-      "type": "Link",
-      "label": "Library Rack",
-      "link_type": "DocType",
-      "link_to": "Library Rack"
+      "link_to": "Book Author"
     },
     {
       "type": "Link",
@@ -55,15 +25,9 @@
     },
     {
       "type": "Link",
-      "label": "Book Issue",
+      "label": "Library Rack",
       "link_type": "DocType",
-      "link_to": "Book Issue"
-    },
-    {
-      "type": "Link",
-      "label": "Book return",
-      "link_type": "DocType",
-      "link_to": "Book return"
+      "link_to": "Library Rack"
     },
     {
       "type": "Link",
@@ -73,15 +37,44 @@
     },
     {
       "type": "Link",
-      "label": "Library fine",
+      "label": "Book Copy",
+      "link_type": "DocType",
+      "link_to": "Book Copy"
+    },
+    {
+      "type": "Link",
+      "label": "Library Member",
+      "link_type": "DocType",
+      "link_to": "Library Member"
+    },
+    {
+      "type": "Card Break",
+      "label": "Circulation",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Book Issue",
+      "link_type": "DocType",
+      "link_to": "Book Issue"
+    },
+    {
+      "type": "Link",
+      "label": "Book Return",
+      "link_type": "DocType",
+      "link_to": "Book return"
+    },
+    {
+      "type": "Link",
+      "label": "Library Fine",
       "link_type": "DocType",
       "link_to": "Library fine"
     },
     {
       "type": "Link",
-      "label": "Book Author",
+      "label": "Library Settings",
       "link_type": "DocType",
-      "link_to": "Book Author"
+      "link_to": "Library Settings"
     }
   ],
   "shortcuts": [],
@@ -100,10 +93,10 @@
     }
   ],
   "title": "Library",
-  "content": "[{\"id\":\"aX_-E0sLXc\",\"type\":\"workflow_overview\",\"data\":{\"workflow_overview_name\":\"Library Setup\",\"workflows\":[{\"label\":\"Library Setup\",\"doctypes\":[{\"doctype\":\"Book Author\",\"label\":\"Book Author\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Book Category\",\"label\":\"Book Category\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Library Rack\",\"label\":\"Library Rack\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Library Book\",\"label\":\"Library Book\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Book Copy\",\"label\":\"Book Copy\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Library Member\",\"label\":\"Library Member\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]},{\"label\":\"Library Circulation\",\"doctypes\":[{\"doctype\":\"Library Member\",\"label\":\"Library Member\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Book Issue\",\"label\":\"Book Issue\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Book return\",\"label\":\"Book return\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"},{\"doctype\":\"Library fine\",\"label\":\"Library fine\",\"icon\":\"\",\"status_type\":\"Active\",\"helper_text\":\"\"}]}],\"col\":12}},{\"id\":\"DZNExlFvyY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KXpINMRfSy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Present\",\"col\":3}},{\"id\":\"H69WdVrrz6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Absent\",\"col\":3}},{\"id\":\"AjFAJPgl7O\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Student Assessments\",\"col\":12}},{\"id\":\"hUJIDT89cY\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":5}},{\"id\":\"zG4o2afSls\",\"type\":\"card\",\"data\":{\"card_name\":\"Library\",\"col\":5}}]",
+  "content": "[{\"id\":\"lib_1\",\"type\":\"card\",\"data\":{\"card_name\":\"Library Setup\",\"col\":6}},{\"id\":\"lib_2\",\"type\":\"card\",\"data\":{\"card_name\":\"Circulation\",\"col\":6}}]",
   "label": "Library",
   "public": 1,
-  "icon": "lc-clipboard-check",
-  "indicator_color": "green",
+  "icon": "lc-book-open",
+  "indicator_color": "blue",
   "sequence_id": 6.1
 }
