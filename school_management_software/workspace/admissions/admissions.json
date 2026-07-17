@@ -1,0 +1,74 @@
+{
+  "doctype": "Workspace",
+  "name": "Admissions",
+  "module": "Education",
+  "charts": [
+    {
+      "chart_name": "Student Enrollments",
+      "label": "Student Enrollments"
+    }
+  ],
+  "cards": [],
+  "custom_blocks": [],
+  "links": [
+    {
+      "type": "Card Break",
+      "label": "Admissions",
+      "link_type": "DocType"
+    },
+    {
+      "type": "Link",
+      "label": "Admissions",
+      "link_type": "DocType",
+      "link_to": "Student Admission"
+    },
+    {
+      "type": "Link",
+      "label": "Student Application",
+      "link_type": "DocType",
+      "link_to": "Student Applicant"
+    },
+    {
+      "type": "Link",
+      "label": "Grade Enrollment",
+      "link_type": "DocType",
+      "link_to": "Program Enrollment"
+    },
+    {
+      "type": "Link",
+      "label": "Course Enrollment",
+      "link_type": "DocType",
+      "link_to": "Course Enrollment"
+    },
+    {
+      "type": "Link",
+      "label": "Grade Enrollment Tool",
+      "link_type": "DocType",
+      "link_to": "Program Enrollment Tool"
+    }
+  ],
+  "shortcuts": [],
+  "title": "Admissions",
+  "content": "[{\"id\": \"x_pk_vcopX\", \"type\": \"workflow_overview\", \"data\": {\"workflows\": [{\"label\": \"Admission workflow\", \"doctypes\": [{\"doctype\": \"Student Admission\", \"label\": \"Student Adimission\", \"icon\": \"lc-graduation-cap\", \"status_type\": \"Active\"}, {\"doctype\": \"Student Applicant\", \"label\": \"Student Applicant\", \"icon\": \"lc-user-plus\", \"status_type\": \"Active\"}, {\"doctype\": \"Program Enrollment\", \"label\": \"Program Enrollment\", \"icon\": \"lc-book-open-check\", \"status_type\": \"Active\"}]}], \"col\": 12, \"workflow_overview_name\": \"Admission workflow\"}}, {\"id\": \"z7X6tugUq4\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"ue7WI5Uk6P\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Total Admission this Year\", \"col\": 3}}, {\"id\": \"PcjaKB23ov\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Student Applicant\", \"col\": 3}}, {\"id\": \"RoA5wo2-1K\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Grade Enrollment\", \"col\": 3}}, {\"id\": \"9QP5zNfC84\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Course Enrollment\", \"col\": 3}}, {\"id\": \"E6vbMqptfz\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Student Enrollments\", \"col\": 12}}, {\"id\": \"OcLVCw416A\", \"type\": \"card\", \"data\": {\"card_name\": \"Admissions\", \"col\": 12}}]",
+  "label": "Admissions",
+  "public": 1,
+  "icon": "lc-file-plus-corner",
+  "sequence_id": 4,
+  "roles": [
+    {
+      "role": "Academics User"
+    },
+    {
+      "role": "Education Manager"
+    },
+    {
+      "role": "Admission Officer"
+    },
+    {
+      "role": "Student"
+    },
+    {
+      "role": "Instructor"
+    }
+  ]
+}

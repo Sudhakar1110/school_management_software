@@ -1,0 +1,77 @@
+{
+  "doctype": "Workspace",
+  "name": "Student & Scheduling",
+  "module": "Education",
+  "charts": [],
+  "cards": [],
+  "custom_blocks": [],
+  "links": [
+    {
+      "type": "Card Break",
+      "label": "Student & Guardian ",
+      "link_type": "DocType",
+      "link_count": 3
+    },
+    {
+      "type": "Link",
+      "label": "Student",
+      "link_type": "DocType",
+      "link_to": "Student"
+    },
+    {
+      "type": "Link",
+      "label": "Guardian",
+      "link_type": "DocType",
+      "link_to": "Guardian"
+    },
+    {
+      "type": "Link",
+      "label": "Student and Guardian Contact Details",
+      "link_type": "Report",
+      "link_to": "Student and Guardian Contact Details"
+    },
+    {
+      "type": "Card Break",
+      "label": "Time Table",
+      "link_type": "DocType",
+      "link_count": 2
+    },
+    {
+      "type": "Link",
+      "label": "Time Table",
+      "link_type": "DocType",
+      "link_to": "Course Schedule"
+    },
+    {
+      "type": "Link",
+      "label": "Time Table Scheduling",
+      "link_type": "DocType",
+      "link_to": "Course Scheduling Tool"
+    }
+  ],
+  "shortcuts": [],
+  "roles": [
+    {
+      "role": "Academics User"
+    },
+    {
+      "role": "Admission Officer"
+    },
+    {
+      "role": "Education Manager"
+    },
+    {
+      "role": "Instructor"
+    },
+    {
+      "role": "Student"
+    }
+  ],
+  "title": "Student & Scheduling",
+  "content": "[{\"id\":\"2LPEE7lNek\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Student Strength\",\"col\":3}},{\"id\":\"uDnyK06Bfv\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"UHJooQmexi\",\"type\":\"card\",\"data\":{\"card_name\":\"Student & Guardian \",\"col\":4}},{\"id\":\"EgNO41Yfvh\",\"type\":\"card\",\"data\":{\"card_name\":\"Time Table\",\"col\":4}}]",
+  "label": "Student & Scheduling",
+  "public": 1,
+  "icon": "lc-calendar-clock",
+  "indicator_color": "",
+  "sequence_id": 7
+}

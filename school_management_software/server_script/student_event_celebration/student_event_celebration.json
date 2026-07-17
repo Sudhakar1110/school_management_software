@@ -1,0 +1,17 @@
+{
+  "doctype": "Server Script",
+  "name": "Student event Celebration",
+  "script_type": "DocType Event",
+  "reference_doctype": "Student Event",
+  "doctype_event": "After Submit",
+  "api_method": "",
+  "script": "if doc.student_group:\n    # Step 1: Get students from the selected Student Group\n    student_group = frappe.get_doc(\"Student Group\", doc.student_group)\n    student_ids = [s.student for s in student_group.students]\n\n    # Step 2: Find Guardians linked to those students\n    guardian_emails = set()\n    guardians = frappe.get_all(\"Guardian\", fields=[\"name\", \"email_address\"])\n    for guardian in guardians:\n        guardian_doc = frappe.get_doc(\"Guardian\", guardian.name)\n        for gs in guardian_doc.students:\n            if gs.student in student_ids and guardian_doc.email_address:\n                guardian_emails.add(guardian_doc.email_address)\n\n    # Step 3: Compose email\n    subject = f\"Event from Bizaxl school\"\n    message = f\"\"\"<div>\n        <h2>Parent Invitation</h2>\n        <h3>{doc.subject}</h3>\n        <p>Dear Parent,</p>\n        <p>You are invited to attend an important event scheduled for your child enrolled in group <strong>{doc.student_group}</strong>.</p>\n        <table>\n            <tr><td>Date:</td><td>{doc.date}</td></tr>\n            <tr><td>Time:</td><td>{doc.time}</td></tr>\n            <tr><td>Venue:</td><td>{doc.venue}</td></tr>\n        </table>\n        <h4>Agenda:</h4>\n        <p>{doc.agenda}</p>\n        <p>We look forward to seeing you there!</p>\n        <p>Let's make this event memorable together!</p>\n    </div>\"\"\"\n\n    # Step 4: Send email to all unique guardian emails\n    if guardian_emails:\n        frappe.sendmail(\n            recipients=list(guardian_emails),\n            subject=subject,\n            message=message\n        )",
+  "allow_guest": 0,
+  "disabled": 0,
+  "module": "Education",
+  "event_frequency": "All",
+  "cron_format": "",
+  "enable_rate_limit": 0,
+  "request_limit": 5,
+  "time_window": 86400
+}
