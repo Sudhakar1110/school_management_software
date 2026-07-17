@@ -1,0 +1,171 @@
+{
+  "doctype": "DocType",
+  "name": "Alumni Record",
+  "module": "Education",
+  "custom": 1,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "is_single": 0,
+  "is_tree": 0,
+  "editable_grid": 0,
+  "track_changes": 0,
+  "track_seen": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "By fieldname",
+  "autoname": "field:alumni_id",
+  "allow_rename": 1,
+  "description": "",
+  "title_field": "student_name",
+  "search_fields": "student_name,alumni_id,graduation_year",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "index_web_pages_for_search": 1,
+  "fields": [
+    {
+      "fieldname": "alumni_id",
+      "fieldtype": "Data",
+      "label": "Alumni ID",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "student_name",
+      "fieldtype": "Data",
+      "label": "Student Name",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "linked_student",
+      "fieldtype": "Link",
+      "label": "Linked Student",
+      "options": "Student"
+    },
+    {
+      "fieldname": "date_of_birth",
+      "fieldtype": "Date",
+      "label": "Date of Birth"
+    },
+    {
+      "fieldname": "gender",
+      "fieldtype": "Select",
+      "label": "Gender",
+      "options": "Male\nFemale\nOther"
+    },
+    {
+      "fieldname": "contact_number",
+      "fieldtype": "Data",
+      "label": "Contact Number"
+    },
+    {
+      "fieldname": "email",
+      "fieldtype": "Data",
+      "label": "Email",
+      "options": "Email"
+    },
+    {
+      "fieldname": "current_address",
+      "fieldtype": "Small Text",
+      "label": "Current Address"
+    },
+    {
+      "fieldname": "graduation_year",
+      "fieldtype": "Int",
+      "label": "Graduation Year",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "last_program",
+      "fieldtype": "Link",
+      "label": "Last Program",
+      "options": "Program"
+    },
+    {
+      "fieldname": "current_occupation",
+      "fieldtype": "Data",
+      "label": "Current Occupation"
+    },
+    {
+      "fieldname": "current_organization",
+      "fieldtype": "Data",
+      "label": "Current Organization"
+    },
+    {
+      "fieldname": "linkedin_profile",
+      "fieldtype": "Data",
+      "label": "LinkedIn Profile"
+    },
+    {
+      "fieldname": "is_newsletter_subscribed",
+      "fieldtype": "Check",
+      "label": "Subscribed to Newsletter"
+    },
+    {
+      "fieldname": "alumni_status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Active\nInactive\nDeceased",
+      "default": "Active"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 1,
+      "write": 1
+    },
+    {
+      "role": "Student",
+      "create": 0,
+      "delete": 0,
+      "email": 0,
+      "export": 0,
+      "print": 1,
+      "read": 1,
+      "report": 0,
+      "share": 0,
+      "write": 1
+    },
+    {
+      "role": "Guardian",
+      "create": 0,
+      "delete": 0,
+      "email": 0,
+      "export": 0,
+      "print": 1,
+      "read": 1,
+      "report": 0,
+      "share": 0,
+      "write": 0
+    },
+    {
+      "role": "Instructor",
+      "create": 1,
+      "delete": 0,
+      "email": 0,
+      "export": 0,
+      "print": 1,
+      "read": 1,
+      "report": 0,
+      "share": 0,
+      "write": 1
+    }
+  ],
+  "actions": [],
+  "links": [],
+  "states": []
+}

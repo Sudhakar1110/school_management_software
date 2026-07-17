@@ -1,26 +1,45 @@
-# Copyright (c) 2026, School Management and contributors
+# Copyright (c) 2025, School Management and contributors
 # For license information, please see license.txt
 
 import frappe
+from frappe import _
 
 def execute(filters=None):
-    """Transport Fee Dues Report"""
-    columns = [
-        {"label": "Student", "fieldname": "student", "fieldtype": "Link", "options": "Custom Student", "width": 120},
-        {"label": "Student Name", "fieldname": "student_name", "fieldtype": "Data", "width": 150},
-        {"label": "Route", "fieldname": "transport_route", "fieldtype": "Link", "options": "Transport Route", "width": 120},
-        {"label": "Monthly Fee", "fieldname": "monthly_fee", "fieldtype": "Currency", "width": 100},
-        {"label": "Fee Status", "fieldname": "fee_status", "fieldtype": "Data", "width": 100},
-        {"label": "Academic Year", "fieldname": "academic_year", "fieldtype": "Data", "width": 100}
-    ]
-    conditions = "sta.is_active = 1 AND sta.fee_status IN ('Pending', 'Overdue', 'Partial')"
-    if filters and filters.get("fee_status"):
-        conditions += " AND sta.fee_status = '{0}'".format(filters["fee_status"])
-    data = frappe.db.sql("""
-        SELECT sta.student, sta.student_name, sta.transport_route,
-               sta.monthly_fee, sta.fee_status, sta.academic_year
-        FROM `tabStudent Transport Assignment` sta
-        WHERE {0}
-        ORDER BY sta.fee_status, sta.student_name
-    """.format(conditions), as_dict=True)
+    columns = get_columns()
+    data = get_data(filters)
     return columns, data
+
+
+def get_columns():
+    return [
+        _("ID") + ":Link/Transport Fee:200",
+        _("Status") + "::150",
+        _("Date") + ":Date:120",
+    ]
+
+
+def get_data(filters):
+    conditions = get_conditions(filters)
+    query = """
+        SELECT
+            name,
+            status,
+            modified
+        FROM
+            `tabTransport Fee`
+        WHERE
+            docstatus < 2
+            {conditions}
+        ORDER BY
+            modified DESC
+    """.format(conditions=conditions or "")
+    return frappe.db.sql(query, filters)
+
+
+def get_conditions(filters):
+    conditions = []
+    if filters and filters.get("from_date"):
+        conditions.append("AND modified >= %(from_date)s")
+    if filters and filters.get("to_date"):
+        conditions.append("AND modified <= %(to_date)s")
+    return " ".join(conditions)

@@ -1,27 +1,45 @@
-# Copyright (c) 2026, School Management and contributors
+# Copyright (c) 2025, School Management and contributors
 # For license information, please see license.txt
 
 import frappe
+from frappe import _
 
 def execute(filters=None):
-    """Hostel Attendance Summary"""
-    columns = [
-        {"label": "Hostel", "fieldname": "hostel", "fieldtype": "Data", "width": 120},
-        {"label": "Date", "fieldname": "date", "fieldtype": "Date", "width": 100},
-        {"label": "Total Students", "fieldname": "total", "fieldtype": "Int", "width": 100},
-        {"label": "Present", "fieldname": "present", "fieldtype": "Int", "width": 80},
-        {"label": "Absent", "fieldname": "absent", "fieldtype": "Int", "width": 80},
-        {"label": "Attendance %", "fieldname": "attendance_pct", "fieldtype": "Percent", "width": 100}
-    ]
-    data = frappe.db.sql("""
-        SELECT ha.hostel, ha.date,
-               COUNT(*) AS total,
-               SUM(CASE WHEN ha.status = 'Present' THEN 1 ELSE 0 END) AS present,
-               SUM(CASE WHEN ha.status = 'Absent' THEN 1 ELSE 0 END) AS absent
-        FROM `tabHostel Attendance` ha
-        GROUP BY ha.hostel, ha.date
-        ORDER BY ha.date DESC, ha.hostel
-    """, as_dict=True)
-    for d in data:
-        d["attendance_pct"] = round((d["present"] / d["total"]) * 100, 1) if d["total"] > 0 else 0
+    columns = get_columns()
+    data = get_data(filters)
     return columns, data
+
+
+def get_columns():
+    return [
+        _("ID") + ":Link/Hostel Attendance:200",
+        _("Status") + "::150",
+        _("Date") + ":Date:120",
+    ]
+
+
+def get_data(filters):
+    conditions = get_conditions(filters)
+    query = """
+        SELECT
+            name,
+            status,
+            modified
+        FROM
+            `tabHostel Attendance`
+        WHERE
+            docstatus < 2
+            {conditions}
+        ORDER BY
+            modified DESC
+    """.format(conditions=conditions or "")
+    return frappe.db.sql(query, filters)
+
+
+def get_conditions(filters):
+    conditions = []
+    if filters and filters.get("from_date"):
+        conditions.append("AND modified >= %(from_date)s")
+    if filters and filters.get("to_date"):
+        conditions.append("AND modified <= %(to_date)s")
+    return " ".join(conditions)

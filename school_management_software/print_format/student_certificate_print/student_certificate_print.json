@@ -1,0 +1,14 @@
+{
+  "doctype": "Print Format",
+  "name": "Student Certificate Print",
+  "doc_type": "Student Certificate",
+  "format_type": "HTML",
+  "module": "Education",
+  "css": "body { font-family: Arial; }",
+  "html": "<div class=\"student_certificate_print\"><h2>{{ doc.name }}</h2></div>",
+  "standard": "No",
+  "disabled": 0,
+  "align_labels_left": 0,
+  "absolute_value": 0,
+  "default_print_language": "en"
+}

@@ -1,0 +1,163 @@
+{
+  "doctype": "DocType",
+  "name": "Admission Enquiry",
+  "module": "Education",
+  "custom": 1,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "is_single": 0,
+  "is_tree": 0,
+  "editable_grid": 0,
+  "track_changes": 0,
+  "track_seen": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "By fieldname",
+  "autoname": "field:enquiry_id",
+  "allow_rename": 1,
+  "description": "",
+  "title_field": "student_name",
+  "search_fields": "student_name,enquiry_id",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "index_web_pages_for_search": 1,
+  "fields": [
+    {
+      "fieldname": "enquiry_id",
+      "fieldtype": "Data",
+      "label": "Enquiry ID",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "student_name",
+      "fieldtype": "Data",
+      "label": "Student Name",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "date_of_birth",
+      "fieldtype": "Date",
+      "label": "Date of Birth"
+    },
+    {
+      "fieldname": "gender",
+      "fieldtype": "Select",
+      "label": "Gender",
+      "options": "Male\nFemale\nOther"
+    },
+    {
+      "fieldname": "contact_number",
+      "fieldtype": "Data",
+      "label": "Contact Number",
+      "reqd": 1
+    },
+    {
+      "fieldname": "email",
+      "fieldtype": "Data",
+      "label": "Email",
+      "options": "Email"
+    },
+    {
+      "fieldname": "address",
+      "fieldtype": "Small Text",
+      "label": "Address"
+    },
+    {
+      "fieldname": "program",
+      "fieldtype": "Link",
+      "label": "Program",
+      "options": "Program"
+    },
+    {
+      "fieldname": "academic_year",
+      "fieldtype": "Link",
+      "label": "Academic Year",
+      "options": "Academic Year"
+    },
+    {
+      "fieldname": "reference_source",
+      "fieldtype": "Select",
+      "label": "Reference Source",
+      "options": "Website\nWalk-in\nReferral\nSocial Media\nAdvertisement\nOther"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "New\nContacted\nFollow Up\nConverted\nLost",
+      "default": "New"
+    },
+    {
+      "fieldname": "remarks",
+      "fieldtype": "Small Text",
+      "label": "Remarks"
+    },
+    {
+      "fieldname": "follow_up_date",
+      "fieldtype": "Date",
+      "label": "Follow Up Date"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 1,
+      "write": 1
+    },
+    {
+      "role": "Student",
+      "create": 0,
+      "delete": 0,
+      "email": 0,
+      "export": 0,
+      "print": 1,
+      "read": 1,
+      "report": 0,
+      "share": 0,
+      "write": 1
+    },
+    {
+      "role": "Guardian",
+      "create": 0,
+      "delete": 0,
+      "email": 0,
+      "export": 0,
+      "print": 1,
+      "read": 1,
+      "report": 0,
+      "share": 0,
+      "write": 0
+    },
+    {
+      "role": "Instructor",
+      "create": 1,
+      "delete": 0,
+      "email": 0,
+      "export": 0,
+      "print": 1,
+      "read": 1,
+      "report": 0,
+      "share": 0,
+      "write": 1
+    }
+  ],
+  "actions": [],
+  "links": [],
+  "states": []
+}

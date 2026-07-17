@@ -1,0 +1,139 @@
+{
+  "doctype": "DocType",
+  "name": "Question Bank",
+  "module": "Education",
+  "custom": 1,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "is_single": 0,
+  "is_tree": 0,
+  "editable_grid": 0,
+  "track_changes": 0,
+  "track_seen": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "By fieldname",
+  "autoname": "field:question_title",
+  "allow_rename": 1,
+  "description": "",
+  "title_field": "question_title",
+  "search_fields": "question_title,subject",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "index_web_pages_for_search": 1,
+  "fields": [
+    {
+      "fieldname": "question_title",
+      "fieldtype": "Data",
+      "label": "Question Title",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "subject",
+      "fieldtype": "Link",
+      "label": "Subject",
+      "options": "Course",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "question_type",
+      "fieldtype": "Select",
+      "label": "Question Type",
+      "options": "Multiple Choice\nSingle Choice\nTrue/False\nShort Answer\nLong Answer\nNumerical",
+      "reqd": 1
+    },
+    {
+      "fieldname": "question_text",
+      "fieldtype": "Text Editor",
+      "label": "Question",
+      "reqd": 1
+    },
+    {
+      "fieldname": "difficulty_level",
+      "fieldtype": "Select",
+      "label": "Difficulty",
+      "options": "Easy\nMedium\nHard",
+      "default": "Medium"
+    },
+    {
+      "fieldname": "marks",
+      "fieldtype": "Int",
+      "label": "Marks",
+      "default": "1"
+    },
+    {
+      "fieldname": "section_break_options",
+      "fieldtype": "Section Break",
+      "label": "Options"
+    },
+    {
+      "fieldname": "options_list",
+      "fieldtype": "Table",
+      "label": "Options",
+      "options": "Question Bank Option",
+      "depends_on": "eval:['Multiple Choice','Single Choice'].includes(doc.question_type)"
+    },
+    {
+      "fieldname": "section_break_answer",
+      "fieldtype": "Section Break",
+      "label": "Correct Answer"
+    },
+    {
+      "fieldname": "correct_answer",
+      "fieldtype": "Small Text",
+      "label": "Correct Answer"
+    },
+    {
+      "fieldname": "explanation",
+      "fieldtype": "Text Editor",
+      "label": "Explanation"
+    },
+    {
+      "fieldname": "board",
+      "fieldtype": "Data",
+      "label": "Board/Curriculum"
+    },
+    {
+      "fieldname": "tags",
+      "fieldtype": "Small Text",
+      "label": "Tags"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 1,
+      "write": 1
+    },
+    {
+      "role": "Instructor",
+      "create": 1,
+      "delete": 1,
+      "email": 0,
+      "export": 0,
+      "print": 1,
+      "read": 1,
+      "report": 0,
+      "share": 0,
+      "write": 1
+    }
+  ],
+  "actions": [],
+  "links": [],
+  "states": []
+}

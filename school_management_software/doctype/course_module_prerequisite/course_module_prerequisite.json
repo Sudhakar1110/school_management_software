@@ -1,0 +1,49 @@
+{
+  "doctype": "DocType",
+  "name": "Course Module Prerequisite",
+  "module": "Education",
+  "custom": 1,
+  "is_submittable": 0,
+  "is_child_table": 1,
+  "is_single": 0,
+  "is_tree": 0,
+  "editable_grid": 1,
+  "track_changes": 0,
+  "track_seen": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "By fieldname",
+  "autoname": "",
+  "allow_rename": 0,
+  "description": "",
+  "title_field": "",
+  "search_fields": "",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "index_web_pages_for_search": 1,
+  "fields": [
+    {
+      "fieldname": "prerequisite_module",
+      "fieldtype": "Link",
+      "label": "Prerequisite Module",
+      "options": "Course Module",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    }
+  ],
+  "permissions": [],
+  "actions": [],
+  "links": [],
+  "states": []
+}

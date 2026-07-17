@@ -1,9 +1,15 @@
 {
- "doctype": "Report",
- "name": "Hostel Occupancy Report",
- "module": "Education",
- "report_type": "Script Report",
- "is_standard": "No",
- "ref_doctype": "Hostel Room",
- "roles": [{"role": "System Manager"}, {"role": "Education Manager"}, {"role": "Warden"}]
+  "doctype": "Report",
+  "name": "Hostel Occupancy Report",
+  "report_name": "Hostel Occupancy Report",
+  "report_type": "Script Report",
+  "is_standard": "No",
+  "ref_doctype": "Hostel Room",
+  "module": "Education",
+  "color": "#8e44ad",
+  "icon": "icon-building",
+  "disabled": 0,
+  "add_total_row": 0,
+  "add_employee_total": 0,
+  "query": ""
 }

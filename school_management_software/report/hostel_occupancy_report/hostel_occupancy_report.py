@@ -1,28 +1,45 @@
-# Copyright (c) 2026, School Management and contributors
+# Copyright (c) 2025, School Management and contributors
 # For license information, please see license.txt
 
 import frappe
+from frappe import _
 
 def execute(filters=None):
-    """Hostel Occupancy Report - Rooms, beds, occupancy percentage"""
-    columns = [
-        {"label": "Hostel", "fieldname": "hostel", "fieldtype": "Data", "width": 150},
-        {"label": "Block", "fieldname": "block", "fieldtype": "Data", "width": 120},
-        {"label": "Room", "fieldname": "room", "fieldtype": "Data", "width": 100},
-        {"label": "Room Type", "fieldname": "room_type", "fieldtype": "Data", "width": 120},
-        {"label": "Total Beds", "fieldname": "total_beds", "fieldtype": "Int", "width": 100},
-        {"label": "Occupied", "fieldname": "occupied", "fieldtype": "Int", "width": 100},
-        {"label": "Available", "fieldname": "available", "fieldtype": "Int", "width": 100},
-        {"label": "Occupancy %", "fieldname": "occupancy_pct", "fieldtype": "Percent", "width": 100}
-    ]
-    data = frappe.db.sql("""
-        SELECT hr.hostel, hr.hostel_block AS block, hr.room_number AS room,
-               hr.room_type, hr.total_beds, hr.occupied_beds AS occupied,
-               hr.available_beds AS available,
-               CASE WHEN hr.total_beds > 0
-                    THEN ROUND(hr.occupied_beds * 100.0 / hr.total_beds, 1)
-                    ELSE 0 END AS occupancy_pct
-        FROM `tabHostel Room` hr
-        ORDER BY hr.hostel, hr.hostel_block, hr.room_number
-    """, as_dict=True)
+    columns = get_columns()
+    data = get_data(filters)
     return columns, data
+
+
+def get_columns():
+    return [
+        _("ID") + ":Link/Hostel Room:200",
+        _("Status") + "::150",
+        _("Date") + ":Date:120",
+    ]
+
+
+def get_data(filters):
+    conditions = get_conditions(filters)
+    query = """
+        SELECT
+            name,
+            status,
+            modified
+        FROM
+            `tabHostel Room`
+        WHERE
+            docstatus < 2
+            {conditions}
+        ORDER BY
+            modified DESC
+    """.format(conditions=conditions or "")
+    return frappe.db.sql(query, filters)
+
+
+def get_conditions(filters):
+    conditions = []
+    if filters and filters.get("from_date"):
+        conditions.append("AND modified >= %(from_date)s")
+    if filters and filters.get("to_date"):
+        conditions.append("AND modified <= %(to_date)s")
+    return " ".join(conditions)

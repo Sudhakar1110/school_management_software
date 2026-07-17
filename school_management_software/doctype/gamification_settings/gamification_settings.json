@@ -1,0 +1,137 @@
+{
+  "doctype": "DocType",
+  "name": "Gamification Settings",
+  "module": "Education",
+  "custom": 1,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "is_single": 1,
+  "is_tree": 0,
+  "editable_grid": 0,
+  "track_changes": 0,
+  "track_seen": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "By fieldname",
+  "autoname": "field:setting_name",
+  "allow_rename": 1,
+  "description": "",
+  "title_field": "",
+  "search_fields": "",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "index_web_pages_for_search": 1,
+  "fields": [
+    {
+      "fieldname": "setting_name",
+      "fieldtype": "Data",
+      "label": "Setting Name",
+      "default": "Gamification Settings"
+    },
+    {
+      "fieldname": "enable_points",
+      "fieldtype": "Check",
+      "label": "Enable Points System",
+      "default": "1"
+    },
+    {
+      "fieldname": "enable_badges",
+      "fieldtype": "Check",
+      "label": "Enable Badges",
+      "default": "1"
+    },
+    {
+      "fieldname": "enable_leaderboard",
+      "fieldtype": "Check",
+      "label": "Enable Leaderboard",
+      "default": "1"
+    },
+    {
+      "fieldname": "enable_streaks",
+      "fieldtype": "Check",
+      "label": "Enable Streaks",
+      "default": "1"
+    },
+    {
+      "fieldname": "section_break_points",
+      "fieldtype": "Section Break",
+      "label": "Point Values"
+    },
+    {
+      "fieldname": "attendance_point",
+      "fieldtype": "Int",
+      "label": "Attendance Point",
+      "default": "10"
+    },
+    {
+      "fieldname": "homework_completion_point",
+      "fieldtype": "Int",
+      "label": "Homework Completion Point",
+      "default": "20"
+    },
+    {
+      "fieldname": "exam_performance_point",
+      "fieldtype": "Int",
+      "label": "Exam Performance Point",
+      "default": "50"
+    },
+    {
+      "fieldname": "extra_curricular_point",
+      "fieldtype": "Int",
+      "label": "Extra-curricular Point",
+      "default": "30"
+    },
+    {
+      "fieldname": "behaviour_point",
+      "fieldtype": "Int",
+      "label": "Positive Behaviour Point",
+      "default": "15"
+    },
+    {
+      "fieldname": "column_break_streak",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "streak_bonus_multiplier",
+      "fieldtype": "Float",
+      "label": "Streak Bonus Multiplier",
+      "default": "1.5"
+    },
+    {
+      "fieldname": "leaderboard_refresh_frequency",
+      "fieldtype": "Select",
+      "label": "Leaderboard Refresh",
+      "options": "Daily\nWeekly\nMonthly",
+      "default": "Weekly"
+    },
+    {
+      "fieldname": "max_leaderboard_entries",
+      "fieldtype": "Int",
+      "label": "Max Leaderboard Entries",
+      "default": "50"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "actions": [],
+  "links": [],
+  "states": []
+}

@@ -1,10 +1,15 @@
 {
- "doctype": "Report",
- "name": "Hostel Attendance Summary Report",
- "module": "Education",
- "report_type": "Script Report",
- "is_standard": "No",
- "ref_doctype": "Hostel Attendance",
- "filters": [{"fieldname": "from_date", "label": "From Date", "fieldtype": "Date"}, {"fieldname": "to_date", "label": "To Date", "fieldtype": "Date"}, {"fieldname": "hostel", "label": "Hostel", "fieldtype": "Link", "options": "Hostel"}],
- "roles": [{"role": "System Manager"}, {"role": "Warden"}, {"role": "Education Manager"}]
+  "doctype": "Report",
+  "name": "Hostel Attendance Summary Report",
+  "report_name": "Hostel Attendance Summary Report",
+  "report_type": "Script Report",
+  "is_standard": "No",
+  "ref_doctype": "Hostel Attendance",
+  "module": "Education",
+  "color": "#f39c12",
+  "icon": "icon-list",
+  "disabled": 0,
+  "add_total_row": 0,
+  "add_employee_total": 0,
+  "query": ""
 }

@@ -1,0 +1,113 @@
+{
+  "doctype": "DocType",
+  "name": "Course Module",
+  "module": "Education",
+  "custom": 1,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "is_single": 0,
+  "is_tree": 0,
+  "editable_grid": 0,
+  "track_changes": 0,
+  "track_seen": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "By fieldname",
+  "autoname": "field:module_title",
+  "allow_rename": 1,
+  "description": "",
+  "title_field": "module_title",
+  "search_fields": "",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "index_web_pages_for_search": 1,
+  "fields": [
+    {
+      "fieldname": "module_title",
+      "fieldtype": "Data",
+      "label": "Module Title",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "course",
+      "fieldtype": "Link",
+      "label": "Course",
+      "options": "Course",
+      "reqd": 1
+    },
+    {
+      "fieldname": "module_number",
+      "fieldtype": "Int",
+      "label": "Module Number",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Text Editor",
+      "label": "Description"
+    },
+    {
+      "fieldname": "estimated_hours",
+      "fieldtype": "Float",
+      "label": "Estimated Hours"
+    },
+    {
+      "fieldname": "section_break_content",
+      "fieldtype": "Section Break",
+      "label": "Content"
+    },
+    {
+      "fieldname": "contents",
+      "fieldtype": "Table",
+      "label": "Module Contents",
+      "options": "Course Module Content"
+    },
+    {
+      "fieldname": "section_break_prereq",
+      "fieldtype": "Section Break",
+      "label": "Prerequisites"
+    },
+    {
+      "fieldname": "prerequisites",
+      "fieldtype": "Table",
+      "label": "Prerequisites",
+      "options": "Course Module Prerequisite"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 1,
+      "write": 1
+    },
+    {
+      "role": "Instructor",
+      "create": 1,
+      "delete": 0,
+      "email": 0,
+      "export": 0,
+      "print": 1,
+      "read": 1,
+      "report": 0,
+      "share": 0,
+      "write": 1
+    }
+  ],
+  "actions": [],
+  "links": [],
+  "states": []
+}

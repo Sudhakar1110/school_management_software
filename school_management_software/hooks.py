@@ -102,126 +102,6 @@ client_script_names = [
 
 # Fixtures for customizations - these auto-install on app migration
 fixtures = [
-    # All Custom DocTypes (new DocTypes created for this app)
-    {"dt": "DocType", "filters": [["name", "in", [
-        "Admit Card Template",
-        "Applicant Fee",
-        "Assessment Group",
-        "Book Author",
-        "Book Category",
-        "Book Copy",
-        "Book Issue",
-        "Book return",
-        "Certificate Template",
-        "Course Schedule Slot",
-        "Create Admission",
-        "Custom Course Schedule",
-        "Custom Program Enrollment",
-        "Custom Student",
-        "Custom Student Fee Installment",
-        "Custom Student Guardian",
-        "Custom Student Sibling",
-        "Custom Timetable Detail",
-        "Employee Certificate",
-        "Employee ID Card",
-        "Event Attachment",
-        "Event Gallery",
-        "Event Participant",
-        "Event Type",
-        "Exam Attendance",
-        "Exam Hall",
-        "Exam Schedule",
-        "Exam Term",
-        "Fine Doctypes",
-        "Gate Pass",
-        "Grievance Box",
-        "Guardian Profile",
-        "Guardian Profile Interest",
-        "Guardian Profile Student",
-        "Hall Allocation",
-        "Hall Allocation Student",
-        "Hall Ticket",
-        "Hall Ticket Subject",
-        "Hostel",
-        "Hostel Admission",
-        "Hostel Application",
-        "Hostel Asset Issue",
-        "Hostel Asset Issue Item",
-        "Hostel Attendance",
-        "Hostel Bed",
-        "Hostel Block",
-        "Hostel Card",
-        "Hostel Check-Out",
-        "Hostel Fee",
-        "Hostel leaves",
-        "Hostel Medical Incident",
-        "Hostel Room",
-        "Hostel Room Types",
-        "Hostel Visitor Log",
-        "ID Card Template",
-        "Kit Item Detail",
-        "Library Book",
-        "Library fine",
-        "Library Member",
-        "Library Rack",
-        "Library Settings",
-        "Meeting Child Table",
-        "Meeting Schedule",
-        "Mess Attendance",
-        "Mess Menu",
-        "Program Student Entry",
-        "Report Card",
-        "Report Card Subject",
-        "Report Card Trait",
-        "Room Inspection",
-        "Room Transfer",
-        "School Event",
-        "Student Admit Card",
-        "Student Certificate",
-        "student documents",
-        "Student Event",
-        "Student ID Card",
-        "Student ID Card Batch",
-        "Student ID Card Batch Item",
-        "Student Kit Issue",
-        "Student Progress Card",
-        "Student Progress Card Detail",
-        "Student Rank",
-        "Student Transport Assignment",
-        "Teacher Weekly Schedule",
-        "Trait Entry",
-        "Trait Entry Detail",
-        "Trait Master",
-        "Transport Fee",
-        "Transport Route",
-        "Transport Stop",
-        "Transport Vehicle",
-        "Warden"
-    ]]]},
-
-    # NEW DocTypes added in v1.0.0 gap analysis
-    {"dt": "DocType", "filters": [["name", "in", [
-        "Admission Enquiry",
-        "AI Settings",
-        "Alumni Record",
-        "Assignment",
-        "Assignment Rubric",
-        "Assignment Submission",
-        "Badge Definition",
-        "Biometric Attendance Log",
-        "Biometric Device",
-        "Call Log",
-        "Course Module",
-        "Course Module Content",
-        "Course Module Prerequisite",
-        "Gamification Settings",
-        "Postal Record",
-        "Question Bank",
-        "Response Template",
-        "Student Points Ledger",
-        "Visitor Log"
-    ]]]},
-
     # Custom Server Scripts (listed by name to avoid conflicts with other apps)
     {"dt": "Server Script", "filters": [
         ["name", "in", server_script_names]
@@ -246,30 +126,12 @@ fixtures = [
         "Student Fees",
         "Student & Scheduling",
         "Transport"
-    ]]},
-
-    # Custom Print Formats
-    {"dt": "Print Format", "filters": [["name", "in", [
-        "Student Certificate Print",
-        "Student ID Card Print",
-        "Employee ID Card Print",
-        "Hall Ticket Print",
-        "Report Card Print"
-    ]]},
-
-    # Custom Reports
-    {"dt": "Report", "filters": [["name", "in", [
-        "Certificate Issuance Report",
-        "Exam Result Analysis Report",
-        "Fee Outstanding Report",
-        "Hostel Attendance Summary Report",
-        "Hostel Occupancy Report",
-        "Library Circulation Report",
-        "Mess Attendance & Meal Count Report",
-        "Transport Fee Dues Report"
     ]]}
 ]
 
-# No after_migrate needed - all customizations are handled via fixtures
-# DocTypes, Custom Fields, Server Scripts, Client Scripts are all fixture-based
+# No after_migrate needed - all customizations are auto-discovered
+# DocTypes are loaded from doctype/name/name.json
+# Reports are loaded from report/name/name.json
+# Print Formats are loaded from print_format/name/name.json
+# Server Scripts, Client Scripts, and Workspaces are loaded from fixtures/
 after_migrate = []

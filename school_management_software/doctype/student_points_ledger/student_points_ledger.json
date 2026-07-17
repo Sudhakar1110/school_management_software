@@ -1,0 +1,130 @@
+{
+  "doctype": "DocType",
+  "name": "Student Points Ledger",
+  "module": "Education",
+  "custom": 1,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "is_single": 0,
+  "is_tree": 0,
+  "editable_grid": 0,
+  "track_changes": 0,
+  "track_seen": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "Auto",
+  "autoname": "",
+  "allow_rename": 1,
+  "description": "",
+  "title_field": "",
+  "search_fields": "student_name,point_type",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "index_web_pages_for_search": 1,
+  "fields": [
+    {
+      "fieldname": "student",
+      "fieldtype": "Link",
+      "label": "Student",
+      "options": "Student",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "student_name",
+      "fieldtype": "Read Only",
+      "label": "Student Name",
+      "fetch_from": "student.student_name"
+    },
+    {
+      "fieldname": "point_type",
+      "fieldtype": "Select",
+      "label": "Point Type",
+      "options": "Attendance\nHomework\nExam\nExtra-curricular\nBehaviour\nOther",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "points",
+      "fieldtype": "Int",
+      "label": "Points",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "reference_doctype",
+      "fieldtype": "Data",
+      "label": "Reference Document Type"
+    },
+    {
+      "fieldname": "reference_docname",
+      "fieldtype": "Data",
+      "label": "Reference Document Name"
+    },
+    {
+      "fieldname": "reason",
+      "fieldtype": "Small Text",
+      "label": "Reason"
+    },
+    {
+      "fieldname": "date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "default": "Today",
+      "reqd": 1
+    },
+    {
+      "fieldname": "academic_year",
+      "fieldtype": "Link",
+      "label": "Academic Year",
+      "options": "Academic Year"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 1,
+      "write": 1
+    },
+    {
+      "role": "Instructor",
+      "create": 1,
+      "delete": 0,
+      "email": 0,
+      "export": 0,
+      "print": 1,
+      "read": 1,
+      "report": 0,
+      "share": 0,
+      "write": 1
+    },
+    {
+      "role": "Student",
+      "create": 0,
+      "delete": 0,
+      "email": 0,
+      "export": 0,
+      "print": 1,
+      "read": 1,
+      "report": 0,
+      "share": 0,
+      "write": 0
+    }
+  ],
+  "actions": [],
+  "links": [],
+  "states": []
+}

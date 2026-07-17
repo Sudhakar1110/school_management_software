@@ -1,0 +1,97 @@
+{
+  "doctype": "DocType",
+  "name": "Biometric Attendance Log",
+  "module": "Education",
+  "custom": 1,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "is_single": 0,
+  "is_tree": 0,
+  "editable_grid": 0,
+  "track_changes": 0,
+  "track_seen": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "Auto",
+  "autoname": "",
+  "allow_rename": 1,
+  "description": "",
+  "title_field": "",
+  "search_fields": "employee_id,device_id",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "index_web_pages_for_search": 1,
+  "fields": [
+    {
+      "fieldname": "device_id",
+      "fieldtype": "Link",
+      "label": "Device",
+      "options": "Biometric Device",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "employee_id",
+      "fieldtype": "Data",
+      "label": "Employee/Student ID",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "person_type",
+      "fieldtype": "Select",
+      "label": "Person Type",
+      "options": "Student\nEmployee",
+      "reqd": 1
+    },
+    {
+      "fieldname": "punch_datetime",
+      "fieldtype": "Datetime",
+      "label": "Punch DateTime",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "punch_type",
+      "fieldtype": "Select",
+      "label": "Punch Type",
+      "options": "IN\nOUT",
+      "reqd": 1
+    },
+    {
+      "fieldname": "attendance_ref",
+      "fieldtype": "Data",
+      "label": "Attendance Reference",
+      "read_only": 1
+    },
+    {
+      "fieldname": "is_processed",
+      "fieldtype": "Check",
+      "label": "Processed",
+      "default": "0"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "actions": [],
+  "links": [],
+  "states": []
+}

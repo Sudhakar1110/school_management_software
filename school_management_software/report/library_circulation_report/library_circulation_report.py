@@ -1,26 +1,45 @@
-# Copyright (c) 2026, School Management and contributors
+# Copyright (c) 2025, School Management and contributors
 # For license information, please see license.txt
 
 import frappe
+from frappe import _
 
 def execute(filters=None):
-    """Library Circulation Report - Track issued books and overdue items"""
-    columns = [
-        {"label": "Book", "fieldname": "book", "fieldtype": "Link", "options": "Library Book", "width": 150},
-        {"label": "Copy", "fieldname": "book_copy", "fieldtype": "Data", "width": 80},
-        {"label": "Member", "fieldname": "library_member", "fieldtype": "Link", "options": "Library Member", "width": 120},
-        {"label": "Issue Date", "fieldname": "issue_date", "fieldtype": "Date", "width": 100},
-        {"label": "Due Date", "fieldname": "due_date", "fieldtype": "Date", "width": 100},
-        {"label": "Overdue Days", "fieldname": "overdue_days", "fieldtype": "Int", "width": 100},
-        {"label": "Status", "fieldname": "status", "fieldtype": "Data", "width": 100}
-    ]
-    data = frappe.db.sql("""
-        SELECT bi.book, bi.book_copy, bi.library_member,
-               bi.issue_date, bi.due_date,
-               CASE WHEN bi.due_date < CURDATE() THEN DATEDIFF(CURDATE(), bi.due_date) ELSE 0 END AS overdue_days,
-               bi.status
-        FROM `tabBook Issue` bi
-        WHERE bi.status = 'Issued'
-        ORDER BY bi.due_date ASC
-    """, as_dict=True)
+    columns = get_columns()
+    data = get_data(filters)
     return columns, data
+
+
+def get_columns():
+    return [
+        _("ID") + ":Link/Book Issue:200",
+        _("Status") + "::150",
+        _("Date") + ":Date:120",
+    ]
+
+
+def get_data(filters):
+    conditions = get_conditions(filters)
+    query = """
+        SELECT
+            name,
+            status,
+            modified
+        FROM
+            `tabBook Issue`
+        WHERE
+            docstatus < 2
+            {conditions}
+        ORDER BY
+            modified DESC
+    """.format(conditions=conditions or "")
+    return frappe.db.sql(query, filters)
+
+
+def get_conditions(filters):
+    conditions = []
+    if filters and filters.get("from_date"):
+        conditions.append("AND modified >= %(from_date)s")
+    if filters and filters.get("to_date"):
+        conditions.append("AND modified <= %(to_date)s")
+    return " ".join(conditions)

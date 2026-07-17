@@ -1,10 +1,15 @@
 {
- "doctype": "Report",
- "name": "Certificate Issuance Report",
- "module": "Education",
- "report_type": "Script Report",
- "is_standard": "No",
- "ref_doctype": "Student Certificate",
- "filters": [{"fieldname": "from_date", "label": "From Date", "fieldtype": "Date"}, {"fieldname": "to_date", "label": "To Date", "fieldtype": "Date"}, {"fieldname": "template", "label": "Certificate Type", "fieldtype": "Link", "options": "Certificate Template"}],
- "roles": [{"role": "System Manager"}, {"role": "Education Manager"}]
+  "doctype": "Report",
+  "name": "Certificate Issuance Report",
+  "report_name": "Certificate Issuance Report",
+  "report_type": "Script Report",
+  "is_standard": "No",
+  "ref_doctype": "Student Certificate",
+  "module": "Education",
+  "color": "#743ee2",
+  "icon": "icon-certificate",
+  "disabled": 0,
+  "add_total_row": 0,
+  "add_employee_total": 0,
+  "query": ""
 }

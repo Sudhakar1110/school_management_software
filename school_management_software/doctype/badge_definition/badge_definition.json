@@ -1,0 +1,116 @@
+{
+  "doctype": "DocType",
+  "name": "Badge Definition",
+  "module": "Education",
+  "custom": 1,
+  "is_submittable": 0,
+  "is_child_table": 0,
+  "is_single": 0,
+  "is_tree": 0,
+  "editable_grid": 0,
+  "track_changes": 0,
+  "track_seen": 0,
+  "beta": 0,
+  "is_virtual": 0,
+  "naming_rule": "By fieldname",
+  "autoname": "field:badge_name",
+  "allow_rename": 1,
+  "description": "",
+  "title_field": "badge_name",
+  "search_fields": "badge_name",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "engine": "InnoDB",
+  "show_preview_popup": 0,
+  "max_attachments": 0,
+  "hide_copy": 0,
+  "allow_import": 0,
+  "allow_auto_repeat": 0,
+  "index_web_pages_for_search": 1,
+  "fields": [
+    {
+      "fieldname": "badge_name",
+      "fieldtype": "Data",
+      "label": "Badge Name",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "badge_description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "badge_icon",
+      "fieldtype": "Attach Image",
+      "label": "Badge Icon"
+    },
+    {
+      "fieldname": "badge_color",
+      "fieldtype": "Color",
+      "label": "Badge Color",
+      "default": "#FFD700"
+    },
+    {
+      "fieldname": "category",
+      "fieldtype": "Select",
+      "label": "Category",
+      "options": "Academic\nAttendance\nBehaviour\nSports\nCo-curricular\nOther",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "criteria_type",
+      "fieldtype": "Select",
+      "label": "Criteria Type",
+      "options": "Points Threshold\nManual Award\nAchievement Based",
+      "required": 1
+    },
+    {
+      "fieldname": "points_required",
+      "fieldtype": "Int",
+      "label": "Points Required",
+      "depends_on": "eval:doc.criteria_type == 'Points Threshold'"
+    },
+    {
+      "fieldname": "is_repeatable",
+      "fieldtype": "Check",
+      "label": "Repeatable (can be earned multiple times)"
+    },
+    {
+      "fieldname": "is_active",
+      "fieldtype": "Check",
+      "label": "Active",
+      "default": "1"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "share": 1,
+      "write": 1
+    },
+    {
+      "role": "Instructor",
+      "create": 0,
+      "delete": 0,
+      "email": 0,
+      "export": 0,
+      "print": 1,
+      "read": 1,
+      "report": 0,
+      "share": 0,
+      "write": 0
+    }
+  ],
+  "actions": [],
+  "links": [],
+  "states": []
+}

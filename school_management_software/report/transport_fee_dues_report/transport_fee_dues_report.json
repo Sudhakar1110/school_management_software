@@ -1,10 +1,15 @@
 {
- "doctype": "Report",
- "name": "Transport Fee Dues Report",
- "module": "Education",
- "report_type": "Script Report",
- "is_standard": "No",
- "ref_doctype": "Student Transport Assignment",
- "filters": [{"fieldname": "fee_status", "label": "Fee Status", "fieldtype": "Select", "options": "\nPending\nPaid\nPartial\nOverdue"}],
- "roles": [{"role": "System Manager"}, {"role": "Education Manager"}]
+  "doctype": "Report",
+  "name": "Transport Fee Dues Report",
+  "report_name": "Transport Fee Dues Report",
+  "report_type": "Script Report",
+  "is_standard": "No",
+  "ref_doctype": "Transport Fee",
+  "module": "Education",
+  "color": "#e74c3c",
+  "icon": "icon-truck",
+  "disabled": 0,
+  "add_total_row": 0,
+  "add_employee_total": 0,
+  "query": ""
 }
