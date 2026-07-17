@@ -54,78 +54,6 @@
   {
     "doctype": "Custom Field",
     "dt": "Student",
-    "fieldname": "religion",
-    "label": "Religion",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-religion"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "caste",
-    "label": "Caste",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-caste"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "mother_tongue",
-    "label": "Mother Tongue",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-mother_tongue"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "mother_name",
-    "label": "Mother's Name",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-mother_name"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "father_name",
-    "label": "Father's Name",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-father_name"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "guardians",
-    "label": "Guardians",
-    "fieldtype": "Table",
-    "options": "Custom Student Guardian",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-guardians"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "siblings",
-    "label": "Siblings",
-    "fieldtype": "Table",
-    "options": "Custom Student Sibling",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-siblings"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
     "fieldname": "fee_staus",
     "label": "fee Staus",
     "fieldtype": "Link",
@@ -144,28 +72,6 @@
     "insert_after": "",
     "module": "School Management Software",
     "name": "Program Enrollment-sales_invoice"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Program Enrollment",
-    "fieldname": "courses",
-    "label": "Courses",
-    "fieldtype": "Table",
-    "options": "Program Enrollment Course",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Program Enrollment-courses"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Course Schedule",
-    "fieldname": "branch",
-    "label": "Branch",
-    "fieldtype": "Link",
-    "options": "Branch",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Course Schedule-branch"
   },
   {
     "doctype": "Custom Field",
@@ -208,39 +114,6 @@
     "insert_after": "",
     "module": "School Management Software",
     "name": "Student Admission-paid"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "guardians",
-    "label": "Guardians",
-    "fieldtype": "Table",
-    "options": "Student Guardian",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-guardians"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "siblings",
-    "label": "Siblings",
-    "fieldtype": "Table",
-    "options": "Student Sibling",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-siblings"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "student_documents",
-    "label": "student documents",
-    "fieldtype": "Table",
-    "options": "student documents",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-student_documents"
   },
   {
     "doctype": "Custom Field",
@@ -313,16 +186,5 @@
     "insert_after": "",
     "module": "School Management Software",
     "name": "Student Fee Installment-outstanding_amount"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Course Schedule",
-    "fieldname": "color",
-    "label": "Color",
-    "fieldtype": "Select",
-    "options": "Blue\nGreen\nRed\nOrange\nPurple",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Course Schedule-color"
   }
 ]
