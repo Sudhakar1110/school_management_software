@@ -4,12 +4,48 @@ from frappe.modules.import_file import import_file_by_path
 
 
 def after_migrate_setup():
-    """Run after bench migrate to sync new doctypes and create helper fields."""
+    """Run after bench migrate to sync all custom doctypes from JSON files."""
     app_name = "school_management_software"
     app_path = frappe.get_app_path(app_name)
 
-    # 1. Force-sync all new gap analysis doctypes from JSON files
-    new_doctypes = [
+    # All custom doctypes from git repo that may not be synced to site yet
+    all_custom_doctypes = [
+        # Front Office & Admissions
+        "Admission Enquiry",
+        "Call Log",
+        "Postal Record",
+        "Visitor Log",
+        "Response Template",
+
+        # AI & Gamification
+        "AI Settings",
+        "Badge Definition",
+        "Gamification Settings",
+        "Student Points Ledger",
+
+        # Academic - Assignments & Assessment
+        "Assignment",
+        "Assignment Rubric",
+        "Assignment Submission",
+        "Assessment Group",
+
+        # Course Modules (LMS)
+        "Course Module",
+        "Course Module Content",
+        "Course Module Prerequisite",
+
+        # Assessment - Question Bank
+        "Question Bank",
+        "Question Bank Option",
+
+        # Biometric
+        "Biometric Attendance Log",
+        "Biometric Device",
+
+        # Alumni
+        "Alumni Record",
+
+        # Gap Analysis Features (may already exist, sync to be safe)
         "Compliance Certification",
         "Compliance Policy Link",
         "Board Meeting",
@@ -22,7 +58,7 @@ def after_migrate_setup():
         "Student Fee Installment",
     ]
 
-    for doctype_name in new_doctypes:
+    for doctype_name in all_custom_doctypes:
         doctype_folder = frappe.scrub(doctype_name)
         json_path = os.path.join(app_path, "doctype", doctype_folder, f"{doctype_folder}.json")
 
@@ -31,19 +67,20 @@ def after_migrate_setup():
             continue
 
         try:
+            already_exists = frappe.db.exists("DocType", doctype_name)
             import_file_by_path(json_path, force=True)
-            status = "Re-synced" if frappe.db.exists("DocType", doctype_name) else "Created"
+            status = "Re-synced" if already_exists else "CREATED"
             print(f"{status}: {doctype_name}")
         except Exception as e:
             frappe.log_error(
                 message=f"Error syncing {doctype_name}: {e}",
                 title="School Management - after_migrate",
             )
-            print(f"Error syncing {doctype_name}: {e}")
+            print(f"ERROR: {doctype_name} - {e}")
 
     frappe.db.commit()
 
-    # 2. Add Table custom field linking Student to Student Fee Installment
+    # Add Table custom field linking Student to Student Fee Installment
     if frappe.db.exists("DocType", "Student Fee Installment"):
         if not frappe.db.exists("Custom Field", {"dt": "Student", "fieldname": "fee_installments"}):
             try:
