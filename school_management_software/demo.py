@@ -846,6 +846,70 @@ def cus_fee_installment():
                                                 "amount": amt, "status": "Pending", "outstanding_amount": amt})
 
 
+# ── CUSTOM DOCTYPES TO CLEAR IN FORCE MODE ────────────────
+
+# Only our app's custom doctypes (NOT standard ERPNext/Education)
+CUSTOM_DOCTYPES = [
+    "Hostel", "Hostel Room Types", "Hostel Block", "Hostel Room", "Warden",
+    "Mess Menu", "Mess Attendance",
+    "Transport Route", "Transport Stop", "Transport Vehicle",
+    "Transport Fee", "Student Transport Assignment", "Vehicle GPS Tracking Log",
+    "Book Author", "Book Category", "Library Rack", "Library Book",
+    "Book Copy", "Library Member", "Library Fine", "Book Issue", "Book return",
+    "Exam Term", "Exam Hall", "Exam Schedule", "Exam Attendance",
+    "Event Type", "School Event", "Event Attachment", "Event Gallery",
+    "Event Participant",
+    "AI Settings", "Gamification Settings", "Badge Definition",
+    "Student Points Ledger",
+    "Committee Definition", "Board Meeting", "Board Meeting Agenda",
+    "Meeting Attendee", "Meeting Child Table", "Meeting Schedule",
+    "Compliance Certification", "Compliance Policy Link",
+    "Asset Register", "Asset Maintenance",
+    "Biometric Device", "Biometric Attendance Log",
+    "Alumni Record",
+    "Question Bank", "Question Bank Option",
+    "Course Module", "Course Module Content", "Course Module Prerequisite",
+    "Assignment", "Assignment Rubric", "Assignment Submission",
+    "Assessment Group",
+    "Admission Enquiry", "Call Log", "Postal Record", "Visitor Log",
+    "Response Template", "Grievance Box", "Gate Pass",
+    "Admit Card Template", "Certificate Template", "Student Certificate",
+    "Student Admit Card", "Student Event", "Student Fee Installment",
+    "Student ID Card", "Student ID Card Batch", "Student ID Card Batch Item",
+    "Student Kit Issue", "Student Progress Card", "Student Progress Card Detail",
+    "Student Rank", "Student Documents",
+    "Report Card", "Report Card Subject", "Report Card Trait",
+    "Trait Entry", "Trait Entry Detail", "Trait Master",
+    "Guardian Profile", "Guardian Profile Interest", "Guardian Profile Student",
+    "Fine Doctypes", "Hall Allocation", "Hall Allocation Student",
+    "Hall Ticket", "Hall Ticket Subject",
+    "Hostel Admission", "Hostel Application", "Hostel Attendance",
+    "Hostel Bed", "Hostel Card", "Hostel Check-Out", "Hostel Fee",
+    "Hostel leaves", "Hostel Medical Incident", "Hostel Visitor Log",
+    "Hostel Asset Issue", "Hostel Asset Issue Item",
+    "ID Card Template", "Employee ID Card", "Employee Certificate",
+    "Kit Item Detail", "Course Schedule Slot", "Room Inspection",
+    "Room Transfer", "Program Student Entry",
+    "Applicant Fee",
+]
+
+
+def _clear_data():
+    """Delete all existing custom doctype records for a fresh start."""
+    total = 0
+    for dt in CUSTOM_DOCTYPES:
+        if frappe.db.exists("DocType", dt):
+            names = frappe.db.get_all(dt, pluck="name")
+            if names:
+                for n in names:
+                    try:
+                        frappe.delete_doc(dt, n, ignore_permissions=True, force=True)
+                        total += 1
+                    except Exception:
+                        pass
+    return total
+
+
 # ── MAIN ────────────────────────────────────────────────────
 
 SECTIONS = [
@@ -905,9 +969,26 @@ SECTIONS = [
 ]
 
 
-def generate():
+def generate(force=False):
+    """
+    Generate demo data for all custom doctypes.
+
+    Args:
+        force (bool): If True, deletes ALL existing custom doctype records
+                      before regenerating (ensures no 'skipped' items).
+
+    Usage:
+        bench --site [sitename] execute school_management_software.demo.generate
+        bench --site [sitename] execute school_management_software.demo.generate \
+            --kwargs '{"force": true}'
+    """
     print("=" * 60)
     print("SCHOOL MANAGEMENT SOFTWARE - DEMO DATA GENERATOR")
+    if force:
+        print("  *** FORCE MODE - Clearing existing data first ***")
+        deleted = _clear_data()
+        print(f"  Deleted {deleted} existing records")
+        frappe.db.commit()
     print("=" * 60)
 
     all_results = []
@@ -953,4 +1034,6 @@ def generate():
 
 
 if __name__ == "__main__":
-    generate()
+    import sys
+    force = "--force" in sys.argv or "-f" in sys.argv
+    generate(force=force)
