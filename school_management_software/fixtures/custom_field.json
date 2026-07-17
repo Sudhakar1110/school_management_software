@@ -2,27 +2,6 @@
   {
     "doctype": "Custom Field",
     "dt": "Student",
-    "fieldname": "naming_series",
-    "label": "Naming Series",
-    "fieldtype": "Select",
-    "options": "STU-.YYYY.-",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-naming_series"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "enabled",
-    "label": "Enabled",
-    "fieldtype": "Check",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-enabled"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
     "fieldname": "class_teacher",
     "label": "Class teacher",
     "fieldtype": "Link",
@@ -205,47 +184,6 @@
   {
     "doctype": "Custom Field",
     "dt": "Student",
-    "fieldname": "pincode",
-    "label": "Pincode",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-pincode"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "city",
-    "label": "City",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-city"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "state",
-    "label": "State",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-state"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "country",
-    "label": "Country",
-    "fieldtype": "Link",
-    "options": "Country",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-country"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
     "fieldname": "guardians",
     "label": "Guardians",
     "fieldtype": "Table",
@@ -279,38 +217,6 @@
   {
     "doctype": "Custom Field",
     "dt": "Program Enrollment",
-    "fieldname": "enrollment_date",
-    "label": "Enrollment Date",
-    "fieldtype": "Date",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Program Enrollment-enrollment_date"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Program Enrollment",
-    "fieldname": "student_category",
-    "label": "Student Category",
-    "fieldtype": "Link",
-    "options": "Student Category",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Program Enrollment-student_category"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Program Enrollment",
-    "fieldname": "fees",
-    "label": "Fees",
-    "fieldtype": "Table",
-    "options": "Applicant Fee",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Program Enrollment-fees"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Program Enrollment",
     "fieldname": "sales_invoice",
     "label": "Sales Invoice",
     "fieldtype": "Link",
@@ -318,17 +224,6 @@
     "insert_after": "",
     "module": "School Management Software",
     "name": "Program Enrollment-sales_invoice"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Program Enrollment",
-    "fieldname": "amended_from",
-    "label": "Amended From",
-    "fieldtype": "Link",
-    "options": "Custom Program Enrollment",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Program Enrollment-amended_from"
   },
   {
     "doctype": "Custom Field",
@@ -344,17 +239,6 @@
   {
     "doctype": "Custom Field",
     "dt": "Course Schedule",
-    "fieldname": "naming_series",
-    "label": "Naming Series",
-    "fieldtype": "Select",
-    "options": "CSCH-.YYYY.-",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Course Schedule-naming_series"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Course Schedule",
     "fieldname": "branch",
     "label": "Branch",
     "fieldtype": "Link",
@@ -362,50 +246,6 @@
     "insert_after": "",
     "module": "School Management Software",
     "name": "Course Schedule-branch"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Course Schedule",
-    "fieldname": "academic_year",
-    "label": "Academic Year",
-    "fieldtype": "Link",
-    "options": "Academic Year",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Course Schedule-academic_year"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Course Schedule",
-    "fieldname": "program",
-    "label": "Program",
-    "fieldtype": "Link",
-    "options": "Program",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Course Schedule-program"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Course Schedule",
-    "fieldname": "academic_term",
-    "label": "Academic Term",
-    "fieldtype": "Link",
-    "options": "Academic Term",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Course Schedule-academic_term"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Course Schedule",
-    "fieldname": "student_group",
-    "label": "Student group",
-    "fieldtype": "Link",
-    "options": "Student Group",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Course Schedule-student_group"
   },
   {
     "doctype": "Custom Field",
@@ -462,173 +302,12 @@
   {
     "doctype": "Custom Field",
     "dt": "Student Admission",
-    "fieldname": "naming_series",
-    "label": "Naming Series",
-    "fieldtype": "Select",
-    "options": "EDU-APP-.YYYY.-",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-naming_series"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "application_date",
-    "label": "Application Date",
-    "fieldtype": "Date",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-application_date"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "application_status",
-    "label": "Application Status",
-    "fieldtype": "Select",
-    "options": "Applied\nApproved\nRejected\nAdmitted",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-application_status"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "program",
-    "label": "Program",
-    "fieldtype": "Link",
-    "options": "Program",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-program"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "student_email_id",
-    "label": "Student Email",
-    "fieldtype": "Data",
-    "options": "Email",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-student_email_id"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "student_admission",
-    "label": "Student Admission",
-    "fieldtype": "Link",
-    "options": "Student Admission",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-student_admission"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "student_category",
-    "label": "Student Category",
-    "fieldtype": "Link",
-    "options": "Student Category",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-student_category"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "image",
-    "label": "Photo",
-    "fieldtype": "Attach Image",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-image"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "academic_year",
-    "label": "Academic Year",
-    "fieldtype": "Link",
-    "options": "Academic Year",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-academic_year"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "academic_term",
-    "label": "Academic Term",
-    "fieldtype": "Link",
-    "options": "Academic Term",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-academic_term"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
     "fieldname": "paid",
     "label": "Paid",
     "fieldtype": "Check",
     "insert_after": "",
     "module": "School Management Software",
     "name": "Student Admission-paid"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "title",
-    "label": "Title",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-title"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "amended_from",
-    "label": "Amended From",
-    "fieldtype": "Link",
-    "options": "Create Admission",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-amended_from"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "date_of_birth",
-    "label": "Date of Birth",
-    "fieldtype": "Date",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-date_of_birth"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "gender",
-    "label": "Gender",
-    "fieldtype": "Link",
-    "options": "Gender",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-gender"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "blood_group",
-    "label": "Blood Group",
-    "fieldtype": "Select",
-    "options": "\nA+\nA-\nB+\nB-\nO+\nO-\nAB+\nAB-",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-blood_group"
   },
   {
     "doctype": "Custom Field",
@@ -640,16 +319,6 @@
     "insert_after": "",
     "module": "School Management Software",
     "name": "Student Admission-student_mobile_number"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "nationality",
-    "label": "Nationality",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-nationality"
   },
   {
     "doctype": "Custom Field",
@@ -696,47 +365,6 @@
   {
     "doctype": "Custom Field",
     "dt": "Student Admission",
-    "fieldname": "city",
-    "label": "City",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-city"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "state",
-    "label": "State",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-state"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "pincode",
-    "label": "Pincode",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-pincode"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "country",
-    "label": "Country",
-    "fieldtype": "Link",
-    "options": "Country",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-country"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
     "fieldname": "student_documents",
     "label": "student documents",
     "fieldtype": "Table",
@@ -744,17 +372,6 @@
     "insert_after": "",
     "module": "School Management Software",
     "name": "Student Admission-student_documents"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "fees",
-    "label": "Fee Structure Details",
-    "fieldtype": "Table",
-    "options": "Applicant Fee",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-fees"
   },
   {
     "doctype": "Custom Field",
@@ -827,68 +444,6 @@
     "insert_after": "",
     "module": "School Management Software",
     "name": "Student Fee Installment-outstanding_amount"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Course Schedule",
-    "fieldname": "period",
-    "label": "Period",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Course Schedule-period"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Course Schedule",
-    "fieldname": "subject",
-    "label": "Subject",
-    "fieldtype": "Link",
-    "options": "Course",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Course Schedule-subject"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Course Schedule",
-    "fieldname": "from_time",
-    "label": "From Time",
-    "fieldtype": "Time",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Course Schedule-from_time"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Course Schedule",
-    "fieldname": "to_time",
-    "label": "To Time",
-    "fieldtype": "Time",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Course Schedule-to_time"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Course Schedule",
-    "fieldname": "instructor",
-    "label": "Instructor",
-    "fieldtype": "Link",
-    "options": "Instructor",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Course Schedule-instructor"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Course Schedule",
-    "fieldname": "room",
-    "label": "Room",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Course Schedule-room"
   },
   {
     "doctype": "Custom Field",
