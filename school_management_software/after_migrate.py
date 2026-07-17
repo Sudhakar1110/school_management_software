@@ -126,8 +126,6 @@ def after_migrate_setup():
         if current_app != app_name:
             frappe.db.set_value("Module Def", "School Management Software", "app_name", app_name)
             print(f"Fixed Module Def app_name: {current_app} -> {app_name}")
-        else:
-            print(f"Module Def app_name already correct: {app_name}")
 
     frappe.db.commit()
 
