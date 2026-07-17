@@ -81,27 +81,27 @@ def after_migrate_setup():
     frappe.db.commit()
 
     # Sync all workspace JSONs so module pages appear in sidebar
-    all_workspaces = [
-        "Home",
-        "Admissions",
-        "Attendance & Assessments",
-        "Exam",
-        "Hostel-Management",
-        "Library",
-        "Masters",
-        "Overview",
-        "School Events",
-        "Student Fees",
-        "Student & Scheduling",
-        "Transport",
-        "School Governance",
-        "School Compliance",
-        "School Assets",
-        "School Transport",
-    ]
+    # Note: Manual folder mapping needed because frappe.scrub() keeps & in names
+    workspace_folders = {
+        "Home": "home",
+        "Admissions": "admissions",
+        "Attendance & Assessments": "attendance_assessments",
+        "Exam": "exam",
+        "Hostel-Management": "hostel_management",
+        "Library": "library",
+        "Masters": "masters",
+        "Overview": "overview",
+        "School Events": "school_events",
+        "Student Fees": "student_fees",
+        "Student & Scheduling": "student_scheduling",
+        "Transport": "transport",
+        "School Governance": "school_governance",
+        "School Compliance": "school_compliance",
+        "School Assets": "school_assets",
+        "School Transport": "school_transport",
+    }
 
-    for workspace_name in all_workspaces:
-        workspace_folder = frappe.scrub(workspace_name)
+    for workspace_name, workspace_folder in workspace_folders.items():
         json_path = os.path.join(app_path, "workspace", workspace_folder, f"{workspace_folder}.json")
 
         if not os.path.exists(json_path):
