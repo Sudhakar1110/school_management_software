@@ -24,16 +24,6 @@
   {
     "doctype": "Custom Field",
     "dt": "Student",
-    "fieldname": "student_mobile_number",
-    "label": "Student Mobile Number",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-student_mobile_number"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
     "fieldname": "class_name",
     "label": "Class",
     "fieldtype": "Data",
@@ -50,56 +40,6 @@
     "insert_after": "",
     "module": "School Management Software",
     "name": "Student-section_name"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "register_no",
-    "label": "Register No",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-register_no"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "roll_no",
-    "label": "Roll No",
-    "fieldtype": "Int",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-roll_no"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "admission_date",
-    "label": "Admission Date",
-    "fieldtype": "Date",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-admission_date"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "pan_no",
-    "label": "PAN No",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-pan_no"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "phone_no",
-    "label": "Phone No",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-phone_no"
   },
   {
     "doctype": "Custom Field",
@@ -160,26 +100,6 @@
     "insert_after": "",
     "module": "School Management Software",
     "name": "Student-father_name"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "address_line_1",
-    "label": "Address Line 1",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-address_line_1"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student",
-    "fieldname": "address_line_2",
-    "label": "Address Line 2",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student-address_line_2"
   },
   {
     "doctype": "Custom Field",
@@ -271,26 +191,6 @@
   {
     "doctype": "Custom Field",
     "dt": "Student Admission",
-    "fieldname": "middle_name",
-    "label": "Middle Name",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-middle_name"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "last_name",
-    "label": "Last Name",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-last_name"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
     "fieldname": "custom_guardian_email",
     "label": "Guardian Email",
     "fieldtype": "Data",
@@ -308,17 +208,6 @@
     "insert_after": "",
     "module": "School Management Software",
     "name": "Student Admission-paid"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "student_mobile_number",
-    "label": "Mobile Number",
-    "fieldtype": "Data",
-    "options": "Phone",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-student_mobile_number"
   },
   {
     "doctype": "Custom Field",
@@ -341,26 +230,6 @@
     "insert_after": "",
     "module": "School Management Software",
     "name": "Student Admission-siblings"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "address_line_1",
-    "label": "Address Line 1",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-address_line_1"
-  },
-  {
-    "doctype": "Custom Field",
-    "dt": "Student Admission",
-    "fieldname": "address_line_2",
-    "label": "Address Line 2",
-    "fieldtype": "Data",
-    "insert_after": "",
-    "module": "School Management Software",
-    "name": "Student Admission-address_line_2"
   },
   {
     "doctype": "Custom Field",
