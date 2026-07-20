@@ -10,22 +10,46 @@ app_license = "MIT"
 
 required_apps = ["erpnext", "education"]
 
-# Register app modules so Frappe shows them in the sidebar
-app_modules = {
-    "School Management Software": "School Management Software",
-}
+# NOTE: Module registration is handled by modules.txt (school_management_software/modules.txt),
+# not by hooks.py. There is no "app_modules" hook in Frappe — that key was removed since it
+# had no effect. Make sure modules.txt contains:
+#     School Management Software
+# and that a matching folder school_management_software/school_management_software/ exists
+# with doctype/, report/, etc. inside it.
 
 # Fixtures for customizations that are not auto-discovered during bench migrate.
 # DocTypes, Reports, Print Formats, and Workspaces are auto-discovered from their
 # respective folders (doctype/, report/, print_format/, workspace/).
 # Server Scripts and Client Scripts MUST be listed here to be installed.
+#
+# IMPORTANT: Custom Field / Property Setter / Client Script are filtered by module so that
+# only customizations belonging to this app are exported as fixtures. Without a filter,
+# ALL Custom Fields / Property Setters / Client Scripts on the site — including ones from
+# core ERPNext or the Education app — would get pulled in, which bloats the app and can
+# overwrite unrelated customizations on any site this app is installed on.
+#
+# This assumes each Custom Field / Property Setter / Client Script has its "module" field
+# set to "School Management Software". If some of your fields were added to core doctypes
+# (e.g. Student, Sales Invoice) and don't have that module set, either set it manually on
+# those records, or swap the filter below for something else that reliably isolates your
+# customizations (e.g. a fieldname/script-name prefix like ["fieldname", "like", "sms_%"]).
 fixtures = [
-    # Custom Fields and Property Setters
-    "Custom Field",
-    "Property Setter",
-
-    # Client Scripts — files live in client_script/name/name.json
-    {"dt": "Client Script", "path": "client_script"},
+    {
+        "dt": "Custom Field",
+        "filters": [["module", "=", "School Management Software"]]
+    },
+    {
+        "dt": "Property Setter",
+        "filters": [["module", "=", "School Management Software"]]
+    },
+    {
+        "dt": "Client Script",
+        "filters": [["module", "=", "School Management Software"]]
+    },
+    {
+        "dt": "Module Def",
+        "filters": [["module_name", "=", "School Management Software"]]
+    },
 ]
 
 after_migrate = ["school_management_software.after_migrate.after_migrate_setup"]
